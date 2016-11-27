@@ -10,3 +10,6 @@
      Protocollen skal skrives færdig
      
    https://github.com/maniacbug/StandardCplusplus
+   
+   eksempel på en streng hvor der skal tændes for 3 elementer:
+   "!,S,1,12:45,N,3,12:55,N,6,13:15\n"
