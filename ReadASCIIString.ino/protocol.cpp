@@ -39,7 +39,7 @@ void protocol::printSavedVector() const
 }
 int protocol::protocolLogic()
 {
-  return 900;
+  return 3;
 }
 
 
