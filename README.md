@@ -6,5 +6,5 @@
 # 27-11-2016
   Lidt opdateret GUI(mangler megetarbejde endnu). Vi har lavet vores seriel kommunikation og lidt af logikken som skal være på arduinoen.
     TO DO:
-      # Vi skal have lavet logikken færdig til arduino programmet
-      # Protocollen skal skrives færdig
+     Vi skal have lavet logikken færdig til arduino programmet
+     Protocollen skal skrives færdig
