@@ -14,10 +14,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    help.cpp
+    help.cpp \
+    opretscenarie.cpp
 
 HEADERS  += mainwindow.h \
-    help.h
+    help.h \
+    opretscenarie.h
 
 FORMS    += mainwindow.ui \
-    help.ui
+    help.ui \
+    opretscenarie.ui

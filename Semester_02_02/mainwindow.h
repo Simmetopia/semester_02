@@ -21,6 +21,8 @@ private slots:
 
     void on_alarm1_clicked();
 
+    int on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     char alarmCount;

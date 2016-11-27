@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "help.h"
+#include "opretscenarie.h"
 
 
 
@@ -32,4 +33,11 @@ void MainWindow::on_alarm1_clicked()
         ui->label->setText("Alarm 1 aktiveret");
         alarmCount = 1;
     }
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    OpretScenarie os;
+    os.setModal(true);
+    os.exec();
 }
