@@ -16,7 +16,7 @@ ScenarierList::~ScenarierList()
 
 void ScenarierList::addScenarie(char* a)
 {
-	int sizeOfArray = strlen(a) + 1;
+	int sizeOfArray = strlen(a);
 	protocol pr1;
 	pr1.readToVector(a, sizeOfArray);
 	Scenarier nyt_scenarier;
@@ -113,8 +113,9 @@ std::vector<char> ScenarierList::etScenarie(int i)
 	return scenarielist[i - 1].getScenarieStreng();
 }
 
-char* ScenarierList::tilCharArray(std::vector<char> a)
+char* ScenarierList::tilCharArray(std::vector<char> a, int )
 {
-	return reinterpret_cast<char*> (&a[0]);
+	char *p = &*a.begin();
+	return  p;
 }
 

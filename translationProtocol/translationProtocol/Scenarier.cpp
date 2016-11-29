@@ -31,7 +31,16 @@ int Scenarier::antalAktioner() const
 
 std::vector<char> Scenarier::getScenarieStreng()
 {
-	return scenariestreng;
+	int i = scenariestreng.size();
+	if (scenariestreng[i-1] == '\n')
+	{
+		return scenariestreng;
+	}
+	else 
+	{
+		scenariestreng.push_back('\n');
+		return scenariestreng;
+	}
 }
 
 void Scenarier::setScenarieStreng(std::vector<char> a)

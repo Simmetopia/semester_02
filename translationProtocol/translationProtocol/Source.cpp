@@ -17,10 +17,8 @@ int main()
 	SerialCom serialCom;
 	ScenarierList scenlist;
 	scenlist.addScenarie(a);
-	scenlist.opretScenarie();
-	int size, *ports;
 try{
-	serialCom.open(3, 9600, 8, PARITY_NONE, 1);
+	serialCom.open(5, 9600, 8, PARITY_NONE, 1);
 }
 catch (const char *e)
 {
@@ -29,10 +27,13 @@ catch (const char *e)
 	exit(1);
 }
 cout << "COM3 er open og klar til brug." << endl;
+vector<char> g = scenlist.etScenarie(1);
+char* z = scenlist.tilCharArray(g);
+int size = scenlist.etScenarie(1).size();
 //scenlist.tilCharArray(scenlist.etScenarie(2)), scenlist.etScenarie(2).size()
 try
 {
-	serialCom.send(scenlist.tilCharArray(scenlist.etScenarie(2)), scenlist.etScenarie(2).size()+1);
+	serialCom.send(z,size );
 	cout << "information sent" << endl;
 }
 catch (const char *e)
