@@ -1,2 +1,3 @@
 ﻿  Source.cpp
-  translationProtocol.vcxproj -> D:\Dropbox\Dropbox\OOP\translationProtocol\Debug\translationProtocol.exe
+d:\dropbox\dropbox\semesterproject\semester_02\translationprotocol\translationprotocol\source.cpp(16): warning C4101: 'serialCom': unreferenced local variable
+  translationProtocol.vcxproj -> D:\Dropbox\Dropbox\SemesterProject\semester_02\translationProtocol\Debug\translationProtocol.exe
