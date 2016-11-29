@@ -15,7 +15,7 @@ eksempel på en streng hvor der skal tændes for 3 elementer:
 "!,S,1,12:45,N,3,12:55,N,6,13:15\n"
 
 #29-11-2016 - Simon
-skrevet mere til PC program, som nu kan oprette scenarier og gemme dem i en dynamisk list.
+skrevet mere til PC program(se PCkode), som nu kan oprette scenarier og gemme dem i en dynamisk vector.
 ##TO DO mere her:
 1. denne opsættelses process skal kunne gennem den streng vi modtager.
 2. den skal også kunne oprette en streng som sendes serielt.
