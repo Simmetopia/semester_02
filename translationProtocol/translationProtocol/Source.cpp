@@ -10,14 +10,18 @@ using namespace std;
 
 int main()
 {
+	char *a = "!NH12M45NH12M55NH13M15";
+	char *b = "!NH12M45NH12M55";
+	int SIZE = strlen(a)+1;
+	SerialCom serialCom;
 	ScenarierList scenlist;
-	scenlist.addScenarie();
-	scenlist.addScenarie();
+	scenlist.addScenarie(a);
+	scenlist.addScenarie(a);
+	scenlist.addScenarie(b);
 	scenlist.AntalElementer();
-	int a=0;
-	cout << "antal scen i hvilket nr?" << endl;
-	cin >> a;
-	scenlist.AntalaktionerIScenarie(a);
+	scenlist.AntalaktionerIScenarie(2);
+	scenlist.AntalaktionerIScenarie(3);
+
 
 
 	/*char *a = "f \n";

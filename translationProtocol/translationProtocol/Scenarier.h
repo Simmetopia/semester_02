@@ -5,10 +5,9 @@
 class Scenarier
 {
 public:
-	Scenarier(int& antalscenarier);
 	Scenarier();
 	~Scenarier();
-	void addAction(Actions&);
+	void addAction(int& hour, int & minut);
 	void antalAktioner() const;
 private:
 	std::vector<Actions> aktioner;
