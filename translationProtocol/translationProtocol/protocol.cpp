@@ -32,6 +32,11 @@ void protocol::readToVector(char* x, int size)
 		}//end for loop
 	}
 }
+void protocol::readToVector(vector<char> a)
+{
+
+	SaveVector = a;
+}
 
 void protocol::printSavedVector() const
 {
@@ -62,56 +67,14 @@ void protocol::makeRawTime(int& size)
 		{
 			for (auto j = i+1; j < i + 3; j++)
 			{
-				RawtimeVec.push_back(charToInt(SaveVector[j]));
+				RawtimeVec.push_back(charIntConverter(SaveVector[j]));
 			}
 		}
 		
 	}
 
 }
-int protocol::charToInt(char a)
-{
-	if (a == '1')
-	{
-		return 1;
-	}
-	if (a == '2')
-	{
-		return 2;
-	}
-	if (a == '3')
-	{
-		return 3;
-	}
-	if (a == '4')
-	{
-		return 4;
-	}
-	if (a == '5')
-	{
-		return 5;
-	}
-	if (a == '6')
-	{
-		return 6;
-	}
-	if (a == '7')
-	{
-		return 7;
-	}
-	if (a == '8')
-	{
-		return 8;
-	}
-	if (a == '9')
-	{
-		return 9;
-	}
-	else
-	{
-		return 0;
-	}
-}
+
 
 
 void protocol::printTimes(std::vector<int> a) const
@@ -133,3 +96,59 @@ vector<int> protocol::times(int &size)
 	}
 	return  useable;
 }
+
+void protocol::pushBack(char a)
+{
+	SaveVector.push_back(a);
+}
+
+char protocol::charIntConverter(int a)
+{
+	if (a == 1)
+	{
+		return '1';
+	}
+	if (a ==2)
+	{
+		return '2';
+	}
+	if (a == 3)
+	{
+		return '3';
+	}
+	if (a == 4)
+	{
+		return '4';
+	}
+	if (a == 5)
+	{
+		return '5';
+	}
+	if (a == 6)
+	{
+		return '6';
+	}
+	if (a == 7)
+	{
+		return '7';
+	}
+	if (a == 8)
+	{
+		return '8';
+	}
+	if (a == 9)
+	{
+		return '9';
+	}
+	else
+	{
+		return '0';
+	}
+}
+
+vector<char> protocol::getSaveVector()
+{
+	return SaveVector;
+}
+
+
