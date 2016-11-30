@@ -108,14 +108,19 @@ void ScenarierList::opretScenarie()
 
 }
 
+
+
 std::vector<char> ScenarierList::etScenarie(int i)
 {
 	return scenarielist[i - 1].getScenarieStreng();
 }
 
-char* ScenarierList::tilCharArray(std::vector<char> a, int )
+
+void ScenarierList::tilCharArray(char * a, int b)
 {
-	char *p = &*a.begin();
-	return  p;
+	for (auto i = 0; i < etScenarie(b).size(); i++)
+	{
+		a[i] = etScenarie(b)[i];
+	}
 }
 

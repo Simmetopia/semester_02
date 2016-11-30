@@ -10,9 +10,8 @@ using namespace std;
 
 int main()
 {
-	char test = 'a';
+	char test[200]={};
 	char *a = "!NH12M45NH12M55NH13M15";
-	char *b = "!NH12M45NH12M55";
 	int SIZE = strlen(a);
 	SerialCom serialCom;
 	ScenarierList scenlist;
@@ -27,13 +26,11 @@ catch (const char *e)
 	exit(1);
 }
 cout << "COM3 er open og klar til brug." << endl;
-vector<char> g = scenlist.etScenarie(1);
-char* z = scenlist.tilCharArray(g);
-int size = scenlist.etScenarie(1).size();
-//scenlist.tilCharArray(scenlist.etScenarie(2)), scenlist.etScenarie(2).size()
+
 try
 {
-	serialCom.send(z,size );
+	scenlist.tilCharArray(test,1 );
+	serialCom.send(test, scenlist.etScenarie(1).size());
 	cout << "information sent" << endl;
 }
 catch (const char *e)
