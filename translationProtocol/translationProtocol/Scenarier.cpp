@@ -19,7 +19,33 @@ void Scenarier::addAction(int& hour, int & minut)
 	aktioner.push_back(ny_actions);
 }
 
-void Scenarier::antalAktioner() const
+void Scenarier::antalAktioner(char p) const
 {
 	std::cout << "Der er " << aktioner.size() << std::endl;
 }
+
+int Scenarier::antalAktioner() const
+{
+	return aktioner.size();
+}
+
+std::vector<char> Scenarier::getScenarieStreng()
+{
+	int i = scenariestreng.size();
+	if (scenariestreng[i-1] == '\n')
+	{
+		return scenariestreng;
+	}
+	else 
+	{
+		scenariestreng.push_back('\n');
+		return scenariestreng;
+	}
+}
+
+void Scenarier::setScenarieStreng(std::vector<char> a)
+{
+	scenariestreng = a;
+}
+
+
