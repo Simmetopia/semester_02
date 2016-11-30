@@ -3,6 +3,7 @@
 #include "protocol.h"
 #include <iostream>
 #include <vector>
+#include <String>
 
 
 ScenarierList::ScenarierList()
@@ -31,6 +32,24 @@ void ScenarierList::addScenarie(char* a)
 	scenarielist.push_back(nyt_scenarier);
 	
 	
+}
+void ScenarierList::addScenarie(String a)
+{
+  int sizeOfArray = a.size();
+  protocol pr1;
+  pr1.readToVector(a, sizeOfArray);
+  Scenarier nyt_scenarier;
+  for (auto i = 0; i < pr1.antalElementer(sizeOfArray) * 2 ;)
+  {
+    auto hour = pr1.times(sizeOfArray)[i];
+    auto minut = pr1.times(sizeOfArray)[i+1];
+    i = i + 2;
+    nyt_scenarier.addAction(hour, minut);
+  }
+  nyt_scenarier.setScenarieStreng(pr1.getSaveVector());
+  scenarielist.push_back(nyt_scenarier);
+  
+  
 }
 
 void ScenarierList::addScenarie(std::vector<char> a)
@@ -67,16 +86,16 @@ void ScenarierList::opretScenarie()
 	std::vector<char> temp_vector;
 	int antalKnytninger;
 	temp_vector.push_back('!');
-	std::cout << "hvor mange elementer ønsker du at knytte til alarmen?" << std::endl;
+	std::cout << "hvor mange elementer ï¿½nsker du at knytte til alarmen?" << std::endl;
 	std::cin >> antalKnytninger;
 	
 	for (auto i = 0; i < antalKnytninger; i++)
 	{
 		
 		int hour,minut,hour1,hour2, minut1, minut2;
-		std::cout << "Først timer på alarm element nr:" << i + 1 << std::endl;
+		std::cout << "Fï¿½rst timer pï¿½ alarm element nr:" << i + 1 << std::endl;
 		std::cin >> hour;		
-		std::cout << "Så minutter på alarm element nr:" << i + 1 << std::endl;
+		std::cout << "Sï¿½ minutter pï¿½ alarm element nr:" << i + 1 << std::endl;
 		std::cin >> minut;
 		if (hour > 0 && hour < 24 && minut > 0 && minut < 60)
 		{

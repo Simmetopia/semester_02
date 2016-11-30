@@ -25,7 +25,7 @@ void setup() {
 void loop() {
   // print the string when a newline arrives:
   if (stringComplete) {
-    Serial.println(inputString);
+    p1.
     switch ( p1.protocolLogic() ) {
       case 1:
         digitalWrite(LED4, HIGH);
