@@ -35,6 +35,7 @@ void protocol::readToVector(char* x, int size)
 }
 void protocol::readToVector(string x)
 {
+
   int i = 0;
 
   if (x[0] != '!')
@@ -50,7 +51,7 @@ void protocol::readToVector(string x)
        while(x[i] != '\n')
        {
     
-      
+        
         SaveVector.push_back(x[i]);
         i++;
       
@@ -178,17 +179,27 @@ vector<char> protocol::getSaveVector()
 
 int protocol::protocolLogic(){
   if(antalElementer(SaveVector.size()) == 1){
+
     return 1;
+    
   }
   else if(antalElementer(SaveVector.size()) == 2){
+
     return 2;
+    
   }
   else if(antalElementer(SaveVector.size()) == 3){
+
     return 3;
+    
   }
   else{
+
     return 0;
   }
+}
+void protocol::resetSaveVector(std::vector<char> a){
+  SaveVector = a;
 }
 
 

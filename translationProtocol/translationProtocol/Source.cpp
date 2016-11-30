@@ -9,36 +9,50 @@
 using namespace std;
 
 int main()
-{
-	char test[200]={};
-	char *a = "!NH12M45NH12M55NH13M15";
-	int SIZE = strlen(a);
+{	
+	auto i = 0;
+	char test[200] = {};
+	
 	SerialCom serialCom;
 	ScenarierList scenlist;
-	scenlist.addScenarie(a);
-try{
-	serialCom.open(5, 9600, 8, PARITY_NONE, 1);
-}
-catch (const char *e)
-{
-	cout << endl << e;
-	_getch();
-	exit(1);
-}
-cout << "COM3 er open og klar til brug." << endl;
+	while (1) {
+		i++;
+		scenlist.opretScenarie();
+		try {
+			serialCom.open(5, 9600, 8, PARITY_NONE, 1);
+		}
+		catch (const char *e)
+		{
+			cout << endl << e;
+			_getch();
+			exit(1);
+		}
+		cout << "COM3 er open og klar til brug." << endl;
 
-try
-{
-	scenlist.tilCharArray(test,1 );
-	serialCom.send(test, scenlist.etScenarie(1).size());
-	cout << "information sent" << endl;
-}
-catch (const char *e)
-{
-	cout << endl << e;
-	_getch();
-	exit(1);
-}
+		try
+		{
 
+			scenlist.tilCharArray(test, i);
+			serialCom.send(test, scenlist.etScenarie(i).size());
+			cout << "information sent" << endl;
+		}
+		catch (const char *e)
+		{
+			cout << endl << e;
+			_getch();
+			exit(1);
+		}
+		try
+		{
+			serialCom.close();
+		}
+		catch (const char *e)
+		{
+			cout << endl << e;
+			_getch();
+			exit(1);
+		}
+		memset(test, 0, 200);
+	}
 	return 0;
 }

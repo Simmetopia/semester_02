@@ -8,7 +8,7 @@ public:
 	Scenarier();
 	~Scenarier();
 	void addAction(int& hour, int & minut);
-	void antalAktioner(char p) const;
+	int antalAktioner(char p);
 	int antalAktioner() const;
 	std::vector<char> getScenarieStreng();
 	void setScenarieStreng(std::vector<char> a);

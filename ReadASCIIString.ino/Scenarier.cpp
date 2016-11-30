@@ -19,9 +19,9 @@ void Scenarier::addAction(int& hour, int & minut)
 	aktioner.push_back(ny_actions);
 }
 
-void Scenarier::antalAktioner(char p) const
+int Scenarier::antalAktioner(char p)
 {
-	std::cout << "Der er " << aktioner.size() << std::endl;
+	return aktioner.size() ;
 }
 
 int Scenarier::antalAktioner() const

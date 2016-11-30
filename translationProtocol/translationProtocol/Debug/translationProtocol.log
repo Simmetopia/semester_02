@@ -1,2 +1,2 @@
 ﻿  Source.cpp
-  translationProtocol.vcxproj -> C:\Users\SimonEgeberg\Desktop\semester_02\translationProtocol\Debug\translationProtocol.exe
+LINK : fatal error LNK1104: cannot open file 'C:\Users\SimonEgeberg\Desktop\semester_02\translationProtocol\Debug\translationProtocol.ilk'

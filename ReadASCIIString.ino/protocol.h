@@ -22,6 +22,7 @@ public:
 	char charIntConverter(int a);
 	std::vector<char> getSaveVector();
   int protocolLogic();
+  void resetSaveVector(std::vector<char>);
 
 	
 

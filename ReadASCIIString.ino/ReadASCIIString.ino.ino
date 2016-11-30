@@ -4,11 +4,14 @@
 #include <utility.h>
 #include <string>
 #include "protocol.h"
+#include "Actions.h"
+#include "Scenarier.h"
+#include "ScenarierList.h"
 #include "vector"
 using namespace std;
 
 
-
+vector<char> b;
 const int LED4 = 10;
 const int LED5 = 11;
 const int LED6 = 12;
@@ -33,15 +36,18 @@ void loop() {
     switch ( p1.protocolLogic() ) {
       case 1:
         digitalWrite(LED4, HIGH);
+            p1.resetSaveVector(b);
         break;
       case 2:
         digitalWrite(LED4, HIGH);
         digitalWrite(LED5, HIGH);
+            p1.resetSaveVector(b);
         break;
       case 3:
         digitalWrite(LED4, HIGH);
         digitalWrite(LED5, HIGH);
         digitalWrite(LED6, HIGH);
+            p1.resetSaveVector(b);
         break;
       default:
      
@@ -50,11 +56,12 @@ void loop() {
     }
     delay(1000);
     // clear the string:
-    inputString = "";
-    stringComplete = false;
+
     digitalWrite(LED4, LOW);
     digitalWrite(LED5, LOW);
     digitalWrite(LED6, LOW);
+        inputString = "";
+    stringComplete = false;
   }
 }
 

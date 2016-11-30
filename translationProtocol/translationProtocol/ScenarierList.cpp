@@ -78,7 +78,7 @@ void ScenarierList::opretScenarie()
 		std::cin >> hour;		
 		std::cout << "Så minutter på alarm element nr:" << i + 1 << std::endl;
 		std::cin >> minut;
-		if (hour > 0 && hour < 24 && minut > 0 && minut < 60)
+		if (hour >= 0 && hour < 24 && minut >= 0 && minut < 60)
 		{
 			hour1 = hour % 10;
 			hour /= 10;
@@ -103,7 +103,6 @@ void ScenarierList::opretScenarie()
 		}
 		
 	}
-	temp_vector.push_back(' ');
 	addScenarie(temp_vector);
 
 }
