@@ -1,2 +1,2 @@
-﻿  Source.cpp
-LINK : fatal error LNK1104: cannot open file 'C:\Users\SimonEgeberg\Desktop\semester_02\translationProtocol\Debug\translationProtocol.ilk'
+﻿  LINK : C:\Users\SimonEgeberg\Desktop\semester_02\translationProtocol\Debug\translationProtocol.exe not found or not built by the last incremental link; performing full link
+  translationProtocol.vcxproj -> C:\Users\SimonEgeberg\Desktop\semester_02\translationProtocol\Debug\translationProtocol.exe
