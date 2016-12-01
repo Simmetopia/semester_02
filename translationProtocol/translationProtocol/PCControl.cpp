@@ -7,12 +7,13 @@
 #include <SerialCom.h>
 
 ScenarierList scenlist;
-
 PCControl::PCControl() {
 	std::cout << "Vil du gerne taende for PC'en? Tast 'j' for ja." << std::endl;
 
 	while (_getch() != 'j')
 		std::cout << "Forkert task, Proev igen." << std::endl;
+
+
 }
 
 void PCControl::pcOn() {

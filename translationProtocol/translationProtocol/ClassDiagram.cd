@@ -3,29 +3,36 @@
   <Class Name="Actions">
     <Position X="1" Y="0.75" Width="3" />
     <TypeIdentifier>
-      <HashCode>AAAQBAACIAAAAAABAAAAAAAAAAAAAAAAACAAAAAQAQA=</HashCode>
+      <HashCode>AAAABAACIAAAAAABAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
       <FileName>Actions.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="protocol">
     <Position X="7.5" Y="0.75" Width="3" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAACARABAAAAAAAEAAAA=</HashCode>
+      <HashCode>QAAAACAAAAAAAAAAABAAJAAAAgCAQABAgAAQAIMAAAA=</HashCode>
       <FileName>protocol.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Scenarier">
-    <Position X="4.25" Y="2.75" Width="3" />
+    <Position X="4.25" Y="0.75" Width="3" />
     <TypeIdentifier>
-      <HashCode>gCAAAAAAAAAAAAAAIAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>gCAAAEAEAIAAAAAAIAAAUAAgAAAAAAQAIAAAAgAAAAA=</HashCode>
       <FileName>Scenarier.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ScenarierList">
-    <Position X="4.25" Y="0.75" Width="3" />
+    <Position X="10.75" Y="0.75" Width="3" />
     <TypeIdentifier>
-      <HashCode>QCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEABAA=</HashCode>
+      <HashCode>YCAAAgCEAAAIAAAAAAAAAAAAAAAAAAAAAgAAAEEABAA=</HashCode>
       <FileName>ScenarierList.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCControl">
+    <Position X="14" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAIgBAAAAAAAAAIAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>PCControl.h</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
