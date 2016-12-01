@@ -48,4 +48,12 @@ void Scenarier::setScenarieStreng(std::vector<char> a)
 	scenariestreng = a;
 }
 
+void Scenarier::setNavn(std::string navn)
+{
+	navnPaaAktion = navn;
+}
 
+std::string Scenarier::getNavn()
+{
+	return navnPaaAktion;
+}
