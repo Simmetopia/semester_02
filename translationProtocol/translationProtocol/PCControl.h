@@ -9,6 +9,7 @@ public:
 	void pcOn();
 	void pcOff();
 	void pcLogic();
+	void pcPrintScenarieNames();
 
 private:
 	int chooseProgram = -1;
