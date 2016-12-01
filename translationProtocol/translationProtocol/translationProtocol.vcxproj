@@ -143,6 +143,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Actions.cpp" />
+    <ClCompile Include="PCControl.cpp" />
     <ClCompile Include="protocol.cpp" />
     <ClCompile Include="Scenarier.cpp" />
     <ClCompile Include="ScenarierList.cpp" />
@@ -150,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions.h" />
+    <ClInclude Include="PCControl.h" />
     <ClInclude Include="protocol.h" />
     <ClInclude Include="Scenarier.h" />
     <ClInclude Include="ScenarierList.h" />

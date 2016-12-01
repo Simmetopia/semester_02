@@ -1,8 +1,10 @@
 #include "ScenarierList.h"
 #include "Scenarier.h"
 #include "protocol.h"
+#include "PCControl.h"
 #include <iostream>
 #include <vector>
+#include <string>
 
 
 ScenarierList::ScenarierList()
@@ -33,12 +35,13 @@ void ScenarierList::addScenarie(char* a)
 	
 }
 
-void ScenarierList::addScenarie(std::vector<char> a)
+void ScenarierList::addScenarie(std::vector<char> a, std::string b)
 {
 	int sizeOfArray = a.size();
 	protocol pr1;
 	pr1.readToVector(a);
 	Scenarier nyt_scenarier;
+	nyt_scenarier.setNavn(b);
 	for (auto i = 0; i < pr1.antalElementer(sizeOfArray) * 2;)
 	{
 		auto hour = pr1.times(sizeOfArray)[i];
@@ -62,18 +65,25 @@ void ScenarierList::AntalaktionerIScenarie(int nummer, char p) const
 
 }
 
+
+
 void ScenarierList::opretScenarie()
 {
+	std::string navnpalarmTemp_;
 	std::vector<char> temp_vector;
 	int antalKnytninger;
 	temp_vector.push_back('!');
 	std::cout << "hvor mange elementer ønsker du at knytte til alarmen?" << std::endl;
 	std::cin >> antalKnytninger;
-	
+
+	std::cout << "Hvad vil du kalde denne alarm?: ";
+	std::cin.ignore(1, '\n');
+	getline(std::cin, navnpalarmTemp_);
 	for (auto i = 0; i < antalKnytninger; i++)
 	{
 		
 		int hour,minut,hour1,hour2, minut1, minut2;
+
 		std::cout << "Først timer på alarm element nr:" << i + 1 << std::endl;
 		std::cin >> hour;		
 		std::cout << "Så minutter på alarm element nr:" << i + 1 << std::endl;
@@ -103,8 +113,8 @@ void ScenarierList::opretScenarie()
 		}
 		
 	}
-	addScenarie(temp_vector);
-
+	addScenarie(temp_vector, navnpalarmTemp_);
+	
 }
 
 
@@ -114,6 +124,10 @@ std::vector<char> ScenarierList::etScenarie(int i)
 	return scenarielist[i - 1].getScenarieStreng();
 }
 
+Scenarier ScenarierList::getScenarie(size_t i)
+{
+	return scenarielist[i-1];
+}
 
 void ScenarierList::tilCharArray(char * a, int b)
 {
@@ -123,3 +137,10 @@ void ScenarierList::tilCharArray(char * a, int b)
 	}
 }
 
+void ScenarierList::printAllNames()
+{
+	for (auto i = 1; i <= scenarielist.size(); i++)
+	{
+		std::cout << getScenarie(i).getNavn() << std::endl;
+	}
+}
