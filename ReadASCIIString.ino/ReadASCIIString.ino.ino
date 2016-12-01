@@ -54,7 +54,7 @@ void loop() {
         
         break;
     }
-    delay(1000);
+    delay(3000);
     // clear the string:
 
     digitalWrite(LED4, LOW);

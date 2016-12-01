@@ -13,6 +13,9 @@ public:
 	void opretScenarie();
 	void tilCharArray(char* a,int b);
 	std::vector<char> etScenarie(int);
+
+	void pcOn();
+	void pcOff();
 private:
 	std::vector<Scenarier> scenarielist;
 };
