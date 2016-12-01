@@ -1,6 +1,7 @@
 #include "ScenarierList.h"
 #include "Scenarier.h"
 #include "protocol.h"
+#include "PCControl.h"
 #include <iostream>
 #include <vector>
 
@@ -59,6 +60,10 @@ void ScenarierList::AntalElementer() const
 void ScenarierList::AntalaktionerIScenarie(int nummer, char p) const
 {
 	scenarielist[nummer - 1].antalAktioner(p);
+
+}
+
+void ScenarierList::pcOn() {
 
 }
 
