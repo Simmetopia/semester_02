@@ -16,7 +16,7 @@ ScenarierList::~ScenarierList()
 
 void ScenarierList::addScenarie(char* a)
 {
-	int sizeOfArray = strlen(a) + 1;
+	int sizeOfArray = strlen(a);
 	protocol pr1;
 	pr1.readToVector(a, sizeOfArray);
 	Scenarier nyt_scenarier;
@@ -78,7 +78,7 @@ void ScenarierList::opretScenarie()
 		std::cin >> hour;		
 		std::cout << "Så minutter på alarm element nr:" << i + 1 << std::endl;
 		std::cin >> minut;
-		if (hour > 0 && hour < 24 && minut > 0 && minut < 60)
+		if (hour >= 0 && hour < 24 && minut >= 0 && minut < 60)
 		{
 			hour1 = hour % 10;
 			hour /= 10;
@@ -103,18 +103,23 @@ void ScenarierList::opretScenarie()
 		}
 		
 	}
-	temp_vector.push_back(' ');
 	addScenarie(temp_vector);
 
 }
+
+
 
 std::vector<char> ScenarierList::etScenarie(int i)
 {
 	return scenarielist[i - 1].getScenarieStreng();
 }
 
-char* ScenarierList::tilCharArray(std::vector<char> a)
+
+void ScenarierList::tilCharArray(char * a, int b)
 {
-	return reinterpret_cast<char*> (&a[0]);
+	for (auto i = 0; i < etScenarie(b).size(); i++)
+	{
+		a[i] = etScenarie(b)[i];
+	}
 }
 

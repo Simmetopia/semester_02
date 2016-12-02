@@ -9,38 +9,50 @@
 using namespace std;
 
 int main()
-{
-	char test = 'a';
-	char *a = "!NH12M45NH12M55NH13M15";
-	char *b = "!NH12M45NH12M55";
-	int SIZE = strlen(a);
+{	
+	auto i = 0;
+	char test[200] = {};
+	
 	SerialCom serialCom;
 	ScenarierList scenlist;
-	scenlist.addScenarie(a);
-	scenlist.opretScenarie();
-	int size, *ports;
-try{
-	serialCom.open(3, 9600, 8, PARITY_NONE, 1);
-}
-catch (const char *e)
-{
-	cout << endl << e;
-	_getch();
-	exit(1);
-}
-cout << "COM3 er open og klar til brug." << endl;
-//scenlist.tilCharArray(scenlist.etScenarie(2)), scenlist.etScenarie(2).size()
-try
-{
-	serialCom.send(scenlist.tilCharArray(scenlist.etScenarie(2)), scenlist.etScenarie(2).size()+1);
-	cout << "information sent" << endl;
-}
-catch (const char *e)
-{
-	cout << endl << e;
-	_getch();
-	exit(1);
-}
+	while (1) {
+		i++;
+		scenlist.opretScenarie();
+		try {
+			serialCom.open(5, 9600, 8, PARITY_NONE, 1);
+		}
+		catch (const char *e)
+		{
+			cout << endl << e;
+			_getch();
+			exit(1);
+		}
+		cout << "COM3 er open og klar til brug." << endl;
 
+		try
+		{
+
+			scenlist.tilCharArray(test, i);
+			serialCom.send(test, scenlist.etScenarie(i).size());
+			cout << "information sent" << endl;
+		}
+		catch (const char *e)
+		{
+			cout << endl << e;
+			_getch();
+			exit(1);
+		}
+		try
+		{
+			serialCom.close();
+		}
+		catch (const char *e)
+		{
+			cout << endl << e;
+			_getch();
+			exit(1);
+		}
+		memset(test, 0, 200);
+	}
 	return 0;
 }
