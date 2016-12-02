@@ -1,8 +1,2 @@
-﻿  ScenarierList.cpp
-c:\users\egebe\documents\semester_02\translationprotocol\translationprotocol\scenarierlist.cpp(134): warning C4018: '<': signed/unsigned mismatch
-c:\users\egebe\documents\semester_02\translationprotocol\translationprotocol\scenarierlist.cpp(142): warning C4018: '<=': signed/unsigned mismatch
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  Source.cpp
-  PCControl.cpp
+﻿  PCControl.cpp
   translationProtocol.vcxproj -> C:\Users\egebe\Documents\semester_02\translationProtocol\Debug\translationProtocol.exe
