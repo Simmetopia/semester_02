@@ -10,6 +10,8 @@ AddItem::AddItem(QWidget *parent) :
     ui(new Ui::AddItem)
 {
     ui->setupUi(this);
+    ui->horizontalSlider->setRange(0,24);
+    ui->horizontalSlider_2->setRange(0,60);
 }
 
 AddItem::~AddItem()
@@ -19,8 +21,8 @@ AddItem::~AddItem()
 
 void AddItem::on_buttonBox_accepted()
 {
-  timer_=ui->spinBox->value();
-  minutter_ = ui ->spinBox_2->value();
+  timer_= (int)ui->lcdNumber->value();
+  minutter_ = (int) ui->lcdNumber_2->value();
 }
 
 void AddItem::getTid(int& timer, int& minutter){
