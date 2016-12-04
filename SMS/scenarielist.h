@@ -11,8 +11,10 @@ public:
     int AntalElementer() const;
     void AntalaktionerIScenarie(int , char ) const;
     void opretScenarie();
+    Scenarier getScenarie(int);
     void tilCharArray(char* a,int b);
     std::vector<char> etScenarie(int);
+    size_t getSize();
 private:
     std::vector<Scenarier> scenarielist;
 };

@@ -25,20 +25,21 @@ void Scenarier::antalAktioner(char p) const
     std::cout << "Der er " << aktioner.size() << std::endl;
 }
 
-int Scenarier::antalAktioner() const
+size_t Scenarier::antalAktioner() const
 {
     return aktioner.size();
 }
 
 std::vector<char> Scenarier::getScenarieStreng()
 {
-    int i = scenariestreng.size();
+    size_t i = scenariestreng.size();
     if (scenariestreng[i-1] == '\n')
     {
         return scenariestreng;
     }
     else
     {
+        qDebug() << "EOF appended";
         scenariestreng.push_back('\n');
         return scenariestreng;
     }
