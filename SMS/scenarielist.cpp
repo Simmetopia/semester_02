@@ -80,10 +80,16 @@ std::vector<char> ScenarierList::etScenarie(int i)
 
 void ScenarierList::tilCharArray(char * a, int b)
 {
+    qDebug() << "størrelse på et scenarie" << etScenarie(b).size();
 
     for (auto i = 0; i < etScenarie(b).size(); i++)
     {
         a[i] = etScenarie(b)[i];
     }
+}
+
+Scenarier ScenarierList::getScenarie(int i)
+{
+    return scenarielist[i-1];
 }
 
