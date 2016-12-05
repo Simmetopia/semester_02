@@ -34,12 +34,6 @@ void OpretScenarie::on_pushButton_clicked()
         AddItem ad1;
         ad1.setModal(true);
         ad1.exec();
-        string navnpalarmTemp_;
-        ui->ScenStreng->text().toStdString() = navnpalarmTemp_ ;
-
-
-
-
 
               int hour,minut,hour1,hour2, minut1, minut2;
               ad1.getTid(hour,minut);
@@ -65,21 +59,12 @@ void OpretScenarie::on_pushButton_clicked()
                 temp_vector.push_back('M');
                 temp_vector.push_back(minut2+'0');
                 temp_vector.push_back(minut1+'0');
-                qDebug() << "Slut Opret Scenarie"<<temp_vector;
-
-                temp_navn = ui->ScenStreng->text();
-
-
-
-
-
 
 
 }
 void OpretScenarie::on_buttonBox_accepted()
 {
-    temp_vector.push_back('\n');
-
+    temp_navn = ui->ScenStreng->text();
 }
 
 vector<char> OpretScenarie::getTempVec(){
