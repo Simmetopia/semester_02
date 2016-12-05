@@ -8,17 +8,30 @@
 #include "Scenarier.h"
 #include "ScenarierList.h"
 #include "vector"
+#define F_CPU 16000000
+#include <avr\io.h>
+#include<avr\delay.h>
 using namespace std;
+
+// Function prototypes
+void initHardware();
+void burstOn();
+void burstOff();
+
 
 
 vector<char> b;
+const uint8_t ZeroCrossIn = 0; 
 const int LED4 = 10;
 const int LED5 = 11;
 const int LED6 = 12;
 string inputString = "";         // a string to hold incoming data
 boolean stringComplete = false;  // whether the string is complete
 protocol p1;
+
+
 void setup() {
+  initHardware();
   // initialize serial:
   Serial.begin(9600);
   pinMode(LED4, OUTPUT);
@@ -30,39 +43,25 @@ void setup() {
 }
 
 void loop() {
-  // print the string when a newline arrives:
+
+  if (digitalRead(ZeroCrossIn) == 0)
+  {
+    burstOn();
+    _delay_ms(1);
+    burstOff();
+    delay(200);
+  }
+
+  
+  
+  
+  
   if (stringComplete) {
     p1.readToVector(inputString);
-    switch ( p1.protocolLogic() ) {
-      case 1:
-        digitalWrite(LED4, HIGH);
-            p1.resetSaveVector(b);
-        break;
-      case 2:
-        digitalWrite(LED4, HIGH);
-        digitalWrite(LED5, HIGH);
-            p1.resetSaveVector(b);
-        break;
-      case 3:
-        digitalWrite(LED4, HIGH);
-        digitalWrite(LED5, HIGH);
-        digitalWrite(LED6, HIGH);
-            p1.resetSaveVector(b);
-        break;
-      default:
-     
-        
-        break;
-    }
-    delay(3000);
-    // clear the string:
-
-    digitalWrite(LED4, LOW);
-    digitalWrite(LED5, LOW);
-    digitalWrite(LED6, LOW);
         inputString = "";
     stringComplete = false;
   }
+  
 }
 
 /*
@@ -84,3 +83,28 @@ void serialEvent() {
     }
   }
 }
+
+void initHardware(){
+  pinMode(ZeroCrossIn, INPUT);
+  //------- FAST PWM SETUP --------//
+  pinMode(11, OUTPUT);                    // PIN 11 OUTPUT BURST 
+  TCCR1A = 0; //default
+  TCCR1B = 0; //default
+  TCCR1A = (1 << WGM11);                                // fast PWM 14
+  TCCR1B = (1 << WGM12) | (1 << WGM13) | (1<< CS10);                        // fast PWM 14 - PS: 1 = 120301 Hz
+  ICR1 = 132/2;                                     // TOP 132.
+  OCR1A = 66/2 ;                                     // 50% DUTY-CYCLE
+  
+}
+
+
+void burstOn()                  //enable burst timer 1 120kHz
+{
+  
+  TCCR1A |= (1 << COM1A0);            // OCR1A on - resten er det samme.
+}
+void burstOff()                 //disable burst timer 1 120kHz
+{
+  TCCR1A &= (0 << COM1A0);            // OCR1A off - resten er det samme.
+}
+
