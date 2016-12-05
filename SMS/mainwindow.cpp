@@ -51,6 +51,7 @@ void MainWindow::on_pushButton_clicked()
     op1.exec();
     qDebug() << op1.getTempVec();
     scenlist.addScenarie(op1.getTempVec(),op1.getNavn());
+    qDebug() << op1.getNavn();
     AddLabel(scenlist.AntalElementer());
 
 }
