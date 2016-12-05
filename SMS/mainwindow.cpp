@@ -71,6 +71,6 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::AddLabel(size_t i)
 {
-   QString q1 = QString::fromStdString(scenlist.getScenarie(i).getNavn());
+   QString q1 = scenlist.getScenarie(i).getNavn();
     ui->listWidget->addItem(q1);
 }

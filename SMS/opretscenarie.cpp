@@ -67,7 +67,7 @@ void OpretScenarie::on_pushButton_clicked()
                 temp_vector.push_back(minut1+'0');
                 qDebug() << "Slut Opret Scenarie"<<temp_vector;
 
-                temp_navn = ui->ScenStreng->text().toStdString();
+                temp_navn = ui->ScenStreng->text();
 
 
 
@@ -85,6 +85,6 @@ void OpretScenarie::on_buttonBox_accepted()
 vector<char> OpretScenarie::getTempVec(){
     return temp_vector;
 }
-std::string OpretScenarie::getNavn(){
+QString OpretScenarie::getNavn(){
     return temp_navn;
 }

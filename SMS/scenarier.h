@@ -2,6 +2,7 @@
 #include "aktion.h"
 #include <vector>
 #include <string>
+#include <QString>
 
 class Scenarier
 {
@@ -14,10 +15,10 @@ public:
     std::vector<char> getScenarieStreng();
     void setScenarieStreng(std::vector<char> a);
     int getSize();
-    void setNavn(std::string );
-    std::string getNavn();
+    void setNavn(QString );
+    QString getNavn();
 private:
-    std::string navnPaaAktion;
+    QString navnPaaAktion;
     std::vector<Actions> aktioner;
     std::vector<char> scenariestreng;
 };
