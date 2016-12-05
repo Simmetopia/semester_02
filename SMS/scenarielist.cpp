@@ -34,7 +34,7 @@ void ScenarierList::addScenarie(char* a)
 
 }
 
-void ScenarierList::addScenarie(std::vector<char> a, std::string b)
+void ScenarierList::addScenarie(std::vector<char> a, QString b)
 {
     int sizeOfArray = a.size();
     protocol pr1;
