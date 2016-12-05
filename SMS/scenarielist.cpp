@@ -34,7 +34,7 @@ void ScenarierList::addScenarie(char* a)
 
 }
 
-void ScenarierList::addScenarie(std::vector<char> a, std::string b)
+void ScenarierList::addScenarie(std::vector<char> a, QString b)
 {
     int sizeOfArray = a.size();
     protocol pr1;
@@ -80,10 +80,16 @@ std::vector<char> ScenarierList::etScenarie(int i)
 
 void ScenarierList::tilCharArray(char * a, int b)
 {
+    qDebug() << "størrelse på et scenarie" << etScenarie(b).size();
 
     for (auto i = 0; i < etScenarie(b).size(); i++)
     {
         a[i] = etScenarie(b)[i];
     }
+}
+
+Scenarier ScenarierList::getScenarie(int i)
+{
+    return scenarielist[i-1];
 }
 

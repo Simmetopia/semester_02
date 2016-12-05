@@ -28,6 +28,7 @@ public:
     explicit OpretScenarie(QWidget *parent = 0);
     ~OpretScenarie();
     std::vector<char> getTempVec();
+    QString getNavn();
 
 private slots:
     void on_pushButton_clicked();
@@ -39,6 +40,7 @@ private:
     Ui::OpretScenarie *ui;
     int alarmCounter = 0;
     std::vector<char> temp_vector;
+    QString temp_navn;
 };
 
 #endif // OPRETSCENARIE_H
