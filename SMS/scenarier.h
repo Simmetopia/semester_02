@@ -10,7 +10,7 @@ public:
     ~Scenarier();
     void addAction(int& hour, int & minut);
     void antalAktioner(char p) const;
-    int antalAktioner() const;
+    size_t antalAktioner() const;
     std::vector<char> getScenarieStreng();
     void setScenarieStreng(std::vector<char> a);
     int getSize();
