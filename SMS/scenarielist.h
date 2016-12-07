@@ -7,7 +7,7 @@ public:
     ScenarierList();
     ~ScenarierList();
     void addScenarie(char* a);
-   void addScenarie(std::vector<char> a, std::string b);
+   void addScenarie(std::vector<char> a, QString b);
     int AntalElementer() const;
     void AntalaktionerIScenarie(int , char ) const;
     void opretScenarie();
