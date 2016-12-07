@@ -2,6 +2,7 @@
 #include "aktion.h"
 #include <iostream>
 #include <QDebug>
+#include <QString>
 
 Scenarier::Scenarier()
 {
@@ -50,12 +51,12 @@ void Scenarier::setScenarieStreng(std::vector<char> a)
     scenariestreng = a;
 }
 
-void Scenarier::setNavn(std::string navn)
+void Scenarier::setNavn(QString navn)
 {
     navnPaaAktion = navn;
 }
 
-std::string Scenarier::getNavn()
+QString Scenarier::getNavn()
 {
     return navnPaaAktion;
 }

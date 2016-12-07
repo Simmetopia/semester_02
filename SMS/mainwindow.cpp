@@ -51,6 +51,7 @@ void MainWindow::on_pushButton_clicked()
     op1.exec();
     qDebug() << op1.getTempVec();
     scenlist.addScenarie(op1.getTempVec(),op1.getNavn());
+    qDebug() << op1.getNavn();
     AddLabel(scenlist.AntalElementer());
 
 }
@@ -71,6 +72,6 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::AddLabel(size_t i)
 {
-   QString q1 = QString::fromStdString(scenlist.getScenarie(i).getNavn());
+   QString q1 = scenlist.getScenarie(i).getNavn();
     ui->listWidget->addItem(q1);
 }
