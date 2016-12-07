@@ -89,9 +89,10 @@ void MainWindow::on_pushButton_clicked()
     QFile file("scenarier.txt");
     if(file.open(QIODevice::ReadWrite|QIODevice::Append) )
     {
+        qDebug() << op1.getTempVec();
         QTextStream stream(&file);
-       char *a =  reinterpret_cast<char*>(op1.getTempVec().data());
-        stream << a;
+        QString charArray = QString::fromLatin1(&op1.getTempVec()[0]);
+        qDebug()<< charArray;
 
     }
 
