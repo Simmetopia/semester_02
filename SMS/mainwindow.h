@@ -38,7 +38,7 @@ private slots:
 
     void initSerial();
 
-    void fileStreamFunktion();
+    void initFileStreamFunktion();
 
 private:
     Ui::MainWindow *ui;

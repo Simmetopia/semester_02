@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->setupUi(this);
     initSerial();
-    fileStreamFunktion();
+    initFileStreamFunktion();
 
 
 
@@ -36,12 +36,13 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-void MainWindow::fileStreamFunktion(){
+void MainWindow::initFileStreamFunktion(){
 
     QFile file("scenarier.txt");
-    if(file.open(QIODevice::ReadWrite|QIODevice::Append) ){
-        if(file.pos()==0){
+    if(file.open(QIODevice::ReadWrite|QIODevice::Append) )
+    {
 
+        if(file.pos()==0){
             char a[] = "!NH13M30NH13M20\n" ;
             scenlist.addScenarie(a);
             QString q1 = "HardCoded Scenarie";
@@ -49,11 +50,12 @@ void MainWindow::fileStreamFunktion(){
             QTextStream stream(&file);
             stream << a;
 
-        }else
+        }
+        else
         {
+            qDebug() << "jeg er her nu!!";
             QTextStream stream(&file);
-            while(!file.atEnd() )
-            {
+
                 qDebug() << "jeg er någet hertil";
                QString temp_= file.readLine();
                char * b;
@@ -65,7 +67,7 @@ void MainWindow::fileStreamFunktion(){
                 scenlist.addScenarie(b);
 
                 ui->listWidget->addItem(q1);
-            }
+
         }
 
     }
@@ -84,6 +86,14 @@ void MainWindow::on_pushButton_clicked()
     scenlist.addScenarie(op1.getTempVec(),op1.getNavn());
     qDebug() << op1.getNavn();
     AddLabel(scenlist.AntalElementer());
+    QFile file("scenarier.txt");
+    if(file.open(QIODevice::ReadWrite|QIODevice::Append) )
+    {
+        QTextStream stream(&file);
+       char *a =  reinterpret_cast<char*>(op1.getTempVec().data());
+        stream << a;
+
+    }
 
 }
 
