@@ -34,6 +34,12 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_sletAlarmKnap_clicked();
+
+    void initSerial();
+
+    void initFileStreamFunktion();
+
 private:
     Ui::MainWindow *ui;
 

@@ -11,6 +11,9 @@
 #include "scenarielist.h"
 #include <QtSerialPort/QSerialPort>
 #include <QMessageBox>
+#include <QFile>
+#include <QTextStream>
+
 QSerialPort *serial;
 ScenarierList scenlist;
 using namespace std;
@@ -18,21 +21,11 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
-    serial = new QSerialPort(this);
-    serial->setPortName("COM5");
-    serial->open(QIODevice::ReadWrite);
-    serial->setBaudRate(QSerialPort::Baud9600);
-    serial->setDataBits(QSerialPort::Data8);
-    serial->setParity(QSerialPort::NoParity);
-    serial->setStopBits(QSerialPort::OneStop);
-    serial->setFlowControl(QSerialPort::NoFlowControl);
-    ui->spinBox->setValue(1);
 
-    char a[] = "!NH13M30NH13M20\n" ;
-    scenlist.addScenarie(a);
-    QString q1 = "HardCoded Scenarie";
-    ui->listWidget->addItem(q1);
+    ui->setupUi(this);
+    initSerial();
+    initFileStreamFunktion();
+
 
 
 
@@ -43,6 +36,46 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+void MainWindow::initFileStreamFunktion(){
+
+    QFile file("scenarier.txt");
+    if(file.open(QIODevice::ReadWrite|QIODevice::Append) )
+    {
+
+        if(file.pos()==0){
+            char a[] = "!NH13M30NH13M20\n" ;
+            scenlist.addScenarie(a);
+            QString q1 = "HardCoded Scenarie";
+            ui->listWidget->addItem(q1);
+            QTextStream stream(&file);
+            stream << a;
+
+        }
+        else
+        {
+            qDebug() << "jeg er her nu!!";
+            QTextStream stream(&file);
+
+                qDebug() << "jeg er någet hertil";
+               QString temp_= file.readLine();
+               char * b;
+               QByteArray ba;
+               ba=temp_.toLatin1();
+               b = ba.data();
+
+                QString q1 = "HardCoded Scenarie";
+                scenlist.addScenarie(b);
+
+                ui->listWidget->addItem(q1);
+
+        }
+
+    }
+
+
+}
+
+
 
 void MainWindow::on_pushButton_clicked()
 {
@@ -53,6 +86,15 @@ void MainWindow::on_pushButton_clicked()
     scenlist.addScenarie(op1.getTempVec(),op1.getNavn());
     qDebug() << op1.getNavn();
     AddLabel(scenlist.AntalElementer());
+    QFile file("scenarier.txt");
+    if(file.open(QIODevice::ReadWrite|QIODevice::Append) )
+    {
+        qDebug() << op1.getTempVec();
+        QTextStream stream(&file);
+        QString charArray = QString::fromLatin1(&op1.getTempVec()[0]);
+        qDebug()<< charArray;
+
+    }
 
 }
 
@@ -74,4 +116,22 @@ void MainWindow::AddLabel(size_t i)
 {
    QString q1 = scenlist.getScenarie(i).getNavn();
     ui->listWidget->addItem(q1);
+}
+
+void MainWindow::on_sletAlarmKnap_clicked()
+{
+    scenlist.sletScenarie(ui->spinBox_2->value());
+    QListWidgetItem* item = ui->listWidget->takeItem(ui->spinBox_2->value()-1);
+    delete item;
+}
+void MainWindow::initSerial(){
+
+    serial = new QSerialPort(this);
+    serial->setPortName("COM5");
+    serial->open(QIODevice::ReadWrite);
+    serial->setBaudRate(QSerialPort::Baud9600);
+    serial->setDataBits(QSerialPort::Data8);
+    serial->setParity(QSerialPort::NoParity);
+    serial->setStopBits(QSerialPort::OneStop);
+    serial->setFlowControl(QSerialPort::NoFlowControl);
 }
