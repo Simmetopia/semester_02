@@ -11,6 +11,10 @@
 #include "scenarielist.h"
 #include <QtSerialPort/QSerialPort>
 #include <QMessageBox>
+#include <QFile>
+#include <QTextStream>
+#include <QByteArray>
+
 QSerialPort *serial;
 ScenarierList scenlist;
 using namespace std;
@@ -18,31 +22,57 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+
     ui->setupUi(this);
-    serial = new QSerialPort(this);
-    serial->setPortName("COM5");
-    serial->open(QIODevice::ReadWrite);
-    serial->setBaudRate(QSerialPort::Baud9600);
-    serial->setDataBits(QSerialPort::Data8);
-    serial->setParity(QSerialPort::NoParity);
-    serial->setStopBits(QSerialPort::OneStop);
-    serial->setFlowControl(QSerialPort::NoFlowControl);
-    ui->spinBox->setValue(1);
-
-    char a[] = "!NH13M30NH13M20\n" ;
-    scenlist.addScenarie(a);
-    QString q1 = "HardCoded Scenarie";
-    ui->listWidget->addItem(q1);
+    initSerial();
+    initFileStreamFunktion();
 
 
 
-connect(serial, SIGNAL(error(QSerialPort::SerialPortError)), this, SLOT(SerialError(QSerialPort::SerialPortError)));
+
+    connect(serial, SIGNAL(error(QSerialPort::SerialPortError)), this, SLOT(SerialError(QSerialPort::SerialPortError)));
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+void MainWindow::initFileStreamFunktion(){
+
+    QFile file("scenarier.txt");
+    if(file.open(QIODevice::ReadWrite|QIODevice::Text) )
+    {
+
+        if(file.pos()==0){
+            char a[] = "!NH13M30NH13M20\n" ;
+            scenlist.addScenarie(a);
+            QString q1 = "HardCoded Scenarie";
+            ui->listWidget->addItem(q1);
+            QTextStream stream(&file);
+            stream << a;
+            file.close();
+
+        }
+        else
+        {
+            QTextStream stream(&file);
+
+            QString temp_= file.readLine();
+            char * b;
+            QByteArray ba;
+            ba=temp_.toLatin1();
+            b = ba.data();
+
+            QString q1 = "HardCoded Scenarie";
+            scenlist.addScenarie(b);
+
+            ui->listWidget->addItem(q1);
+        }//end else
+    }//end file open if
+
+}//end init file
+
+
 
 void MainWindow::on_pushButton_clicked()
 {
@@ -53,6 +83,19 @@ void MainWindow::on_pushButton_clicked()
     scenlist.addScenarie(op1.getTempVec(),op1.getNavn());
     qDebug() << op1.getNavn();
     AddLabel(scenlist.AntalElementer());
+    QFile file("scenarier.txt");
+    if(file.open(QIODevice::ReadWrite|QIODevice::Text) )
+    {
+        vector<char> v1 = op1.getTempVec();
+        auto sized = v1.size();
+        QString temp_ = QString::fromLatin1(&v1[0] );
+        temp_.resize(sized);
+        QTextStream stream(&file);
+        stream << temp_;
+        file.close();
+
+
+    }
 
 }
 
@@ -60,19 +103,19 @@ void MainWindow::on_pushButton_2_clicked()
 {
 
 
-        size_t scenToSend = ui->spinBox->value();
-        char test[200] = {};
-        scenlist.tilCharArray(test,scenToSend);
-        qDebug() << test;
-        serial->write(test,scenlist.etScenarie(scenToSend).size());
-        serial->write("\n");
+    size_t scenToSend = ui->spinBox->value();
+    char test[200] = {};
+    scenlist.tilCharArray(test,scenToSend);
+    qDebug() << test;
+    serial->write(test,scenlist.etScenarie(scenToSend).size());
+    serial->write("\n");
 
 
 }
 
 void MainWindow::AddLabel(size_t i)
 {
-   QString q1 = scenlist.getScenarie(i).getNavn();
+    QString q1 = scenlist.getScenarie(i).getNavn();
     ui->listWidget->addItem(q1);
 }
 
@@ -81,4 +124,15 @@ void MainWindow::on_sletAlarmKnap_clicked()
     scenlist.sletScenarie(ui->spinBox_2->value());
     QListWidgetItem* item = ui->listWidget->takeItem(ui->spinBox_2->value()-1);
     delete item;
+}
+void MainWindow::initSerial(){
+
+    serial = new QSerialPort(this);
+    serial->setPortName("COM5");
+    serial->open(QIODevice::ReadWrite);
+    serial->setBaudRate(QSerialPort::Baud9600);
+    serial->setDataBits(QSerialPort::Data8);
+    serial->setParity(QSerialPort::NoParity);
+    serial->setStopBits(QSerialPort::OneStop);
+    serial->setFlowControl(QSerialPort::NoFlowControl);
 }
