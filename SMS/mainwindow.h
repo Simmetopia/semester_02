@@ -15,6 +15,11 @@
 #include <QMessageBox>
 #include <QLabel>
 #include <QtSerialPort/QSerialPort>
+#include "ui_opretscenarie.h"
+#include <QDialog>
+#include <vector>
+#include <QDebug>
+#include <cstdlib>
 
 namespace Ui {
 class MainWindow;

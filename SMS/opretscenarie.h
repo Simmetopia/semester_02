@@ -2,19 +2,7 @@
 #define OPRETSCENARIE_H
 #include "opretscenarie.h"
 #include "ui_opretscenarie.h"
-#include "opretscenarie.h"
-#include "protocol.h"
-#include "aktion.h"
-#include "scenarier.h"
-#include "scenarielist.h"
-#include "additem.h"
-#include <Qstring>
-#include <string>
-#include <QMessageBox>
-#include <QLabel>
-#include <QtSerialPort/QSerialPort>
-#include <QDialog>
-#include <vector>
+#include "mainwindow.h"
 
 namespace Ui {
 class OpretScenarie;
