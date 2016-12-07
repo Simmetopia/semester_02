@@ -36,6 +36,10 @@ private slots:
 
     void on_sletAlarmKnap_clicked();
 
+    void initSerial();
+
+    void fileStreamFunktion();
+
 private:
     Ui::MainWindow *ui;
 
