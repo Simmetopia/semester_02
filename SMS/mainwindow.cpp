@@ -75,3 +75,10 @@ void MainWindow::AddLabel(size_t i)
    QString q1 = scenlist.getScenarie(i).getNavn();
     ui->listWidget->addItem(q1);
 }
+
+void MainWindow::on_sletAlarmKnap_clicked()
+{
+    scenlist.sletScenarie(ui->spinBox_2->value());
+    QListWidgetItem* item = ui->listWidget->takeItem(ui->spinBox_2->value()-1);
+    delete item;
+}
