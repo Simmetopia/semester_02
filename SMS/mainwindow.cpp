@@ -1,4 +1,5 @@
 #include "QDebug"
+#include <fstream>
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "opretscenarie.h"
@@ -13,6 +14,7 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QTextStream>
+#include <QByteArray>
 
 QSerialPort *serial;
 ScenarierList scenlist;
@@ -29,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
 
-connect(serial, SIGNAL(error(QSerialPort::SerialPortError)), this, SLOT(SerialError(QSerialPort::SerialPortError)));
+    connect(serial, SIGNAL(error(QSerialPort::SerialPortError)), this, SLOT(SerialError(QSerialPort::SerialPortError)));
 }
 
 MainWindow::~MainWindow()
@@ -38,43 +40,42 @@ MainWindow::~MainWindow()
 }
 void MainWindow::initFileStreamFunktion(){
 
-    QFile file("scenarier.txt");
-    if(file.open(QIODevice::ReadWrite|QIODevice::Append) )
+
+   ifstream checkAlarm( "alarmet.txt", ios::in );
+   int nummerListe = 1;
+   string name,streng;
+
+    if(is_empty(checkAlarm) ) // tjekker om filen er tom eller ikke
     {
-
-        if(file.pos()==0){
-            char a[] = "!NH13M30NH13M20\n" ;
-            scenlist.addScenarie(a);
-            QString q1 = "HardCoded Scenarie";
-            ui->listWidget->addItem(q1);
-            QTextStream stream(&file);
-            stream << a;
-
-        }
-        else
-        {
-            qDebug() << "jeg er her nu!!";
-            QTextStream stream(&file);
-
-                qDebug() << "jeg er någet hertil";
-               QString temp_= file.readLine();
-               char * b;
-               QByteArray ba;
-               ba=temp_.toLatin1();
-               b = ba.data();
-
-                QString q1 = "HardCoded Scenarie";
-                scenlist.addScenarie(b);
-
-                ui->listWidget->addItem(q1);
-
-        }
-
+        qDebug() << "jeg er forbi her ";
+        ofstream outAlarmFile( "alarmet.txt", ios::out |ios::in);
+        outAlarmFile << "!NH07M00NH07M30" << " " << "Predefineret_Scenarie" << endl; // lægger vores prediferenet scenarie ind hvis den ér tom
     }
 
+        ifstream InAlarmFile("alarmet.txt");
+        while(InAlarmFile >> streng >> name  )
+        {
+            savedData(streng,name,nummerListe);
+            nummerListe++;
+        } // end while
 
+
+
+}//end init file
+
+void MainWindow::savedData(string streng,string& navn ,int nrListe){
+
+    scenlist.addScenarie(streng,navn);
+    scenlist.getScenarie(nrListe).setNavn(QString::fromStdString(navn));
+    AddLabel(nrListe);
 }
 
+
+
+bool MainWindow::is_empty(ifstream& pFile)
+{
+    return pFile.peek() == std::ifstream::traits_type::eof();
+}
 
 
 void MainWindow::on_pushButton_clicked()
@@ -83,38 +84,37 @@ void MainWindow::on_pushButton_clicked()
     op1.setModal(true);
     op1.exec();
     qDebug() << op1.getTempVec();
-    scenlist.addScenarie(op1.getTempVec(),op1.getNavn());
-    qDebug() << op1.getNavn();
+    scenlist.addScenarie(op1.getTempVec(),QString::fromStdString(op1.getNavn()));
     AddLabel(scenlist.AntalElementer());
-    QFile file("scenarier.txt");
-    if(file.open(QIODevice::ReadWrite|QIODevice::Append) )
-    {
-        qDebug() << op1.getTempVec();
-        QTextStream stream(&file);
-        QString charArray = QString::fromLatin1(&op1.getTempVec()[0]);
-        qDebug()<< charArray;
+    skrivTilFil(std::string(op1.getTempVec().data(),op1.getTempVec().size()),op1.getNavn());
 
-    }
 
+}
+void MainWindow::skrivTilFil(string a, string b){
+
+    ofstream outAlarmFile("alarmet.txt",ios::out|ios::app);
+
+    outAlarmFile << a << " " << b << endl;
+    qDebug() << "baam så der skrevt mere til filen";
 }
 
 void MainWindow::on_pushButton_2_clicked()
 {
 
 
-        size_t scenToSend = ui->spinBox->value();
-        char test[200] = {};
-        scenlist.tilCharArray(test,scenToSend);
-        qDebug() << test;
-        serial->write(test,scenlist.etScenarie(scenToSend).size());
-        serial->write("\n");
+    size_t scenToSend = ui->spinBox->value();
+    char test[200] = {};
+    scenlist.tilCharArray(test,scenToSend);
+    qDebug() << test;
+    serial->write(test,scenlist.etScenarie(scenToSend).size());
+    serial->write("\n");
 
 
 }
 
 void MainWindow::AddLabel(size_t i)
 {
-   QString q1 = scenlist.getScenarie(i).getNavn();
+    QString q1 = scenlist.getScenarie(i).getNavn();
     ui->listWidget->addItem(q1);
 }
 
@@ -123,6 +123,43 @@ void MainWindow::on_sletAlarmKnap_clicked()
     scenlist.sletScenarie(ui->spinBox_2->value());
     QListWidgetItem* item = ui->listWidget->takeItem(ui->spinBox_2->value()-1);
     delete item;
+    ifstream readData("alarmet.txt" , ios::in);
+    vector<string> a;
+    vector<string> b;
+    int c = 0;
+    string streng,name;
+    while(readData >> streng >> name  )
+    {
+        a.push_back(streng); b.push_back(name);
+        c++;
+    } // end while
+
+    qDebug() << ui->spinBox_2->value()-1;
+
+    if(a.size() == 1){
+        ofstream ofs;
+        ofs.open("alarmet.txt", ios::out|ios::trunc);
+        ofs.close();
+    }
+    else
+    {
+        ofstream ofs;
+        ofs.open("alarmet.txt", ios::out|ios::trunc);
+        ofs.close();
+
+        a.erase(a.begin()+ui->spinBox_2->value()-1);
+        b.erase(b.begin()+ui->spinBox_2->value()-1);
+        qDebug() << "Størrelse på c er:" <<c ;
+        for(int i = 0; i < c-1 ;i++)
+        {
+            qDebug() << " Jeg kan sagtens skrive til filen" << i << "gange";
+            skrivTilFil(a[i],b[i]);
+        }
+    }
+
+
+
+
 }
 void MainWindow::initSerial(){
 
