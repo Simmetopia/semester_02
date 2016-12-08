@@ -21,13 +21,16 @@ void burstOff();
 
 
 vector<char> b;
-const uint8_t ZeroCrossIn = 0; 
+const uint8_t ZeroCrossIn = 19; //INT2/RXD1 
+const int BurstPin = 11;        //Burst Pin/OC1A
 const int LED4 = 10;
 const int LED5 = 11;
 const int LED6 = 12;
 string inputString = "";         // a string to hold incoming data
 boolean stringComplete = false;  // whether the string is complete
 protocol p1;
+// zero cross/burst variable that changes
+volatile int zeroState = 0;
 
 
 void setup() {
@@ -87,16 +90,41 @@ void serialEvent() {
 void initHardware(){
   pinMode(ZeroCrossIn, INPUT);
   //------- FAST PWM SETUP --------//
-  pinMode(11, OUTPUT);                    // PIN 11 OUTPUT BURST 
+  pinMode(BurstPin, OUTPUT);                    // PIN 11 OUTPUT BURST 
   TCCR1A = 0; //default
   TCCR1B = 0; //default
   TCCR1A = (1 << WGM11);                                // fast PWM 14
   TCCR1B = (1 << WGM12) | (1 << WGM13) | (1<< CS10);                        // fast PWM 14 - PS: 1 = 120301 Hz
   ICR1 = 132/2;                                     // TOP 132.
   OCR1A = 66/2 ;                                     // 50% DUTY-CYCLE
-  
+  //------- attachInterrupt try --------//
+  attachInterrupt(digitalPinToInterrupt(ZeroCrossIn),burst_ISR, CHANGE);
 }
 
+void burst_ISR(){
+  zeroState = digitalRead(ZeroCrossIn);
+  if(zeroState == 0){
+    burstOn();
+    delay(1);
+    burstOff();
+  }
+  else{
+    burstOff();
+  }
+}
+
+//void activateInterrupt2(){
+//  EICRA &= (0 << ISC20 | 0 << ISC21); //clear existing flags
+//  EICRA |= (1 << ISC20);              //set wanted flags (any change intterupt)
+//  EIFR  |= (1 << INTF2);              //clear flag for INT 2
+//  EIMSK |= (1 << INT2);               //enable INT 2
+//} 
+
+//void deactivateInterrupt2(){
+//  EIMSK &= (0 << INT2);               //disable INT2
+//}
+
+// if
 
 void burstOn()                  //enable burst timer 1 120kHz
 {
