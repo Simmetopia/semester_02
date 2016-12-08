@@ -64,12 +64,16 @@ void OpretScenarie::on_pushButton_clicked()
 }
 void OpretScenarie::on_buttonBox_accepted()
 {
-    temp_navn = ui->ScenStreng->text();
+    temp_navn = ui->ScenStreng->text().toStdString();
 }
+//string OpretScenarie::vectorTilString(vector<char> a) const
+//{
+
+//}
 
 vector<char> OpretScenarie::getTempVec(){
     return temp_vector;
 }
-QString OpretScenarie::getNavn(){
+string OpretScenarie::getNavn(){
     return temp_navn;
 }
