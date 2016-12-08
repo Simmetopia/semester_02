@@ -22,15 +22,9 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-
     ui->setupUi(this);
     initSerial();
-    initFileStreamFunktion();
-
-
-
-
-    connect(serial, SIGNAL(error(QSerialPort::SerialPortError)), this, SLOT(SerialError(QSerialPort::SerialPortError)));
+    initFileStreamFunktion();    
 }
 
 MainWindow::~MainWindow()
@@ -42,7 +36,6 @@ void MainWindow::initFileStreamFunktion(){
     QFile file("scenarier.txt");
     if(file.open(QIODevice::ReadWrite|QIODevice::Text) )
     {
-
         if(file.pos()==0){
             char a[] = "!NH13M30NH13M20\n" ;
             scenlist.addScenarie(a);
@@ -51,7 +44,6 @@ void MainWindow::initFileStreamFunktion(){
             QTextStream stream(&file);
             stream << a;
             file.close();
-
         }
         else
         {
@@ -68,6 +60,7 @@ void MainWindow::initFileStreamFunktion(){
 
             ui->listWidget->addItem(q1);
         }//end else
+
     }//end file open if
 
 }//end init file
@@ -84,6 +77,7 @@ void MainWindow::on_pushButton_clicked()
     qDebug() << op1.getNavn();
     AddLabel(scenlist.AntalElementer());
     QFile file("scenarier.txt");
+
     if(file.open(QIODevice::ReadWrite|QIODevice::Text) )
     {
         vector<char> v1 = op1.getTempVec();
@@ -93,24 +87,18 @@ void MainWindow::on_pushButton_clicked()
         QTextStream stream(&file);
         stream << temp_;
         file.close();
-
-
     }
 
 }
 
 void MainWindow::on_pushButton_2_clicked()
 {
-
-
     size_t scenToSend = ui->spinBox->value();
     char test[200] = {};
     scenlist.tilCharArray(test,scenToSend);
     qDebug() << test;
     serial->write(test,scenlist.etScenarie(scenToSend).size());
     serial->write("\n");
-
-
 }
 
 void MainWindow::AddLabel(size_t i)
