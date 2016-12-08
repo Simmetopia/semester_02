@@ -47,13 +47,13 @@ void setup() {
 
 void loop() {
 
-  if (digitalRead(ZeroCrossIn) == 0)
-  {
-    burstOn();
-    _delay_ms(1);
-    burstOff();
-    delay(200);
-  }
+//  if (digitalRead(ZeroCrossIn) == 0)
+//  {
+//    burstOn();
+//    _delay_ms(1);
+//    burstOff();
+//    delay(200);
+//  }
 
   
   
