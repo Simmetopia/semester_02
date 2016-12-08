@@ -21,13 +21,14 @@ void burstOff();
 
 
 vector<char> b;
-const uint8_t ZeroCrossIn = 0; 
+const uint8_t ZeroCrossIn = 19; //ændret til PIN 19 fra 0, da vi kører INT2 
 const int LED4 = 10;
 const int LED5 = 11;
 const int LED6 = 12;
 string inputString = "";         // a string to hold incoming data
 boolean stringComplete = false;  // whether the string is complete
 protocol p1;
+//int timerInterruptCounter = 0;
 
 
 void setup() {
@@ -35,76 +36,38 @@ void setup() {
   // initialize serial:
   Serial.begin(9600);
   pinMode(LED4, OUTPUT);
-  pinMode(LED5, OUTPUT);
-  pinMode(LED6, OUTPUT);
-
-  // reserve 200 bytes for the inputString:
-  inputString.reserve(200);
 }
 
-void loop() {
+void loop()
+{
+  //if any zeroX, the INT2- interrupt routine will run
 
-  if (digitalRead(ZeroCrossIn) == 0)
-  {
-    burstOn();
-    _delay_ms(1);
-    burstOff();
-    delay(200);
-  }
-
-  
-  
-  
-  
+   
   if (stringComplete) {
     p1.readToVector(inputString);
+   
         inputString = "";
     stringComplete = false;
   }
   
 }
 
-/*
-  SerialEvent occurs whenever a new data comes in the
-  hardware serial RX.  This routine is run between each
-  time loop() runs, so using delay inside loop can delay
-  response.  Multiple bytes of data may be available.
-*/
-void serialEvent() {
-  while (Serial.available()) {
-    // get the new byte:
-    char inChar = (char)Serial.read();
-    // add it to the inputString:
-    inputString += inChar;
-    // if the incoming character is a newline, set a flag
-    // so the main loop can do something about it:
-    if (inChar == '\n') {
+
+void serialEvent() 
+{
       stringComplete = true;
-    }
-  }
 }
 
-void initHardware(){
-  pinMode(ZeroCrossIn, INPUT);
-  //------- FAST PWM SETUP --------//
-  pinMode(11, OUTPUT);                    // PIN 11 OUTPUT BURST 
-  TCCR1A = 0; //default
-  TCCR1B = 0; //default
-  TCCR1A = (1 << WGM11);                                // fast PWM 14
-  TCCR1B = (1 << WGM12) | (1 << WGM13) | (1<< CS10);                        // fast PWM 14 - PS: 1 = 120301 Hz
-  ICR1 = 132/2;                                     // TOP 132.
-  OCR1A = 66/2 ;                                     // 50% DUTY-CYCLE
-  
-}
-
-
-void burstOn()                  //enable burst timer 1 120kHz
+// INT2 routine, burst 120kHz for 1ms, then goes to loop.
+ISR(INT2_vect)    //INT2 PIN 19
 {
-  
-  TCCR1A |= (1 << COM1A0);            // OCR1A on - resten er det samme.
+  sei();    //Global-int enable
+  burstOn();
+  delay(1);
+  burstOff();
 }
-void burstOff()                 //disable burst timer 1 120kHz
-{
-  TCCR1A &= (0 << COM1A0);            // OCR1A off - resten er det samme.
-}
+
+
+
+
 
