@@ -102,15 +102,9 @@ void initHardware(){
 }
 
 void burst_ISR(){
-  zeroState = digitalRead(ZeroCrossIn);
-  if(zeroState == 0){
     burstOn();
     delay(1);
     burstOff();
-  }
-  else{
-    burstOff();
-  }
 }
 
 //void activateInterrupt2(){
