@@ -1,0 +1,4 @@
+#ifndef SETTINGSDIALOG_H
+#define SETTINGSDIALOG_H
+
+#endif // SETTINGSDIALOG_H
