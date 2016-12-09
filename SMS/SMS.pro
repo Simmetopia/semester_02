@@ -19,8 +19,7 @@ SOURCES += main.cpp\
     scenarielist.cpp \
     aktion.cpp \
     protocol.cpp \
-    scenarier.cpp \
-    settingsdialog.cpp
+    scenarier.cpp
 
 HEADERS  += mainwindow.h \
     opretscenarie.h \
@@ -28,8 +27,7 @@ HEADERS  += mainwindow.h \
     scenarielist.h \
     aktion.h \
     protocol.h \
-    scenarier.h \
-    settingsdialog.h
+    scenarier.h
 
 FORMS    += mainwindow.ui \
     opretscenarie.ui \
