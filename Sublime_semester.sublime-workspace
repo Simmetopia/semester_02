@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"const",
+				"constBuff"
+			],
+			[
+				"if",
+				"if\tArduino if"
+			],
+			[
 				"start",
 				"startBuf"
 			],
@@ -26,10 +34,6 @@
 			[
 				"ze",
 				"ZEROSTATE"
-			],
-			[
-				"if",
-				"ifelse\tArduino if-else"
 			],
 			[
 				"err",
@@ -163,6 +167,15 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "KodeTilHardware/Modtager/SWmodtager/SWmodtager.ino",
+			"settings":
+			{
+				"buffer_size": 2371,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "Packages/C++/C++ Single File.sublime-build",
 	"build_system_choices":
@@ -701,8 +714,39 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "KodeTilHardware/Modtager/SWmodtager/SWmodtager.ino",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2371,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								949,
+								949
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Arduino-like IDE/Arduino.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 459.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

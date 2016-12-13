@@ -4,20 +4,22 @@
 #include <utility.h>
 #include <vector>
 #include "logik.h"
-#include "CircularBuffer-int.h"
 #define ZEROCROSS 2
 #define d_in 3
 #define redLed 32
 #define yellowLed 33
 #define greenLed 31
 
-std::vector<int> bufferVec;
+
 void dataIn();
 void writeToVector(unsigned char);
 logik l1;
+int  count = 0;
+const std::vector<int> constBuff = {1, 1, 1, 0};
+std::vector<int> tempBuff;
+std::vector<int> bufferVec;
 
-CircularBuffer startBuf(4);
-char startBit[] = {1,1,1,0;
+
 
 
 void setup() 
@@ -37,70 +39,65 @@ void loop()
   digitalWrite(redLed, LOW);
   digitalWrite(greenLed, HIGH);
 
-if(digitalRead(ZEROCROSS) == 1)
-{
-   startBuf.insert( digitalRead(d_in) )
-} 
-else if(std::equal(std::begin(startBit), std::end(startBit), std::begin(startBuf)) )
-{
 
-}
-
-
-//  unsigned char next_step = 0;
-
-//  if(digitalRead(ZEROCROSS) == 1 && digitalRead(d_in) == 1)
-//  {
-//    dataIn();
-//    digitalWrite(redLed, HIGH);
-//  }
-  
-//  if(next_step != 0)
-//  {
-//    l1.readVec(bufferVec);
-//    writeToVector(5);
-//  }
-}
-
-
-
-void writeToVector(unsigned char i) 
-{
-  if(i==0)
+  if(ZEROCROSS == 1)
   {
-    bufferVec.push_back(0);
-    Serial.print(0);
-  }
-  else if(i==1)
-  {
-    bufferVec.push_back(1);
-    Serial.print(1);
-  }
-  else
-  {
-    bufferVec.erase(bufferVec.begin(), bufferVec.end() );
-  }
-}
-
-void dataIn()
-{
     digitalWrite(greenLed, LOW);
-    unsigned int count = 0;
-    if(count < 7 )
+    digitalWrite(yellowLed, HIGH);
+  
+    
+    switch (count) 
     {
-      digitalWrite(yellowLed, HIGH);
-      if(digitalRead(ZEROCROSS) == HIGH && digitalRead(d_in) == HIGH)
-      {
-        writeToVector(1);
-        count++;
-        delay(3);
-      }
-      if(digitalRead(ZEROCROSS) == HIGH && digitalRead(d_in) == LOW)
-      {
-        writeToVector(0);
-        count++;
-        delay(3);
-      }
-    } //end while
-    digitalWrite(yellowLed, LOW);
+      case 0:
+        tempBuff.push_back(digitalRead(d_in)) ;
+        break; 
+
+      case 1:  
+        tempBuff.push_back(digitalRead(d_in))
+        break;
+
+      case 2:
+        tempBuff.push_back(digitalRead(d_in))
+        break;
+
+      case 3:
+        tempBuff.push_back(digitalRead(d_in))
+        break;
+
+      default:
+        // do something
+        break;
+    }
+    count ++;
+
+    if( tempBuff == constBuff )
+    { 
+      int count2_=0;
+        while(count2_ < 14)
+        {
+          if(digitalRead(ZEROCROSS) == 1)
+          {
+            bufferVec.push_back(digitalRead(d_in) )
+          } // end inner if
+
+          digitalWrite(redLed,HIGH);
+        } // end while
+        p1.readBufferVec(bufferVec);
+        bufferVec.erase(bufferVec.data(),bufferVec.size());
+        digitalWrite(redLed,LOW);
+
+     } // end main if
+
+  if(count > 4)
+  {
+      count = 0;
+
+  }
+
+
+  
 }
+
+
+
+
