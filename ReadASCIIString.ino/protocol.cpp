@@ -7,6 +7,7 @@ using namespace std;
 
 protocol::protocol()
 {
+	
 }
 
 
@@ -57,6 +58,18 @@ void protocol::readToVector(string x)
       
     }
   }
+	for (int i = 0; i <= antalElementer; ++i)
+	{
+		alarm1 = SaveVector[3];
+		if (antalElementer == 2)
+		{
+			alarm2 = SaveVector[11];
+		}
+		if (antalElementer == 3)
+		{
+			alarm3 == SaveVector[19];
+		}
+	}
 }
 void protocol::readToVector(vector<char> a)
 {
@@ -70,16 +83,16 @@ void protocol::printSavedVector() const
 		cout << *i;
 }
 
-int protocol::antalElementer(int size)
+int protocol::antalElementer()
 {
 	int antal = 0;
-	for (auto i = 0; i <size ; i++)
+	for (auto i = SaveVector.begin(); i != SaveVector.end())
 	{
 		if (SaveVector[i] == 'N')
 		{
 			antal++;
 		}
-		
+		i++;		
 	}
 	return antal;
 }
@@ -202,35 +215,35 @@ void protocol::resetSaveVector(std::vector<char> a){
   SaveVector = a;
 }
 
-void protocol::alarmTid(std::vector<char> &v, int * a)
+int protocol::alarmTid(std::vector<char> &v, int * a)
 {
-int alarmTidIMs;
-const int asciiConverter = 48; // bruges til at modulere vores chars til talværdier.
+	int alarmTidIMs;
+	const int asciiConverter = 48; // bruges til at modulere vores chars til talværdier.
 
-  for (int i = 0; i != v.size(); i++)
-  {
-	  if (v[i] == 'N')
-	  {
-		  switch (v[i + 1])
-      {
-        case '1':
-		alarmTidIMs = (((int)v[4] % asciiConverter) * 1000) + (((int)v[5] % asciiConverter) * 100) + (((int)v[7] % asciiConverter) * 10) + (((int)v[8] % asciiConverter) * 1);  // første enhed i ms
-		break;
+  	for (int i = 0; i != v.size(); i++)
+  	{
 
-        case '2':
-        alarmTidIMs = (((int)v[((4*2)-1)] % asciiConverter)*1000) + (((int)v[((5*2)-1)] % asciiConverter)*100) + (((int)v[(7*2)-1] % asciiConverter)*10) + (((int)v[(8*2)-1] % asciiConverter) *1);  // anden enhed i ms
-        break;
+		switch (a)
+      	{
+	        case 1:
+			alarmTidIMs = (((int)v[4] % asciiConverter) * 1000) + (((int)v[5] % asciiConverter) * 100) + (((int)v[7] % asciiConverter) * 10) + (((int)v[8] % asciiConverter) * 1);  // første enhed i ms
+			break;
 
-        case '3':
-        alarmTidIMs = (((int)v[(5*3)-1] % asciiConverter)*1000) + (((int)v[(6*3)-1] % asciiConverter)*100) + (((int)v[(8*3)-1] % asciiConverter)*10) + ((int)v[(9*3)-1] % asciiConverter *1); // tredje enhed i ms
-        break;
+	        case 2:
+	        alarmTidIMs = (((int)v[((4*2)-1)] % asciiConverter)*1000) + (((int)v[((5*2)-1)] % asciiConverter)*100) + (((int)v[(7*2)-1] % asciiConverter)*10) + (((int)v[(8*2)-1] % asciiConverter) *1);  // anden enhed i ms
+	        break;
 
-		default:
-		alarmTidIMs = (((int)v[4] % asciiConverter) * 1000) + (((int)v[5] % asciiConverter) * 100) + (((int)v[7] % asciiConverter) * 10) + (((int)v[8] % asciiConverter) * 1);  // Default er tilsvarende den første
-        break;
-      }
-    }
-  }
+	        case 3:
+	        alarmTidIMs = (((int)v[(5*3)-1] % asciiConverter)*1000) + (((int)v[(6*3)-1] % asciiConverter)*100) + (((int)v[(8*3)-1] % asciiConverter)*10) + ((int)v[(9*3)-1] % asciiConverter *1); // tredje enhed i ms
+	        break;
+
+			default:
+			alarmTidIMs = (((int)v[4] % asciiConverter) * 1000) + (((int)v[5] % asciiConverter) * 100) + (((int)v[7] % asciiConverter) * 10) + (((int)v[8] % asciiConverter) * 1);  // Default er tilsvarende den første
+	        break;
+      	}
+    
+  	}
+  	return alarmTidIMs;
 }
 
 std::vector<int> protocol::ConvertToBinary()
@@ -242,3 +255,7 @@ std::vector<int> protocol::ConvertToBinary()
     }
     printf("%d", n % 2);
 }
+
+
+
+

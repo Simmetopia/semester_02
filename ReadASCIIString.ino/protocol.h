@@ -11,9 +11,9 @@ public:
 	~protocol();
 	void readToVector(char *x, int size);
 	void readToVector(std::vector<char>);
- void readToVector(std::string a);
+ 	void readToVector(std::string a);
 	void printSavedVector() const;
-	int antalElementer(int size);
+	int  antalElementer();
 	void makeRawTime(int& size);	
 	void printTimes(std::vector<int> a) const;
 	std::vector<int> times(int & size);
@@ -34,5 +34,6 @@ public:
 private:
 	std::vector<char> SaveVector;
 	std::vector<int> RawtimeVec;
+	int alarm1=0,alarm2=0,alarm3=0;
 };
 

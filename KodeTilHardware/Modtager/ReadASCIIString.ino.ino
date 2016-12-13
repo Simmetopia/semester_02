@@ -46,6 +46,7 @@ void setup() {
 }
 
 void loop() {
+  int readyToSend = 0;
 
 //  if (digitalRead(ZeroCrossIn) == 0)
 //  {
@@ -54,17 +55,28 @@ void loop() {
 //    burstOff();
 //    delay(200);
 //  }
-
-  
-  
-  
-  
-  if (stringComplete) {
+ if (stringComplete) 
+  {
     p1.readToVector(inputString);
         inputString = "";
     stringComplete = false;
+    readyToSend = 1;
   }
+if(readyToSend == 1){
+
+  if(p1.antalElementer() == 1)
+  {
+      int decVal  
+  }
+    
+}
   
+  
+  
+  
+  
+  
+
 }
 
 /*
