@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"start",
+				"startBuf"
+			],
+			[
+				"bu",
+				"startBuf"
+			],
+			[
+				"Zeor",
+				"ZEROCROSS"
+			],
+			[
+				"ZERO",
+				"ZEROCROSS"
+			],
+			[
+				"nul",
+				"nulState_"
+			],
+			[
+				"ze",
+				"ZEROSTATE"
+			],
+			[
+				"if",
+				"ifelse\tArduino if-else"
+			],
+			[
 				"err",
 				"ERRORS"
 			],
@@ -136,9 +164,33 @@
 	"buffers":
 	[
 	],
-	"build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
+	"build_system": "Packages/C++/C++ Single File.sublime-build",
 	"build_system_choices":
 	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/C++11/C++11.sublime-build",
+					""
+				],
+				[
+					"Packages/C++11/C++11.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
 		[
 			[
 				[
@@ -300,15 +352,79 @@
 	"command_palette":
 	{
 		"height": 446.0,
-		"last_filter": "",
+		"last_filter": "status",
 		"selected_items":
 		[
 			[
-				"instal",
-				"Package Control: Install Package"
+				"status",
+				"Git: Status"
+			],
+			[
+				"diff",
+				"Git: Diff"
+			],
+			[
+				"pull",
+				"Git: Pull"
+			],
+			[
+				"push",
+				"Git: Push Current Branch"
+			],
+			[
+				"checkou",
+				"Git: Checkout New Branch"
+			],
+			[
+				"gitme",
+				"Git: Merge"
+			],
+			[
+				"git",
+				"Git: Show"
+			],
+			[
+				"branc",
+				"Legit: Branches"
+			],
+			[
+				"gipsu",
+				"Git: Push"
+			],
+			[
+				"remote",
+				"Git: Remote"
+			],
+			[
+				"gremo",
+				"Git: Remote"
+			],
+			[
+				"gitpc",
+				"Git: Push Current Branch"
+			],
+			[
+				"stat",
+				"Git: Status"
+			],
+			[
+				"statu",
+				"Git: Status"
+			],
+			[
+				"st",
+				"Git: Status"
 			],
 			[
 				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"init",
+				"Git: Init"
+			],
+			[
+				"instal",
 				"Package Control: Install Package"
 			],
 			[
@@ -385,8 +501,20 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/C/Users/SimonEgeberg/Documents/semester_02",
+		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware",
+		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager",
+		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/SWmodtager"
+	],
 	"file_history":
 	[
+		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/SWmodtager/logik.cpp",
+		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/SWmodtager/SWmodtager.ino",
+		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/SWmodtager/CircularBuffer-int.cpp",
+		"/C/Users/SimonEgeberg/Desktop/arraytest.cpp",
+		"/C/Users/SimonEgeberg/Documents/semester_02/SMS/opretscenarie.cpp",
 		"/C/Users/SimonEgeberg/AppData/Roaming/Sublime Text 3/Packages/SublimeGit/Default.sublime-keymap",
 		"/C/Users/SimonEgeberg/Documents/semester_02/SMS/protocol.h",
 		"/C/Users/SimonEgeberg/Dropbox/cprog/Computer/Computer/Calculator.h",
@@ -625,11 +753,31 @@
 	{
 		"height": 112.0
 	},
+	"output.git-checkout":
+	{
+		"height": 142.0
+	},
+	"output.git-commit":
+	{
+		"height": 142.0
+	},
+	"output.git-merge":
+	{
+		"height": 142.0
+	},
+	"output.git-pull":
+	{
+		"height": 142.0
+	},
+	"output.git-push":
+	{
+		"height": 142.0
+	},
 	"output.latextools":
 	{
 		"height": 130.0
 	},
-	"pinned_build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
+	"pinned_build_system": "",
 	"project": "Sublime_semester.sublime-project",
 	"replace":
 	{

@@ -17,7 +17,7 @@ void writeToVector(unsigned char);
 logik l1;
 
 CircularBuffer startBuf(4);
-
+char startBit[] = {1,1,1,0;
 
 
 void setup() 
@@ -41,6 +41,10 @@ if(digitalRead(ZEROCROSS) == 1)
 {
    startBuf.insert( digitalRead(d_in) )
 } 
+else if(std::equal(std::begin(startBit), std::end(startBit), std::begin(startBuf)) )
+{
+
+}
 
 
 //  unsigned char next_step = 0;
