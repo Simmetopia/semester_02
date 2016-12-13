@@ -84,7 +84,7 @@ void initHardware(){
   TCCR1B = 0; //default
   TCCR1A = (1 << WGM11);                                // fast PWM 14
   TCCR1B = (1 << WGM12) | (1 << WGM13) | (1<< CS10);                        // fast PWM 14 - PS: 1 = 120301 Hz
-  ICR1 = 132/2;                                     // TOP 132.
+  ICR1 = 132/2;                                     // TOP 132/2 - periodetid 8.313us.
   OCR1A = 66/2 ;                                     // 50% DUTY-CYCLE
   //------- attachInterrupt try --------//
   //attachInterrupt(digitalPinToInterrupt(ZeroCrossIn),burst_ISR, CHANGE);
