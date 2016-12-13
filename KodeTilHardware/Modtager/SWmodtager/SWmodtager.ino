@@ -82,7 +82,7 @@ void loop()
 
           digitalWrite(redLed,HIGH);
         } // end while
-        p1.readBufferVec(bufferVec);
+        l1.readToVectorModtager(bufferVec);
         bufferVec.erase(bufferVec.data(),bufferVec.size());
         digitalWrite(redLed,LOW);
 
