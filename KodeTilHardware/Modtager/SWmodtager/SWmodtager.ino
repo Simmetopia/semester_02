@@ -15,7 +15,10 @@ std::vector<int> bufferVec;
 void dataIn();
 void writeToVector(unsigned char);
 logik l1;
+
 CircularBuffer startBuf(4);
+
+
 
 void setup() 
 {
@@ -24,6 +27,7 @@ void setup()
   pinMode(greenLed, OUTPUT);
   pinMode(ZEROCROSS, INPUT);
   pinMode(d_in, INPUT);
+  attachInterrupt(digitalPinToInterrupt(ZEROCROSS), Zerostate_int, CHANGE);
 }
 
 
@@ -34,14 +38,6 @@ void loop()
   digitalWrite(redLed, LOW);
   digitalWrite(greenLed, HIGH);
 //  unsigned char next_step = 0;
-  
-
-
-
-
-
-
-
 //  if(digitalRead(ZEROCROSS) == 1 && digitalRead(d_in) == 1)
 //  {
 //    dataIn();
@@ -96,4 +92,14 @@ void dataIn()
       }
     } //end while
     digitalWrite(yellowLed, LOW);
+}
+
+
+void Zerostate_int()
+{
+    int startControlArray[] = "1110";
+    if(std::equal(std::begin(startControlArray), std::end(startControlArray), std::begin(startBuf) ) )
+    {
+        
+    }
 }
