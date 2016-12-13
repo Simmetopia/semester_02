@@ -93,14 +93,7 @@ font-size: 12 pt;
        </widget>
       </item>
       <item>
-       <widget class="QDial" name="dial"/>
-      </item>
-      <item>
-       <widget class="QLCDNumber" name="lcdNumber">
-        <property name="styleSheet">
-         <string notr="true">background-color: black; color: yellow;</string>
-        </property>
-       </widget>
+       <widget class="QListWidget" name="EnhedsList"/>
       </item>
      </layout>
     </item>
@@ -207,22 +200,6 @@ font-size: 12 pt;
     <hint type="destinationlabel">
      <x>286</x>
      <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>dial</sender>
-   <signal>sliderMoved(int)</signal>
-   <receiver>lcdNumber</receiver>
-   <slot>display(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>216</x>
-     <y>69</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>294</x>
-     <y>84</y>
     </hint>
    </hints>
   </connection>

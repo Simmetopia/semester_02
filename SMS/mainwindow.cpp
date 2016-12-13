@@ -166,7 +166,7 @@ void MainWindow::on_sletAlarmKnap_clicked()
 void MainWindow::initSerial(){
 
     serial = new QSerialPort(this);
-    serial->setPortName("COM5");
+    serial->setPortName("COM4");
     serial->open(QIODevice::ReadWrite);
     serial->setBaudRate(QSerialPort::Baud9600);
     serial->setDataBits(QSerialPort::Data8);
