@@ -15,7 +15,8 @@ public:
     void tilCharArray(char* a,int b);
     std::vector<char> etScenarie(int);
     size_t getSize();
+    void sletScenarie(int);
+    void addScenarie(std::string a,std::string);
 private:
     std::vector<Scenarier> scenarielist;
 };
-

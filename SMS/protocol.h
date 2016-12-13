@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <vector>
 #include "Scenarier.h"
+#include <string>
 
 class protocol
 {
@@ -19,6 +20,7 @@ public:
     char* toString(Scenarier scen);
     char charIntConverter(int a);
     std::vector<char> getSaveVector();
+    void readToVector(std::string a);
 
 
 
