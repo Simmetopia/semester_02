@@ -16,7 +16,7 @@ using namespace std;
 // Function prototypes
 void initHardware();
 void burstOn();
-void burstOff();
+//void burstOff();
 
 
 
@@ -29,9 +29,6 @@ const int LED6 = 12;
 string inputString = "";         // a string to hold incoming data
 boolean stringComplete = false;  // whether the string is complete
 protocol p1;
-// zero cross/burst variable that changes
-volatile int zeroState = 0;
-
 
 void setup() {
   initHardware();
@@ -47,8 +44,10 @@ void setup() {
 
 void loop() {
 
-  delay(2000);
+if(digitalRead(ZeroCrossIn)==HIGH)
+{
   burstOn();
+}
 
   if (stringComplete) {
     p1.readToVector(inputString);
@@ -92,17 +91,15 @@ void initHardware(){
 }
 
 void burst_ISR(){
-    zeroState = 1;
     TCCR1A |= (1 << COM1A0);            // OCR1A on - resten er det samme. Enable burst timer 1 120kHz
     delay(1);
     TCCR1A &= (0 << COM1A0);            // OCR1A off - resten er det samme. Disable burst timer 1 120kHz
     detachInterrupt(digitalPinToInterrupt(ZeroCrossIn));
-    zeroState = 0;
 }
 
 void burstOn()                  //enable burst timer 1 120kHz
 {
-  attachInterrupt(digitalPinToInterrupt(ZeroCrossIn),burst_ISR, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(ZeroCrossIn),burst_ISR, RISING);
 }
 
 /*
