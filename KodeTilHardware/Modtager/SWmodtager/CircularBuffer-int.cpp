@@ -28,17 +28,6 @@ CircularBuffer &CircularBuffer::insert( int element )
 }
 
 
-double CircularBuffer::meanValue( ) const
-{
-	int sum = 0;
-
-	for(int j=0; j<size_; j++ )
-		sum += arrayPtr_[j];
-	
-	return ( (double) sum/size_ );
-}
-
-
 CircularBuffer::~CircularBuffer()
 {
 	delete [] arrayPtr_;
