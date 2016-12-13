@@ -53,6 +53,7 @@ void Scenarier::setScenarieStreng(std::vector<char> a)
 
 void Scenarier::setNavn(QString navn)
 {
+
     navnPaaAktion = navn;
 }
 

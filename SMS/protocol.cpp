@@ -38,6 +38,12 @@ void protocol::readToVector(vector<char> a)
     SaveVector = a;
 }
 
+void protocol::readToVector(string a)
+{
+    vector<char> temp(a.begin(),a.end());
+    SaveVector = temp;
+}
+
 void protocol::printSavedVector() const
 {
     for (vector<char>::const_iterator i = SaveVector.begin(); i != SaveVector.end(); ++i)
@@ -150,5 +156,6 @@ vector<char> protocol::getSaveVector()
 {
     return SaveVector;
 }
+
 
 

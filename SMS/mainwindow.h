@@ -15,6 +15,8 @@
 #include <QMessageBox>
 #include <QLabel>
 #include <QtSerialPort/QSerialPort>
+#include <fstream>
+
 
 namespace Ui {
 class MainWindow;
@@ -25,9 +27,13 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+
+
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void AddLabel(size_t);
+
+    void skrivTilFil(std::string a, std::string b);
 
 private slots:
     void on_pushButton_clicked();
@@ -39,6 +45,10 @@ private slots:
     void initSerial();
 
     void initFileStreamFunktion();
+
+    bool is_empty(std::ifstream& pfile);
+
+    void savedData(std::string streng, std::string& navn ,int nrListe);
 
 private:
     Ui::MainWindow *ui;
