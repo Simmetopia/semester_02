@@ -11,11 +11,11 @@
 #define greenLed 31
 
 
-void dataIn();
+int dataIn();
 void writeToVector(unsigned char);
 logik l1;
 int  count = 0;
-const std::vector<int> constBuff = {1, 1, 1, 0};
+const std::vector<int> constBuff = {1, 1, 1, 1};
 std::vector<int> tempBuff;
 std::vector<int> bufferVec;
 
@@ -24,6 +24,7 @@ std::vector<int> bufferVec;
 
 void setup() 
 {
+  Serial.begin(9600);
   pinMode(redLed, OUTPUT);
   pinMode(yellowLed, OUTPUT);
   pinMode(greenLed, OUTPUT);
@@ -35,33 +36,30 @@ void setup()
 
 void loop() 
 {
-  Serial.begin(9600);
   digitalWrite(redLed, LOW);
   digitalWrite(greenLed, HIGH);
+  
 
-
-  if(ZEROCROSS == 1)
+  if(digitalRead(ZEROCROSS) == HIGH)
   {
     digitalWrite(greenLed, LOW);
     digitalWrite(yellowLed, HIGH);
-  
-    
     switch (count) 
     {
       case 0:
-        tempBuff.push_back(digitalRead(d_in)) ;
+        tempBuff.push_back(dataIn()) ;
         break; 
 
       case 1:  
-        tempBuff.push_back(digitalRead(d_in))
+        tempBuff.push_back(dataIn());
         break;
 
       case 2:
-        tempBuff.push_back(digitalRead(d_in))
+        tempBuff.push_back(dataIn());
         break;
 
       case 3:
-        tempBuff.push_back(digitalRead(d_in))
+        tempBuff.push_back(dataIn());
         break;
 
       default:
@@ -75,15 +73,18 @@ void loop()
       int count2_=0;
         while(count2_ < 14)
         {
-          if(digitalRead(ZEROCROSS) == 1)
+          if(digitalRead(ZEROCROSS) == HIGH)
           {
-            bufferVec.push_back(digitalRead(d_in) )
+            bufferVec.push_back(dataIn() );
+            count2_++;
           } // end inner if
 
           digitalWrite(redLed,HIGH);
+          
         } // end while
         l1.readToVectorModtager(bufferVec);
-        bufferVec.erase(bufferVec.data(),bufferVec.size());
+        Serial.println(l1.binaryConverter() );
+        bufferVec.clear();
         digitalWrite(redLed,LOW);
 
      } // end main if
@@ -91,12 +92,25 @@ void loop()
   if(count > 4)
   {
       count = 0;
+      tempBuff.clear();
+      digitalWrite(yellowLed, LOW);
 
   }
+  }
+}
+
+int dataIn(){
+
+if(digitalRead(d_in) == HIGH)
+{
+  return 1;
+}
+else return 0;
+}
 
 
   
-}
+
 
 
 

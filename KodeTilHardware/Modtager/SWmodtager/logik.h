@@ -6,7 +6,8 @@ class logik
   public:
   logik();  
   ~logik();
-  void readToVectorModtager(std::vector<int> a);
+  void readToVectorModtager(std::vector<int>);
+  int binaryConverter();
   
   private:
   	std::vector<int> tidsBin;
