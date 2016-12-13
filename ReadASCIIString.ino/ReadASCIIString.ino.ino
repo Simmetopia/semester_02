@@ -47,24 +47,14 @@ void setup() {
 
 void loop() {
 
-//  if (digitalRead(ZeroCrossIn) == 0)
-//  {
-//    burstOn();
-//    _delay_ms(1);
-//    burstOff();
-//    delay(200);
-//  }
+  delay(2000);
+  burstOn();
 
-  
-  
-  
-  
   if (stringComplete) {
     p1.readToVector(inputString);
         inputString = "";
     stringComplete = false;
   }
-  
 }
 
 /*
@@ -98,35 +88,27 @@ void initHardware(){
   ICR1 = 132/2;                                     // TOP 132.
   OCR1A = 66/2 ;                                     // 50% DUTY-CYCLE
   //------- attachInterrupt try --------//
-  attachInterrupt(digitalPinToInterrupt(ZeroCrossIn),burst_ISR, CHANGE);
+  //attachInterrupt(digitalPinToInterrupt(ZeroCrossIn),burst_ISR, CHANGE);
 }
 
 void burst_ISR(){
-    burstOn();
+    zeroState = 1;
+    TCCR1A |= (1 << COM1A0);            // OCR1A on - resten er det samme. Enable burst timer 1 120kHz
     delay(1);
-    burstOff();
+    TCCR1A &= (0 << COM1A0);            // OCR1A off - resten er det samme. Disable burst timer 1 120kHz
+    detachInterrupt(digitalPinToInterrupt(ZeroCrossIn));
+    zeroState = 0;
 }
-
-//void activateInterrupt2(){
-//  EICRA &= (0 << ISC20 | 0 << ISC21); //clear existing flags
-//  EICRA |= (1 << ISC20);              //set wanted flags (any change intterupt)
-//  EIFR  |= (1 << INTF2);              //clear flag for INT 2
-//  EIMSK |= (1 << INT2);               //enable INT 2
-//} 
-
-//void deactivateInterrupt2(){
-//  EIMSK &= (0 << INT2);               //disable INT2
-//}
-
-// if
 
 void burstOn()                  //enable burst timer 1 120kHz
 {
-  
-  TCCR1A |= (1 << COM1A0);            // OCR1A on - resten er det samme.
+  attachInterrupt(digitalPinToInterrupt(ZeroCrossIn),burst_ISR, CHANGE);
 }
+
+/*
 void burstOff()                 //disable burst timer 1 120kHz
 {
-  TCCR1A &= (0 << COM1A0);            // OCR1A off - resten er det samme.
-}
+  detachInterrupt(digitalPinToInterrupt(ZeroCrossIn));
+  zeroState = 0;
+}*/
 
