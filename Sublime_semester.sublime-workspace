@@ -1,0 +1,679 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"err",
+				"ERRORS"
+			],
+			[
+				"ERRO",
+				"ERRRORS"
+			],
+			[
+				"nan",
+				"nand_8"
+			],
+			[
+				"input",
+				"input_1"
+			],
+			[
+				"p1_seg",
+				"p1_seg10"
+			],
+			[
+				"pro",
+				"process"
+			],
+			[
+				"SEG",
+				"SEG10"
+			],
+			[
+				"std",
+				"std_logic_vector"
+			],
+			[
+				"subsub",
+				"\\subsubsection*{title}                            \tlatex-document"
+			],
+			[
+				"sync",
+				"syncOut"
+			],
+			[
+				"blan",
+				"blankOut"
+			],
+			[
+				"syncCou",
+				"syncCounter"
+			],
+			[
+				"syn",
+				"syncGenerator"
+			],
+			[
+				"Syn",
+				"syncCounter"
+			],
+			[
+				"my",
+				"my_gates_p"
+			],
+			[
+				"code1",
+				"codelock1"
+			],
+			[
+				"ne",
+				"nxt_state"
+			],
+			[
+				"i",
+				"init_"
+			],
+			[
+				"clo",
+				"CLOCK_50"
+			],
+			[
+				"clk",
+				"clk_out_temp"
+			],
+			[
+				"mi",
+				"\\milli                                            \tsiunitx"
+			],
+			[
+				"sec",
+				"\\section{title}                                   \tlatex-document"
+			],
+			[
+				"sh",
+				"show_value_in"
+			],
+			[
+				"show",
+				"show_value_out"
+			],
+			[
+				"ent",
+				"entity"
+			],
+			[
+				"u",
+				"usingCase"
+			],
+			[
+				"cap",
+				"\\caption{title}\tlatex-document"
+			],
+			[
+				"incl",
+				"\\includegraphics[options]{name}\tlatex-document"
+			],
+			[
+				"be",
+				"\\begin{}\tlatex-document"
+			],
+			[
+				"subsubsec",
+				"\\subsubsection{title}\tlatex-document"
+			],
+			[
+				"use",
+				"\\usepackage{package}\tlatex-document"
+			],
+			[
+				"in",
+				"integrate"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++11/C++11.sublime-build",
+					""
+				],
+				[
+					"Packages/C++11/C++11.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++11/C++11.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Subject_1 - Project_1",
+					""
+				],
+				[
+					"Subject_1 - Project_1/fast",
+					""
+				],
+				[
+					"Subject_1 - all",
+					""
+				],
+				[
+					"Subject_1 - clean",
+					""
+				],
+				[
+					"Subject_1 - edit_cache",
+					""
+				],
+				[
+					"Subject_1 - rebuild_cache",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/C++11/C++11.sublime-build",
+					""
+				],
+				[
+					"Packages/C++11/C++11.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/C++ buld and run.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C.sublime-build",
+					""
+				],
+				[
+					"Packages/User/GTK+.sublime-build",
+					""
+				]
+			],
+			[
+				"Subject_1 - all",
+				""
+			]
+		],
+		[
+			[
+				[
+					"main",
+					""
+				],
+				[
+					"main",
+					"Run"
+				]
+			],
+			[
+				"main",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"source",
+					""
+				],
+				[
+					"source",
+					"Run"
+				]
+			],
+			[
+				"source",
+				"Run"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 446.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"packagere",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"cop",
+				"Copy File Path"
+			],
+			[
+				"add",
+				"Add Folders To Project"
+			],
+			[
+				"pro",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"packre",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"app",
+				"Google Apps Scripts: Browse projects"
+			],
+			[
+				"apps",
+				"Google Apps Scripts: Authenticate"
+			],
+			[
+				"g",
+				"Google Apps Scripts: Browse projects"
+			],
+			[
+				"goo",
+				"Google Apps Scripts: Browse projects"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 571.0
+	},
+	"console":
+	{
+		"height": 457.0,
+		"history":
+		[
+			"Git: Status",
+			"dir",
+			"main"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/SimonEgeberg/AppData/Roaming/Sublime Text 3/Packages/SublimeGit/Default.sublime-keymap",
+		"/C/Users/SimonEgeberg/Documents/semester_02/SMS/protocol.h",
+		"/C/Users/SimonEgeberg/Dropbox/cprog/Computer/Computer/Calculator.h",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-8/Rapport/rapport.tex",
+		"/C/Users/SimonEgeberg/AppData/Roaming/Sublime Text 3/Packages/User/LaTeXTools.sublime-settings",
+		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/SWmodtager/logik.h",
+		"/C/Users/SimonEgeberg/Dropbox/cprog/Forlæsning/noter.tex",
+		"/C/Users/SimonEgeberg/Documents/semester_02/SMS/mainwindow.cpp",
+		"/C/Users/SimonEgeberg/Documents/semester_02/build-SMS-Desktop_Qt_5_7_0_MSVC2015_64bit-Debug/saved_data_alarmet.txt",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-8/Kode til excercise 7/codelock/codelock1.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-8/Kode til excercise 7/fsm.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-8/Kode til excercise 7/mee_moo.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-8/Kode til excercise 5/countOnes.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-8/Kode til excercise 5/usingCase.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-8/Kode til excercise 5/nandLoop.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-8/Kode til excercise 5/2player_guessGame.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-8/Kode til excercise 5/guessGame.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-8/Rapport/exc8_1.PNG",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-7/Kode til excercise 8/my_gates.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-8/Kode til excercise 8/VGA/VGA/vga.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-7/Kode til excercise 8/VGA/VGA/vga.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-7/Kode til excercise 7/codelock/codelock1.vhd",
+		"/C/Users/SimonEgeberg/Google Drive/På Eventyr med simon og nikolaj/Balandablads court/Eventyret/11-10-2016/kiste med gotter de gemte.txt",
+		"/C/Users/SimonEgeberg/Desktop/semester_02/SMS/mainwindow.cpp",
+		"/C/Users/SimonEgeberg/Desktop/GitHubLog.txt",
+		"/C/Users/SimonEgeberg/Documents/semester_02/semester_02/SMS/mainwindow.cpp",
+		"/C/Users/SimonEgeberg/Desktop/SemesterProject2/semester_02/translationProtocol/translationProtocol/Source.cpp",
+		"/C/Users/SimonEgeberg/Desktop/SemesterProject2/semester_02/translationProtocol/translationProtocol/ScenarierList.cpp",
+		"/C/Users/SimonEgeberg/Desktop/semester_02/translationProtocol/translationProtocol/Source.cpp",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-7/Kode til excercise 7/mee_moo.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/cprog/Computer/Computer/PC.cpp",
+		"/C/Users/SimonEgeberg/Documents/semester_02/translationProtocol/translationProtocol/ScenarierList.h",
+		"/C/Users/SimonEgeberg/AppData/Roaming/Sublime Text 3/Packages/User/statemachine.sublime-snippet",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-7/Kode til excercise 6/one_digit_clock_tester.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-7/Kode til excercise 7/fsm.vhd",
+		"/C/Users/SimonEgeberg/Google Drive/PRJ2 - G10/tanker.txt",
+		"/C/Users/SimonEgeberg/Downloads/mikeergay.txt",
+		"/C/Users/SimonEgeberg/AppData/Local/Temp/Temp1_semester_02-master (1).zip/semester_02-master/Semester_02_02/mainwindow.h",
+		"/C/Users/SimonEgeberg/Google Drive/PRJ2 - G10/Protokoll/protocol.cpp",
+		"/C/Users/SimonEgeberg/AppData/Local/Temp/Temp1_SerialExample.zip/Serial.h",
+		"/C/Users/SimonEgeberg/AppData/Local/Temp/Temp1_SerialExample.zip/SerialExample.cpp",
+		"/C/Users/SimonEgeberg/AppData/Local/Temp/Temp1_SerialExample.zip/Serial.cpp",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-7/Kode til excercise 6/clock_gen.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-7/Kode til excercise 6/one_digit_counter.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-7/Kode til excercise 6/seven_segment_with_select.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-7/Kode til excercise 6/one_digit_counter_tester.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-7/Kode til excercise 6/clk.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/IDE Lab 4/Project_4.tex",
+		"/C/Users/SimonEgeberg/Dropbox/AASA/Lab_2/Lab2_ASA.tex",
+		"/C/Users/SimonEgeberg/AppData/Roaming/Sublime Text 3/Packages/Calculate/README.md",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/excersice_04/demulti_plz_ez.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-7/Kode til excercise 5/multiplayerGuessGame",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-7/Kode til excercise 5/guessGame.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-7/Rapport/rapport.tex",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-7/Kode til excercise 5/usingCase.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/excersice_04/4_1/seven_segment_with_select.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-7/Rapport/rapport.sublime-project",
+		"/C/Users/SimonEgeberg/Desktop/CPP med Thykier/imal_1.c",
+		"/C/Users/SimonEgeberg/Desktop/CPP med Thykier/test_01.cpp",
+		"/C/Users/SimonEgeberg/Dropbox/OOP/Iterator/Iterator/DataStorage.cpp",
+		"/C/Users/SimonEgeberg/Dropbox/OOP/Iterator/Iterator/DataStorage.h",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport/Rapport/Rapport.tex",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Excercise_02/Quartus/unsigneds.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Excercise_02/Quartus/multi.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport/Rapport/Allan.tex",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Excercise_02/Quartus/src_bak.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Excercise_02/Quartus/src.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/half_adder/full_adder.vhd",
+		"/C/ase/adder/half_adder1/four_bit_adder.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/half_adder/four_bit_adder_tester.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/excersice_04/talbe_lookup.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/excersice_04/lookup.vhd",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport/RapportProject.sublime-project",
+		"/C/Users/SimonEgeberg/Dropbox/DSD/Test/Niggatest.nigga",
+		"/C/Users/SimonEgeberg/Dropbox/cprog/NikoLaj/Project/vector.cpp",
+		"/C/Users/SimonEgeberg/Dropbox/cprog/NikoLaj/Project/Lommeregner.cpp",
+		"/C/Users/SimonEgeberg/Dropbox/cprog/NikoLaj/Project/Subject_1.sublime-project",
+		"/C/Users/SimonEgeberg/Dropbox/cprog/NikoLaj/intergrate.cpp",
+		"/C/Users/SimonEgeberg/Dropbox/cprog/NikoLaj/Project/Lommeregner.h",
+		"/C/Users/SimonEgeberg/Dropbox/cprog/NikoLaj/Project/main.cpp",
+		"/C/Users/SimonEgeberg/AppData/Roaming/Sublime Text 3/Installed Packages/C++11.sublime-package",
+		"/C/Users/SimonEgeberg/Dropbox/cprog/NikoLaj/Project/integrate.h",
+		"/D/Dropbox/Dropbox/cprog/NikoLaj/Project/Subject_1.sublime-project",
+		"/D/Dropbox/Dropbox/cprog/NikoLaj/Project/Klasser/Lommeregner.cpp",
+		"/D/Dropbox/Dropbox/cprog/NikoLaj/Project/Headers/Lommeregner.h",
+		"/C/Users/Simon/Dropbox/cprog/Sublime Project/Project/Headers/class.h",
+		"/C/Users/Simon/Dropbox/cprog/Subject_1/main.cpp",
+		"/C/Users/Simon/Dropbox/cprog/Subject_1/Klasser/class.cpp",
+		"/C/Users/Simon/Dropbox/cprog/Subject_1/Headers/class.h",
+		"/C/Users/Simon/Dropbox/cprog/Subject_1/Subject_1.sublime-project",
+		"/C/Users/Simon/AppData/Roaming/Sublime Text 3/Packages/User/cppclass.sublime-snippet",
+		"/C/Users/Simon/Dropbox/cprog/Opgaver_uge_8/opgave2.sublime-project",
+		"/C/Users/Simon/Dropbox/cprog/Subject_1/Headers/triangle.h",
+		"/C/Users/Simon/Dropbox/cprog/Subject_1/Klasser/triangle.cpp",
+		"/C/Users/Simon/Dropbox/cprog/Subject_1/triangle.cpp",
+		"/C/Users/Simon/Dropbox/cprog/Subject_1/triangle.h",
+		"/C/Users/Simon/AppData/Roaming/Sublime Text 3/Packages/C++/C++ Single File.sublime-build",
+		"/C/Users/Simon/AppData/Roaming/Sublime Text 3/Packages/C++11/C++11.sublime-build",
+		"/C/Users/Simon/Dropbox/cprog/Subject_9/Source.cpp",
+		"/C/Users/Simon/Dropbox/cprog/Subject_1/SRC/triangle.h",
+		"/C/Users/Simon/Dropbox/cprog/Subject_1/SRC/main.cpp",
+		"/C/Users/Simon/Dropbox/cprog/Subject_1/SRC/triangle.cpp",
+		"/C/Users/Simon/Dropbox/cprog/Subject_9/SRC/Triangle.h",
+		"/C/Users/Simon/Dropbox/cprog/Subject_9/SRC/Triangle.cpp",
+		"/C/Users/Simon/Dropbox/cprog/Subject_9/SRC/Source.cpp",
+		"/C/Users/egebe/Dropbox/cprog/Subject_9/build/Subject_9.sublime-project",
+		"/C/Users/egebe/Dropbox/cprog/Øvelse 9/Subject_9/SRC/Source.cpp"
+	],
+	"find":
+	{
+		"height": 59.0
+	},
+	"find_in_files":
+	{
+		"height": 165.0,
+		"where_history":
+		[
+			"<current file>",
+			"",
+			"<current file>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"error_",
+			"zeroPin",
+			"my_gates_p",
+			"fsm_template",
+			"nxt_state",
+			"idle_",
+			"active_",
+			"init_",
+			"HEX",
+			"test",
+			"'",
+			",",
+			"b",
+			"\\cref",
+			"cref",
+			"\\cref",
+			"cref",
+			"h!",
+			"!ht",
+			"!h",
+			"h!",
+			"Billeder/øvelse3/"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"fejlstate",
+			"ZeroCrossIn",
+			"my_gates",
+			"${1:FSM TEMPLATE}",
+			"mee_moo",
+			"next_state",
+			"idle",
+			"aktiv",
+			"init",
+			"HEX0",
+			"compareLogic",
+			"\"",
+			";",
+			"seg",
+			"Figure: \\ref",
+			"H",
+			"h!",
+			"!ht",
+			"!h",
+			"øvelse3/"
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 58.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.CppYCM.2":
+	{
+		"height": 0.0
+	},
+	"output.CppYCM.3":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 127.0
+	},
+	"output.find_results":
+	{
+		"height": 112.0
+	},
+	"output.latextools":
+	{
+		"height": 130.0
+	},
+	"pinned_build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
+	"project": "Sublime_semester.sublime-project",
+	"replace":
+	{
+		"height": 56.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 283.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
