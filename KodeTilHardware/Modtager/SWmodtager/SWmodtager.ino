@@ -27,7 +27,6 @@ void setup()
   pinMode(greenLed, OUTPUT);
   pinMode(ZEROCROSS, INPUT);
   pinMode(d_in, INPUT);
-  attachInterrupt(digitalPinToInterrupt(ZEROCROSS), Zerostate_int, CHANGE);
 }
 
 
@@ -37,7 +36,15 @@ void loop()
   Serial.begin(9600);
   digitalWrite(redLed, LOW);
   digitalWrite(greenLed, HIGH);
+
+if(digitalRead(ZEROCROSS) == 1)
+{
+   startBuf.insert( digitalRead(d_in) )
+} 
+
+
 //  unsigned char next_step = 0;
+
 //  if(digitalRead(ZEROCROSS) == 1 && digitalRead(d_in) == 1)
 //  {
 //    dataIn();
@@ -92,14 +99,4 @@ void dataIn()
       }
     } //end while
     digitalWrite(yellowLed, LOW);
-}
-
-
-void Zerostate_int()
-{
-    int startControlArray[] = "1110";
-    if(std::equal(std::begin(startControlArray), std::end(startControlArray), std::begin(startBuf) ) )
-    {
-        
-    }
 }

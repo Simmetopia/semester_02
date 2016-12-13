@@ -4,3 +4,4 @@ logik::logik(){ }
 
 logik::~logik(){ }
 
+
