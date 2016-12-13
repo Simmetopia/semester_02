@@ -5,11 +5,39 @@
 
 #include "senderLogik.h"
 
-#define switchDonger  38 // switch 0
+#define   38 // switch 0
 #define sendTid  13      // LED7
 
+void setup()
+{
+	
+}
+
+void loop()
+{
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+-----TESTER-------------
+
 //////////////////////////////////////
-/* Vector med vores char koden */ 
+Vector med vores char koden
 char a[] = "!N1H12M30";
 
 std::vector<char> testVec(a, a + strlen(a));
@@ -29,6 +57,6 @@ void loop()
     digitalWrite(sendTid, LOW);
   }
 }
-
+*/
 
 

@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"for",
+				"forv\tVector For Loop"
+			],
+			[
+				"writ",
+				"digitalWrite"
+			],
+			[
 				"const",
 				"constBuff"
 			],
@@ -168,10 +176,19 @@
 	"buffers":
 	[
 		{
-			"file": "KodeTilHardware/Modtager/SWmodtager/SWmodtager.ino",
+			"file": "ReadASCIIString.ino/protocol.cpp",
 			"settings":
 			{
-				"buffer_size": 2371,
+				"buffer_size": 3732,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ReadASCIIString.ino/protocol.h",
+			"settings":
+			{
+				"buffer_size": 793,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -373,16 +390,68 @@
 				"Git: Status"
 			],
 			[
-				"diff",
-				"Git: Diff"
+				"statu",
+				"Git: Status"
+			],
+			[
+				"checbra",
+				"Git: Checkout New Branch"
 			],
 			[
 				"pull",
 				"Git: Pull"
 			],
 			[
+				"chec",
+				"Git: Checkout"
+			],
+			[
+				"gitm",
+				"Git: Merge"
+			],
+			[
 				"push",
-				"Git: Push Current Branch"
+				"Git: Push"
+			],
+			[
+				"git pu",
+				"Git: Push"
+			],
+			[
+				"merg",
+				"Git: Merge"
+			],
+			[
+				"check",
+				"Git: Checkout New Branch"
+			],
+			[
+				"chb",
+				"Git: Checkout New Branch"
+			],
+			[
+				"git che",
+				"Git: Checkout New Branch"
+			],
+			[
+				"bran",
+				"Git: Checkout New Branch"
+			],
+			[
+				"stat",
+				"Git: Status"
+			],
+			[
+				"gitpu",
+				"Git: Push"
+			],
+			[
+				"git pul",
+				"Git: Pull"
+			],
+			[
+				"diff",
+				"Git: Diff"
 			],
 			[
 				"checkou",
@@ -415,14 +484,6 @@
 			[
 				"gitpc",
 				"Git: Push Current Branch"
-			],
-			[
-				"stat",
-				"Git: Status"
-			],
-			[
-				"statu",
-				"Git: Status"
 			],
 			[
 				"st",
@@ -518,13 +579,20 @@
 	[
 		"/C/Users/SimonEgeberg/Documents/semester_02",
 		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware",
-		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager",
-		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/SWmodtager"
+		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/SWmodtager",
+		"/C/Users/SimonEgeberg/Documents/semester_02/ReadASCIIString.ino",
+		"/C/Users/SimonEgeberg/Documents/semester_02/senderLogik",
+		"/C/Users/SimonEgeberg/Documents/semester_02/senderLogik/senderLogikTester"
 	],
 	"file_history":
 	[
+		"/C/Users/SimonEgeberg/Documents/semester_02/senderLogik/senderLogikTester/senderLogik.cpp",
+		"/C/Users/SimonEgeberg/Documents/semester_02/senderLogik/senderLogikTester/senderLogik.h",
+		"/C/Users/SimonEgeberg/Documents/semester_02/senderLogik/senderLogikTester/senderLogikTester.ino",
+		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/SWmodtager/logik.h",
 		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/SWmodtager/logik.cpp",
 		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/SWmodtager/SWmodtager.ino",
+		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/ReadASCIIString.ino.ino",
 		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/SWmodtager/CircularBuffer-int.cpp",
 		"/C/Users/SimonEgeberg/Desktop/arraytest.cpp",
 		"/C/Users/SimonEgeberg/Documents/semester_02/SMS/opretscenarie.cpp",
@@ -533,7 +601,6 @@
 		"/C/Users/SimonEgeberg/Dropbox/cprog/Computer/Computer/Calculator.h",
 		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-8/Rapport/rapport.tex",
 		"/C/Users/SimonEgeberg/AppData/Roaming/Sublime Text 3/Packages/User/LaTeXTools.sublime-settings",
-		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/SWmodtager/logik.h",
 		"/C/Users/SimonEgeberg/Dropbox/cprog/Forlæsning/noter.tex",
 		"/C/Users/SimonEgeberg/Documents/semester_02/SMS/mainwindow.cpp",
 		"/C/Users/SimonEgeberg/Documents/semester_02/build-SMS-Desktop_Qt_5_7_0_MSVC2015_64bit-Debug/saved_data_alarmet.txt",
@@ -719,32 +786,59 @@
 			[
 				{
 					"buffer": 0,
-					"file": "KodeTilHardware/Modtager/SWmodtager/SWmodtager.ino",
+					"file": "ReadASCIIString.ino/protocol.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2371,
+						"buffer_size": 3732,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								949,
-								949
+								2508,
+								2508
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Arduino-like IDE/Arduino.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/C++11/C++11.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 459.0,
+						"translation.y": 3264.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "ReadASCIIString.ino/protocol.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 793,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								677,
+								677
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

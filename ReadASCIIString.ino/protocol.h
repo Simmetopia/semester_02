@@ -21,8 +21,13 @@ public:
 	char* toString(Scenarier scen);
 	char charIntConverter(int a);
 	std::vector<char> getSaveVector();
+	
   int protocolLogic();
   void resetSaveVector(std::vector<char>);
+
+  //Christians logic filer
+  void binaryConverter();
+  int alarmTid(std::vector<char> &);
 
 	
 
