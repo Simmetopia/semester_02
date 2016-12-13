@@ -202,7 +202,7 @@ void protocol::resetSaveVector(std::vector<char> a){
   SaveVector = a;
 }
 
-int protocol::alarmTid(std::vector<char> &v)
+void protocol::alarmTid(std::vector<char> &v, int * a)
 {
 int alarmTidIMs;
 const int asciiConverter = 48; // bruges til at modulere vores chars til talværdier.
@@ -226,10 +226,19 @@ const int asciiConverter = 48; // bruges til at modulere vores chars til talvær
         break;
 
 		default:
-			alarmTidIMs = (((int)v[4] % asciiConverter) * 1000) + (((int)v[5] % asciiConverter) * 100) + (((int)v[7] % asciiConverter) * 10) + (((int)v[8] % asciiConverter) * 1);  // Default er tilsvarende den første
+		alarmTidIMs = (((int)v[4] % asciiConverter) * 1000) + (((int)v[5] % asciiConverter) * 100) + (((int)v[7] % asciiConverter) * 10) + (((int)v[8] % asciiConverter) * 1);  // Default er tilsvarende den første
         break;
       }
     }
   }
-  return alarmTidIMs;
+}
+
+std::vector<int> protocol::ConvertToBinary()
+{
+	
+	int n = alarmTid(SaveVector);
+	if (n / 2 != 0) {
+    ConvertToBinary(n / 2);
+    }
+    printf("%d", n % 2);
 }

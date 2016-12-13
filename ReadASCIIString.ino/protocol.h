@@ -26,8 +26,8 @@ public:
   void resetSaveVector(std::vector<char>);
 
   //Christians logic filer
-  void binaryConverter();
-  int alarmTid(std::vector<char> &);
+  std::vector<int> ConvertToBinary();
+  int alarmTid(std::vector<char> &,int *);
 
 	
 
