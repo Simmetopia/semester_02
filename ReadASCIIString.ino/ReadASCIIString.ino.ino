@@ -41,17 +41,24 @@ void setup() {
 
 void loop() 
 {
-  if(digitalRead(ZeroCrossIn)==HIGH)
-  {
-    burstOn();
-  }
+  int readyToSend = 0;
 
-  if (stringComplete) {
+  if (stringComplete) 
+  {
     p1.readToVector(inputString);
         inputString = "";
     stringComplete = false;
+    readyToSend = 1;
   }
-  
+
+  if(readyToSend == 1)
+  {
+    if(p1.antalElementer() == 1)
+    {
+      int decVal
+    }
+  }
+
 }
 
 /*
