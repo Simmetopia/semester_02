@@ -16,9 +16,6 @@ using namespace std;
 // Function prototypes
 void initHardware();
 void burstOn();
-void burstOff();
-
-
 
 vector<char> b;
 const uint8_t ZeroCrossIn = 19; //INT2/RXD1 
@@ -29,9 +26,6 @@ const int LED6 = 12;
 string inputString = "";         // a string to hold incoming data
 boolean stringComplete = false;  // whether the string is complete
 protocol p1;
-// zero cross/burst variable that changes
-volatile int zeroState = 0;
-
 
 void setup() {
   initHardware();
@@ -45,20 +39,13 @@ void setup() {
   inputString.reserve(200);
 }
 
-void loop() {
+void loop() 
+{
+  if(digitalRead(ZeroCrossIn)==HIGH)
+  {
+    burstOn();
+  }
 
-//  if (digitalRead(ZeroCrossIn) == 0)
-//  {
-//    burstOn();
-//    _delay_ms(1);
-//    burstOff();
-//    delay(200);
-//  }
-
-  
-  
-  
-  
   if (stringComplete) {
     p1.readToVector(inputString);
         inputString = "";
@@ -87,7 +74,8 @@ void serialEvent() {
   }
 }
 
-void initHardware(){
+void initHardware()
+{
   pinMode(ZeroCrossIn, INPUT);
   //------- FAST PWM SETUP --------//
   pinMode(BurstPin, OUTPUT);                    // PIN 11 OUTPUT BURST 
@@ -95,38 +83,21 @@ void initHardware(){
   TCCR1B = 0; //default
   TCCR1A = (1 << WGM11);                                // fast PWM 14
   TCCR1B = (1 << WGM12) | (1 << WGM13) | (1<< CS10);                        // fast PWM 14 - PS: 1 = 120301 Hz
-  ICR1 = 132/2;                                     // TOP 132.
+  ICR1 = 132/2;                                     // TOP 132/2.
   OCR1A = 66/2 ;                                     // 50% DUTY-CYCLE
-  //------- attachInterrupt try --------//
-  attachInterrupt(digitalPinToInterrupt(ZeroCrossIn),burst_ISR, CHANGE);
 }
 
-void burst_ISR(){
-    burstOn();
+void burst_ISR()               // run interrupt routine and detach interrupt after 1 ms.
+{
+    TCCR1A |= (1 << COM1A0);            // OCR1A on - resten er det samme. Enable burst timer 1 120kHz.
     delay(1);
-    burstOff();
+    TCCR1A &= (0 << COM1A0);            // OCR1A off - resten er det samme. disable burst timer 1 120kHz
+    detachInterrupt(digitalPinToInterrupt(ZeroCrossIn));
 }
 
-//void activateInterrupt2(){
-//  EICRA &= (0 << ISC20 | 0 << ISC21); //clear existing flags
-//  EICRA |= (1 << ISC20);              //set wanted flags (any change intterupt)
-//  EIFR  |= (1 << INTF2);              //clear flag for INT 2
-//  EIMSK |= (1 << INT2);               //enable INT 2
-//} 
 
-//void deactivateInterrupt2(){
-//  EIMSK &= (0 << INT2);               //disable INT2
-//}
-
-// if
-
-void burstOn()                  //enable burst timer 1 120kHz
+void burstOn()                  //enable burst in 1 ms.
 {
-  
-  TCCR1A |= (1 << COM1A0);            // OCR1A on - resten er det samme.
-}
-void burstOff()                 //disable burst timer 1 120kHz
-{
-  TCCR1A &= (0 << COM1A0);            // OCR1A off - resten er det samme.
+  attachInterrupt(digitalPinToInterrupt(ZeroCrossIn),burst_ISR, RISING);
 }
 
