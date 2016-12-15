@@ -53,10 +53,17 @@ void loop()
 
   if(readyToSend == 1)
   {
-    if(p1.antalElementer() == 1)
-    {
-      int decVal
-    }
+    int antalEnheder = p1.antalElementer();
+
+    std::vector<int> Enheder;
+    for(int i=0; i<antalEnheder; i++){        
+
+      for(int i=0; i<p1.getSaveVector().size(); i++){
+          if(p1.getSaveVector()[i] == 'N'){
+            Enheder.push_back p1.getSaveVector()[i+1];              
+          } // end if
+      } // end inner for lopp
+    } // end outer for
   }
 
 }
