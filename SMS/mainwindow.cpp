@@ -96,14 +96,18 @@ void MainWindow::on_enhedsHaandtering_clicked()
     Enheder e1;
     e1.setModal(true);
     e1.exec();
+/*
+    scenlist.addUnit(e1.getEnhed());
+    qDebug() << scenlist.getEnhedsVector().size();
+    skrivTilFil(scenlist.getEnhedsVector()[scenlist.getEnhedsVector().size() - 1], scenlist.getEnhedsVector().size());
+*/
     qDebug() << "Inde i Tilføjenhed";
-
 }
 
 
 void MainWindow::skrivTilFil(string a, string b){
 
-    ofstream outAlarmFile("saved_data_alarmet.txt",ios::out|ios::app);
+    ofstream outAlarmFile("saved_data_alarmet.txt", ios::out | ios::app);
 
     outAlarmFile << a << " " << b << endl;
     qDebug() << "baam så der skrevt mere til filen";

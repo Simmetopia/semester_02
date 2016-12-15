@@ -31,6 +31,7 @@ public:
     QLabel *label;
     QLineEdit *navnEnhed;
     QPushButton *tilfoejEnhedTilListe;
+    QPushButton *sletEnhed;
 
     void setupUi(QDialog *Enheder)
     {
@@ -53,6 +54,9 @@ public:
         tilfoejEnhedTilListe = new QPushButton(Enheder);
         tilfoejEnhedTilListe->setObjectName(QStringLiteral("tilfoejEnhedTilListe"));
         tilfoejEnhedTilListe->setGeometry(QRect(50, 150, 111, 23));
+        sletEnhed = new QPushButton(Enheder);
+        sletEnhed->setObjectName(QStringLiteral("sletEnhed"));
+        sletEnhed->setGeometry(QRect(50, 190, 111, 23));
 
         retranslateUi(Enheder);
         QObject::connect(godkend, SIGNAL(accepted()), Enheder, SLOT(accept()));
@@ -66,6 +70,7 @@ public:
         Enheder->setWindowTitle(QApplication::translate("Enheder", "Dialog", 0));
         label->setText(QApplication::translate("Enheder", "Angiv navn til enhed", 0));
         tilfoejEnhedTilListe->setText(QApplication::translate("Enheder", "Tilf\303\270j enhed til liste", 0));
+        sletEnhed->setText(QApplication::translate("Enheder", "Slet Enhed", 0));
     } // retranslateUi
 
 };

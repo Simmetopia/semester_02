@@ -72,6 +72,19 @@
     <string>Tilføj enhed til liste</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="sletEnhed">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>190</y>
+     <width>111</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Slet Enhed</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections>

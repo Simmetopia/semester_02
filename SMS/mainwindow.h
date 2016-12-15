@@ -35,6 +35,7 @@ public:
     void AddLabel(size_t);
 
     void skrivTilFil(std::string a, std::string b);
+    void skrivTilFil(std::string, int);
 
 private slots:
     void on_pushButton_clicked();

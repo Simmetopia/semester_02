@@ -1,6 +1,7 @@
 #include "scenarielist.h"
 #include "scenarier.h"
 #include "protocol.h"
+#include "enheder.h"
 #include <iostream>
 #include <vector>
 #include <QDebug>
@@ -76,6 +77,11 @@ void ScenarierList::addScenarie(std::vector<char> a, QString b)
 
 }
 
+void ScenarierList::addEnhed(std::vector<char> name)
+{
+
+}
+
 int ScenarierList::AntalElementer() const
 {
     return scenarielist.size();
@@ -119,6 +125,15 @@ void ScenarierList::sletScenarie(int nr){
     scenarielist.erase(scenarielist.begin()+nr-1);
 
 }
+/*
+std::vector<std::string> ScenarierList::getEnhedsVector()
+{
+    return enhedsListe;
+}
+*/
 
-
+void ScenarierList::addUnit(std::string a)
+{
+    enhedsListe.push_back(a);
+}
 
