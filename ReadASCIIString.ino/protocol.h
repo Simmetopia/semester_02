@@ -2,7 +2,6 @@
 #include <cstdlib>
 #include <vector>
 #include <string>
-#include "Scenarier.h"
 
 class protocol
 {
@@ -18,7 +17,6 @@ public:
 	void printTimes(std::vector<int> a) const;
 	std::vector<int> times(int & size);
 	void pushBack(char a);
-	char* toString(Scenarier scen);
 	char charIntConverter(int a);
 	std::vector<char> getSaveVector();
 	
@@ -27,7 +25,9 @@ public:
 
   //Christians logic filer
   std::vector<int> ConvertToBinary();
-  int alarmTid(std::vector<char> &,int *);
+  int alarmTid(int);
+
+  std::string bitConverter();
 
 	
 
