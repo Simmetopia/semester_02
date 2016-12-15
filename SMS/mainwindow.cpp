@@ -3,6 +3,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "opretscenarie.h"
+#include "enheder.h"
 #include "additem.h"
 #include <iostream>
 #include <conio.h>
@@ -88,9 +89,18 @@ void MainWindow::on_pushButton_clicked()
     skrivTilFil(std::string(op1.getTempVec().data(),op1.getTempVec().size()),op1.getNavn());
     ui->spinBox->setMaximum(scenlist.getSize());
     ui->spinBox_2->setMaximum(scenlist.getSize());
+}
 
+void MainWindow::on_enhedsHaandtering_clicked()
+{
+    Enheder e1;
+    e1.setModal(true);
+    e1.exec();
+    qDebug() << "Inde i Tilføjenhed";
 
 }
+
+
 void MainWindow::skrivTilFil(string a, string b){
 
     ofstream outAlarmFile("saved_data_alarmet.txt",ios::out|ios::app);
@@ -118,6 +128,8 @@ void MainWindow::AddLabel(size_t i)
     QString q1 = scenlist.getScenarie(i).getNavn();
     ui->listWidget->addItem(q1);
 }
+
+
 
 void MainWindow::on_sletAlarmKnap_clicked()
 {

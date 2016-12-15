@@ -112,10 +112,13 @@ void ScenarierList::tilCharArray(char * a, int b)
 
 Scenarier ScenarierList::getScenarie(int i)
 {
-    return scenarielist[i-1];
+    return scenarielist[i - 1];
 }
 
 void ScenarierList::sletScenarie(int nr){
     scenarielist.erase(scenarielist.begin()+nr-1);
 
 }
+
+
+
