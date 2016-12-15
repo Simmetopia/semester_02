@@ -3,6 +3,7 @@
 #include <unwind-cxx.h>
 #include <utility.h>
 #include <string>
+#include <bitset>
 #include "protocol.h"
 #include "Actions.h"
 #include "Scenarier.h"
@@ -60,10 +61,16 @@ void loop()
 
       for(int i=0; i<p1.getSaveVector().size(); i++){
           if(p1.getSaveVector()[i] == 'N'){
-            Enheder.push_back p1.getSaveVector()[i+1];              
+            Enheder.push_back( p1.getSaveVector()[i+1] );              
           } // end if
       } // end inner for lopp
     } // end outer for
+    for(int i=0; i<antalEnheder; i++){
+      
+      std::string binary = std::bitset<12>(alarmTid(p1.getSaveVector(), Enheder[i]) ).to_string();
+      serial.println(binary);
+    }
+
   }
 
 }
