@@ -33,7 +33,7 @@ void setup() {
   pinMode(LED5, OUTPUT);
   pinMode(LED6, OUTPUT);
   pinMode(44, OUTPUT);
-  pinMode(42,OUTPUT);
+  pinMode(42, OUTPUT);
   // reserve 200 bytes for the inputString:
   inputString.reserve(200);
 }
@@ -51,21 +51,21 @@ void loop()
   }
 
 
-//    int antalEnheder = p1.antalElementer();
-//
-//    std::vector<int> Enheder;
-//    for (int i = 0; i < antalEnheder; i++) {
-//
-//      for (int i = 0; i < p1.getSaveVector().size(); i++) {
-//        if (p1.getSaveVector()[i] == 'N') {
-//          Enheder.push_back( (int)p1.getSaveVector()[i + 1] );
-//        } // end if
-//      } // end inner for lopp
-//    } // end outer for
-//    for (int i = 0; i < antalEnheder; i++) {
+  //    int antalEnheder = p1.antalElementer();
+  //
+  //    std::vector<int> Enheder;
+  //    for (int i = 0; i < antalEnheder; i++) {
+  //
+  //      for (int i = 0; i < p1.getSaveVector().size(); i++) {
+  //        if (p1.getSaveVector()[i] == 'N') {
+  //          Enheder.push_back( (int)p1.getSaveVector()[i + 1] );
+  //        } // end if
+  //      } // end inner for lopp
+  //    } // end outer for
+  //    for (int i = 0; i < antalEnheder; i++) {
 
-//    }
-  
+  //    }
+
 
 }
 
@@ -121,17 +121,12 @@ void burstOn()                  //enable burst in 1 ms.
 
 void ConvertToBinary(int n) /*recusiv følge*/
 {
-
+  while (digitalRead(ZeroCrossIn) != HIGH) {}
   if (n / 2 != 0) {
     ConvertToBinary(n / 2);
-
   }
-  if( (n % 2) == 1 ){
-Serial.print(1);Serial.print(" ");
-  }
-  else
-  {
-Serial.print(0);Serial.print(" ");
+  if ( (n % 2) == 1 ) {
+    burstOn();
   }
 }
 
