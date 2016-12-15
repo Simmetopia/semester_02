@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"antal",
+				"antalEnheder"
+			],
+			[
+				"ana",
+				"antalElementer"
+			],
+			[
+				"anl",
+				"antalElementer"
+			],
+			[
+				"alarm",
+				"alarm1"
+			],
+			[
+				"for",
+				"for\tFor Loop"
+			],
+			[
+				"read",
+				"readyToSend"
+			],
+			[
+				"writ",
+				"digitalWrite"
+			],
+			[
 				"const",
 				"constBuff"
 			],
@@ -168,12 +196,24 @@
 	"buffers":
 	[
 		{
-			"file": "KodeTilHardware/Modtager/SWmodtager/SWmodtager.ino",
+			"file": "ReadASCIIString.ino/ReadASCIIString.ino.ino",
 			"settings":
 			{
-				"buffer_size": 2371,
+				"buffer_size": 2905,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "#include \"protocol.h\"\n#include <vector>\n#include <iostream>\n#include <string>\nusing namespace std;\n\n\nprotocol::protocol()\n{\n\t\n}\n\n\nprotocol::~protocol()\n{\n}\n\nvoid protocol::readToVector(char* x, int size)\n{\n\n\tif (x[0] != '!')\n\t{\n\t\t/* EXIT */\n\n\t}\n\telse if (x[0] == '!')\n\t{\n\t\t\n\n\t\tfor (auto i = 0; i < size; i++)\n\t\t{\n\t\t\tSaveVector.push_back(x[i]);\n\t\t\t\n\t\t}//end for loop\n\t}\n}\nvoid protocol::readToVector(string x)\n{\n\n  int i = 0;\n\n  if (x[0] != '!')\n  {\n    /* EXIT */\n\n  }\n  else if (x[0] == '!')\n  {\n    \n\n        \n       while(x[i] != '\\n')\n       {\n    \n        \n        SaveVector.push_back(x[i]);\n        i++;\n      \n    }\n  }\n\tfor (int i = 0; i <= antalElementer; ++i)\n\t{\n\t\talarm1 = SaveVector[3];\n\t\tif (antalElementer == 2)\n\t\t{\n\t\t\talarm2 = SaveVector[11];\n\t\t}\n\t\tif (antalElementer == 3)\n\t\t{\n\t\t\talarm3 == SaveVector[19];\n\t\t}\n\t}\n}\nvoid protocol::readToVector(vector<char> a)\n{\n\n\tSaveVector = a;\n}\n\nvoid protocol::printSavedVector() const\n{\n\tfor (vector<char>::const_iterator i = SaveVector.begin(); i != SaveVector.end(); ++i)\n\t\tcout << *i;\n}\n\nint protocol::antalElementer()\n{\n\tint antal = 0;\n\tfor (auto i = SaveVector.begin(); i != SaveVector.end())\n\t{\n\t\tif (SaveVector[i] == 'N')\n\t\t{\n\t\t\tantal++;\n\t\t}\n\t\ti++;\t\t\n\t}\n\treturn antal;\n}\n\nvoid protocol::makeRawTime(int& size)\n{\n\n\tfor (auto i = 0; i < size; i++)\n\t{\n\t\tif (SaveVector[i] == 'H' || SaveVector[i] == 'M')\n\t\t{\n\t\t\tfor (auto j = i+1; j < i + 3; j++)\n\t\t\t{\n\t\t\t\tRawtimeVec.push_back(charIntConverter(SaveVector[j]));\n\t\t\t}\n\t\t}\n\t\t\n\t}\n\n}\n\n\n\nvoid protocol::printTimes(std::vector<int> a) const\n{\n\tfor (vector<int>::const_iterator i = a.begin(); i != a.end(); ++i)\n\t\tcout << *i;\n}\n\nvector<int> protocol::times(int &size)\n{\n\tmakeRawTime(size);\n\tvector<int> useable;\n\tfor (auto i = 0; i < RawtimeVec.size();)\n\t{\n\t\t\n\t\t\tauto a = RawtimeVec[i] * 10 + RawtimeVec[i + 1];\n\t\t\tuseable.push_back(a);\n\t\t\ti = i + 2;\n\t}\n\treturn  useable;\n}\n\nvoid protocol::pushBack(char a)\n{\n\tSaveVector.push_back(a);\n}\n\nchar protocol::charIntConverter(int a)\n{\n\tif (a == 1)\n\t{\n\t\treturn '1';\n\t}\n\tif (a ==2)\n\t{\n\t\treturn '2';\n\t}\n\tif (a == 3)\n\t{\n\t\treturn '3';\n\t}\n\tif (a == 4)\n\t{\n\t\treturn '4';\n\t}\n\tif (a == 5)\n\t{\n\t\treturn '5';\n\t}\n\tif (a == 6)\n\t{\n\t\treturn '6';\n\t}\n\tif (a == 7)\n\t{\n\t\treturn '7';\n\t}\n\tif (a == 8)\n\t{\n\t\treturn '8';\n\t}\n\tif (a == 9)\n\t{\n\t\treturn '9';\n\t}\n\telse\n\t{\n\t\treturn '0';\n\t}\n}\n\nvector<char> protocol::getSaveVector()\n{\n\treturn SaveVector;\n}\n\nint protocol::protocolLogic(){\n  if(antalElementer(SaveVector.size()) == 1){\n\n    return 1;\n    \n  }\n  else if(antalElementer(SaveVector.size()) == 2){\n\n    return 2;\n    \n  }\n  else if(antalElementer(SaveVector.size()) == 3){\n\n    return 3;\n    \n  }\n  else{\n\n    return 0;\n  }\n}\nvoid protocol::resetSaveVector(std::vector<char> a){\n  SaveVector = a;\n}\n\nint protocol::alarmTid(std::vector<char> &v, int * a)\n{\n\tint alarmTidIMs;\n\tconst int asciiConverter = 48; // bruges til at modulere vores chars til talværdier.\n\t\n  \tfor (int i = 0; i != v.size(); i++)\n  \t{\n\n\t\tswitch (a)\n      \t{\n\t        case 1:\n\t\t\talarmTidIMs = (((int)v[4] % asciiConverter) * 1000) + (((int)v[5] % asciiConverter) * 100) + (((int)v[7] % asciiConverter) * 10) + (((int)v[8] % asciiConverter) * 1);  // første enhed i ms\n\t\t\tbreak;\n\n\t        case 2:\n\t        alarmTidIMs = (((int)v[((4*2)-1)] % asciiConverter)*1000) + (((int)v[((5*2)-1)] % asciiConverter)*100) + (((int)v[(7*2)-1] % asciiConverter)*10) + (((int)v[(8*2)-1] % asciiConverter) *1);  // anden enhed i ms\n\t        break;\n\n\t        case 3:\n\t        alarmTidIMs = (((int)v[(5*3)-1] % asciiConverter)*1000) + (((int)v[(6*3)-1] % asciiConverter)*100) + (((int)v[(8*3)-1] % asciiConverter)*10) + ((int)v[(9*3)-1] % asciiConverter *1); // tredje enhed i ms\n\t        break;\n\n\t\t\tdefault:\n\t\t\talarmTidIMs = (((int)v[4] % asciiConverter) * 1000) + (((int)v[5] % asciiConverter) * 100) + (((int)v[7] % asciiConverter) * 10) + (((int)v[8] % asciiConverter) * 1);  // Default er tilsvarende den første\n\t        break;\n      \t}\n    \n  \t}\n  \treturn alarmTidIMs;\n}\n\nstd::vector<int> protocol::ConvertToBinary()\n{\n\t\n\tint n = alarmTid(SaveVector);\n\tif (n / 2 != 0) {\n    ConvertToBinary(n / 2);\n    }\n    printf(\"%d\", n % 2);\n}\n\n\n\n\n",
+			"file": "ReadASCIIString.ino/protocol.cpp",
+			"file_size": 4376,
+			"file_write_time": 131262707953322276,
+			"settings":
+			{
+				"buffer_size": 4113,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -364,25 +404,109 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 446.0,
-		"last_filter": "status",
+		"height": 141.0,
+		"last_filter": "git pull",
 		"selected_items":
 		[
 			[
-				"status",
+				"git pull",
+				"Git: Pull"
+			],
+			[
+				"git check",
+				"Git: Checkout"
+			],
+			[
+				"statu",
 				"Git: Status"
 			],
 			[
-				"diff",
-				"Git: Diff"
+				"git chec",
+				"Git: Checkout"
 			],
 			[
 				"pull",
 				"Git: Pull"
 			],
 			[
+				"gitstatu",
+				"Git: Status"
+			],
+			[
+				"git p",
+				"Git: Push"
+			],
+			[
+				"sta",
+				"Git: Status"
+			],
+			[
+				"git pus",
+				"Git: Push"
+			],
+			[
+				"git merge",
+				"Git: Merge"
+			],
+			[
+				"status",
+				"Git: Status"
+			],
+			[
+				"checbra",
+				"Git: Checkout New Branch"
+			],
+			[
+				"chec",
+				"Git: Checkout"
+			],
+			[
+				"gitm",
+				"Git: Merge"
+			],
+			[
 				"push",
-				"Git: Push Current Branch"
+				"Git: Push"
+			],
+			[
+				"git pu",
+				"Git: Push"
+			],
+			[
+				"merg",
+				"Git: Merge"
+			],
+			[
+				"check",
+				"Git: Checkout New Branch"
+			],
+			[
+				"chb",
+				"Git: Checkout New Branch"
+			],
+			[
+				"git che",
+				"Git: Checkout New Branch"
+			],
+			[
+				"bran",
+				"Git: Checkout New Branch"
+			],
+			[
+				"stat",
+				"Git: Status"
+			],
+			[
+				"gitpu",
+				"Git: Push"
+			],
+			[
+				"git pul",
+				"Git: Pull"
+			],
+			[
+				"diff",
+				"Git: Diff"
 			],
 			[
 				"checkou",
@@ -415,14 +539,6 @@
 			[
 				"gitpc",
 				"Git: Push Current Branch"
-			],
-			[
-				"stat",
-				"Git: Status"
-			],
-			[
-				"statu",
-				"Git: Status"
 			],
 			[
 				"st",
@@ -517,12 +633,17 @@
 	"expanded_folders":
 	[
 		"/C/Users/SimonEgeberg/Documents/semester_02",
-		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware",
-		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager",
-		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/SWmodtager"
+		"/C/Users/SimonEgeberg/Documents/semester_02/ReadASCIIString.ino"
 	],
 	"file_history":
 	[
+		"/C/Users/SimonEgeberg/Documents/semester_02/ReadASCIIString.ino/protocol.h",
+		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/ReadASCIIString.ino.ino",
+		"/C/Users/SimonEgeberg/Documents/semester_02/ReadASCIIString.ino/protocol.cpp",
+		"/C/Users/SimonEgeberg/Documents/semester_02/senderLogik/senderLogikTester/senderLogik.cpp",
+		"/C/Users/SimonEgeberg/Documents/semester_02/senderLogik/senderLogikTester/senderLogik.h",
+		"/C/Users/SimonEgeberg/Documents/semester_02/senderLogik/senderLogikTester/senderLogikTester.ino",
+		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/SWmodtager/logik.h",
 		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/SWmodtager/logik.cpp",
 		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/SWmodtager/SWmodtager.ino",
 		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/SWmodtager/CircularBuffer-int.cpp",
@@ -533,7 +654,6 @@
 		"/C/Users/SimonEgeberg/Dropbox/cprog/Computer/Computer/Calculator.h",
 		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-8/Rapport/rapport.tex",
 		"/C/Users/SimonEgeberg/AppData/Roaming/Sublime Text 3/Packages/User/LaTeXTools.sublime-settings",
-		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/SWmodtager/logik.h",
 		"/C/Users/SimonEgeberg/Dropbox/cprog/Forlæsning/noter.tex",
 		"/C/Users/SimonEgeberg/Documents/semester_02/SMS/mainwindow.cpp",
 		"/C/Users/SimonEgeberg/Documents/semester_02/build-SMS-Desktop_Qt_5_7_0_MSVC2015_64bit-Debug/saved_data_alarmet.txt",
@@ -719,19 +839,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "KodeTilHardware/Modtager/SWmodtager/SWmodtager.ino",
+					"file": "ReadASCIIString.ino/ReadASCIIString.ino.ino",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2371,
+						"buffer_size": 2905,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								949,
-								949
+								1266,
+								1266
 							]
 						],
 						"settings":
@@ -741,10 +861,38 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 459.0,
+						"translation.y": 663.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "ReadASCIIString.ino/protocol.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4113,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2771,
+								2771
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++11/C++11.tmLanguage"
+						},
+						"translation.x": -0.0,
+						"translation.y": 3621.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
