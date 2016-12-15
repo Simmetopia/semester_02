@@ -153,3 +153,7 @@ int protocol::alarmTid(int a) {
 
   return alarmTidIMs;
 }
+void protocol::clearSavedVector(){
+  SaveVector.clear();
+}
+

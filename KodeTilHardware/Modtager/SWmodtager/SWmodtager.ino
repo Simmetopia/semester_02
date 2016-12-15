@@ -3,6 +3,7 @@
 #include <unwind-cxx.h>
 #include <utility.h>
 #include <vector>
+#include <list>
 #include "logik.h"
 #define ZEROCROSS 2
 #define d_in 3
@@ -15,7 +16,7 @@ int dataIn();
 void writeToVector(unsigned char);
 logik l1;
 int  count = 0;
-const std::vector<int> constBuff = {1, 1, 1, 1};
+const std::vector<int> constBuff = {1, 1, 1, 0};
 std::vector<int> tempBuff;
 std::vector<int> bufferVec;
 
@@ -103,9 +104,9 @@ int dataIn(){
 
 if(digitalRead(d_in) == HIGH)
 {
-  return 1;
+  return 0;
 }
-else return 0;
+else return 1;
 }
 
 
