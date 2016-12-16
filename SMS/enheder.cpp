@@ -118,7 +118,7 @@ void Enheder::on_sletEnhed_clicked()
     if(ui->listeAfEnheder->currentRow() == 0)
     {
         QMessageBox msg;
-        msg.setText("IDIOT!");
+        msg.setText("Du kan ikke slette denne enhed!");
         msg.exec();
     }
     else

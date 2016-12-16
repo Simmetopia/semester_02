@@ -13,14 +13,13 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QDial>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
@@ -36,8 +35,7 @@ public:
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout_3;
     QPushButton *pushButton;
-    QDial *dial;
-    QLCDNumber *lcdNumber;
+    QListWidget *hentEnheder;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_2;
@@ -114,16 +112,10 @@ public:
 
         horizontalLayout_3->addWidget(pushButton);
 
-        dial = new QDial(layoutWidget);
-        dial->setObjectName(QStringLiteral("dial"));
+        hentEnheder = new QListWidget(layoutWidget);
+        hentEnheder->setObjectName(QStringLiteral("hentEnheder"));
 
-        horizontalLayout_3->addWidget(dial);
-
-        lcdNumber = new QLCDNumber(layoutWidget);
-        lcdNumber->setObjectName(QStringLiteral("lcdNumber"));
-        lcdNumber->setStyleSheet(QStringLiteral("background-color: black; color: yellow;"));
-
-        horizontalLayout_3->addWidget(lcdNumber);
+        horizontalLayout_3->addWidget(hentEnheder);
 
 
         verticalLayout_2->addLayout(horizontalLayout_3);
@@ -178,11 +170,13 @@ public:
 
         verticalLayout_2->addLayout(verticalLayout);
 
+        buttonBox->raise();
+        layoutWidget->raise();
+        ScenStreng->raise();
 
         retranslateUi(OpretScenarie);
         QObject::connect(buttonBox, SIGNAL(accepted()), OpretScenarie, SLOT(accept()));
         QObject::connect(buttonBox, SIGNAL(rejected()), OpretScenarie, SLOT(reject()));
-        QObject::connect(dial, SIGNAL(sliderMoved(int)), lcdNumber, SLOT(display(int)));
 
         QMetaObject::connectSlotsByName(OpretScenarie);
     } // setupUi

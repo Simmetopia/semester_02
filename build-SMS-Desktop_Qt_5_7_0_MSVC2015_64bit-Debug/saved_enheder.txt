@@ -1,0 +1,4 @@
+Lysalarm 0
+sqdf 1
+sf 2
+ag 3

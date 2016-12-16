@@ -30,10 +30,13 @@ public:
     std::vector<char> getTempVec();
     std::string getNavn();
 
+    void initLoadEnhedsListe();
+
 private slots:
     void on_pushButton_clicked();
 
     void on_buttonBox_accepted();
+
 
 
 private:

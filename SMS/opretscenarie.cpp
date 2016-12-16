@@ -12,6 +12,9 @@
 #include <QLabel>
 #include <QDebug>
 #include <vector>
+#include <iostream>
+#include <fstream>
+#include <QFile>
 using namespace std;
 
 
@@ -21,12 +24,26 @@ OpretScenarie::OpretScenarie(QWidget *parent) :
 {
     ui->setupUi(this);
     temp_vector.push_back('!');
+    initLoadEnhedsListe();
 
 }
 
 OpretScenarie::~OpretScenarie()
 {
     delete ui;
+}
+
+void OpretScenarie::initLoadEnhedsListe()
+{
+    ifstream loadEnheder("saved_enheder.txt", ios::in);
+
+    string enheder;
+    int nummerEnhed;
+
+    while(loadEnheder >> enheder >> nummerEnhed)
+    {
+        ui->hentEnheder->addItem(QString::fromStdString(enheder));
+    }
 }
 
 void OpretScenarie::on_pushButton_clicked()
