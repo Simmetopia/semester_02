@@ -25,4 +25,10 @@ int logik::binaryConverter()
 	return tal-1;
 }
 
+std::vector<int> logik::getVector(){
+	return tidsBin;
+}
 
+void logik::clearVec(){
+	tidsBin.clear();
+}

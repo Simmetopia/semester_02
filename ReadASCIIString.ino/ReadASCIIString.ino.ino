@@ -176,7 +176,7 @@ void sendStartBit(){
     senderstuffs ++;
   }
   if(senderstuffs == 3){
-    delay(11);
+//    delay(11);
     senderstuffs = 0;
     readyToSend = 2;
   }

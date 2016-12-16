@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"digital",
+				"digitalWrite\tArduino digitalWrite"
+			],
+			[
 				"get",
 				"getSaveVector"
 			],
@@ -200,30 +204,30 @@
 	"buffers":
 	[
 		{
-			"file": "ReadASCIIString.ino/ReadASCIIString.ino.ino",
+			"file": "KodeTilHardware/Modtager/SWmodtager/SWmodtager.ino",
 			"settings":
 			{
-				"buffer_size": 3427,
+				"buffer_size": 2164,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "ReadASCIIString.ino/bitsettest.cpp",
+			"file": "KodeTilHardware/Modtager/SWmodtager/logik.cpp",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 416,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "ReadASCIIString.ino/protocol.cpp",
+			"file": "KodeTilHardware/Modtager/SWmodtager/logik.h",
 			"settings":
 			{
-				"buffer_size": 3317,
+				"buffer_size": 251,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -423,6 +427,14 @@
 				"Git: Push"
 			],
 			[
+				"status",
+				"Git: Status"
+			],
+			[
+				"clang",
+				"Clang Format: Format Selection"
+			],
+			[
 				"statu",
 				"Git: Status"
 			],
@@ -465,10 +477,6 @@
 			[
 				"git merge",
 				"Git: Merge"
-			],
-			[
-				"status",
-				"Git: Status"
 			],
 			[
 				"checbra",
@@ -647,12 +655,16 @@
 	"expanded_folders":
 	[
 		"/C/Users/SimonEgeberg/Documents/semester_02",
-		"/C/Users/SimonEgeberg/Documents/semester_02/ReadASCIIString.ino"
+		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware",
+		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager",
+		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/SWmodtager"
 	],
 	"file_history":
 	[
-		"/C/Users/SimonEgeberg/Documents/semester_02/ReadASCIIString.ino/ScenarierList.cpp",
+		"/C/Users/SimonEgeberg/Documents/semester_02/ReadASCIIString.ino/ReadASCIIString.ino.ino",
 		"/C/Users/SimonEgeberg/Documents/semester_02/ReadASCIIString.ino/protocol.cpp",
+		"/C/Users/SimonEgeberg/Documents/semester_02/ReadASCIIString.ino/bitsettest.cpp",
+		"/C/Users/SimonEgeberg/Documents/semester_02/ReadASCIIString.ino/ScenarierList.cpp",
 		"/C/Users/SimonEgeberg/Documents/semester_02/SMS/mainwindow.cpp",
 		"/C/Users/SimonEgeberg/Documents/semester_02/ReadASCIIString.ino/protocol.h",
 		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/ReadASCIIString.ino.ino",
@@ -849,24 +861,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "ReadASCIIString.ino/ReadASCIIString.ino.ino",
+					"file": "KodeTilHardware/Modtager/SWmodtager/SWmodtager.ino",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3427,
+						"buffer_size": 2164,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1624,
-								1624
+								1963,
+								1963
 							]
 						],
 						"settings":
@@ -876,63 +888,64 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 561.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "ReadASCIIString.ino/bitsettest.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++11/C++11.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1275.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "ReadASCIIString.ino/protocol.cpp",
+					"buffer": 1,
+					"file": "KodeTilHardware/Modtager/SWmodtager/logik.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3317,
+						"buffer_size": 416,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3164,
-								3164
+								384,
+								384
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++11/C++11.tmLanguage"
+							"syntax": "Packages/C++11/C++11.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3468.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "KodeTilHardware/Modtager/SWmodtager/logik.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 251,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12,
+								12
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
