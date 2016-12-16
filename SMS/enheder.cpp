@@ -118,46 +118,48 @@ void Enheder::on_sletEnhed_clicked()
     if(ui->listeAfEnheder->currentRow() == 0)
     {
         QMessageBox msg;
-        msg.setText("Du kan ikke slette denne enhed!");
+        msg.setText("Du må ikke slette denne enhed!");
         msg.exec();
     }
-    else
+
+    else if(ui->listeAfEnheder->currentRow() > 0)
     {
         sletEnheder();
-    }
-    std::ifstream readEnheder("saved_enheder.txt", std::ios::in);
 
-    std::string enhedsNavn;
-    int enhedsNummer;
+        std::ifstream readEnheder("saved_enheder.txt", std::ios::in);
 
-    std::vector<std::string> updateEnhed;
-    std::vector<int> updateNummer;
+        std::string enhedsNavn;
+        int enhedsNummer;
 
-    while(readEnheder >> enhedsNavn >> enhedsNummer)
-    {
-        updateEnhed.push_back(enhedsNavn);
-        updateNummer.push_back(enhedsNummer);
-    }
+        std::vector<std::string> updateEnhed;
+        std::vector<int> updateNummer;
 
-
-    if(updateEnhed.size() == 1)
-    {
-        std::ofstream ofs;
-        ofs.open("saved_enheder.txt", std::ios::out | std::ios::trunc);
-        ofs.close();
-    }
-    else
-    {
-        std::ofstream ofs;
-        ofs.open("saved_enheder.txt", std::ios::out | std::ios::trunc);
-        ofs.close();
-
-        updateEnhed.erase(updateEnhed.begin()+ui->listeAfEnheder->currentRow());
-
-
-        for(int i = 0; i < updateEnhed.size(); i++)
+        while(readEnheder >> enhedsNavn >> enhedsNummer)
         {
-            skrivTilFil(updateEnhed[i], updateNummer[i]);
+            updateEnhed.push_back(enhedsNavn);
+            updateNummer.push_back(enhedsNummer);
+        }
+
+
+        if(updateEnhed.size() == 1)
+        {
+            std::ofstream ofs;
+            ofs.open("saved_enheder.txt", std::ios::out | std::ios::trunc);
+            ofs.close();
+        }
+        else
+        {
+            std::ofstream ofs;
+            ofs.open("saved_enheder.txt", std::ios::out | std::ios::trunc);
+            ofs.close();
+
+            updateEnhed.erase(updateEnhed.begin() + ui->listeAfEnheder->count());
+
+
+            for(int i = 0; i < updateEnhed.size(); i++)
+            {
+                skrivTilFil(updateEnhed[i], i);
+            }
         }
     }
 
