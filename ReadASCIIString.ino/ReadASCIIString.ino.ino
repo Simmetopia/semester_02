@@ -171,11 +171,11 @@ void burstOn()                  //enable burst in 1 ms.
 void sendStartBit(){
   
   
-  if(senderstuffs < 3){
+  if(senderstuffs < 2){
     burstOn();
     senderstuffs ++;
   }
-  if(senderstuffs == 3){
+  if(senderstuffs == 2){
 //    delay(11);
     senderstuffs = 0;
     readyToSend = 2;
