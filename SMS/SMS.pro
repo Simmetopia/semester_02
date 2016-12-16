@@ -19,7 +19,9 @@ SOURCES += main.cpp\
     scenarielist.cpp \
     aktion.cpp \
     protocol.cpp \
-    scenarier.cpp
+    scenarier.cpp \
+    enheder.cpp \
+    tilfoejenhed.cpp
 
 HEADERS  += mainwindow.h \
     opretscenarie.h \
@@ -27,8 +29,12 @@ HEADERS  += mainwindow.h \
     scenarielist.h \
     aktion.h \
     protocol.h \
-    scenarier.h
+    scenarier.h \
+    enheder.h \
+    tilfoejenhed.h
 
 FORMS    += mainwindow.ui \
     opretscenarie.ui \
-    additem.ui
+    additem.ui \
+    enheder.ui \
+    tilfoejenhed.ui
