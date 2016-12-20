@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"begin",
+				"\\begin{}                                          \tlatex-document"
+			],
+			[
 				"get",
 				"getSaveVector"
 			],
@@ -200,28 +204,19 @@
 	"buffers":
 	[
 		{
-			"file": "ReadASCIIString.ino/ReadASCIIString.ino.ino",
+			"file": "Rapport/simon_rapport.tex",
 			"settings":
 			{
-				"buffer_size": 3427,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "ReadASCIIString.ino/bitsettest.cpp",
-			"settings":
-			{
-				"buffer_size": 0,
+				"buffer_size": 501,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "ReadASCIIString.ino/protocol.cpp",
+			"file": "/C/Users/SimonEgeberg/AppData/Roaming/Sublime Text 3/Packages/User/LaTeXTools.sublime-settings",
 			"settings":
 			{
-				"buffer_size": 3317,
+				"buffer_size": 19840,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -414,10 +409,22 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 267.0,
-		"last_filter": "push",
+		"height": 225.0,
+		"last_filter": "git status",
 		"selected_items":
 		[
+			[
+				"git status",
+				"Git: Status"
+			],
+			[
+				"git ini",
+				"Git: Init"
+			],
+			[
+				"status",
+				"Git: Status"
+			],
 			[
 				"push",
 				"Git: Push"
@@ -465,10 +472,6 @@
 			[
 				"git merge",
 				"Git: Merge"
-			],
-			[
-				"status",
-				"Git: Status"
 			],
 			[
 				"checbra",
@@ -647,12 +650,17 @@
 	"expanded_folders":
 	[
 		"/C/Users/SimonEgeberg/Documents/semester_02",
-		"/C/Users/SimonEgeberg/Documents/semester_02/ReadASCIIString.ino"
+		"/C/Users/SimonEgeberg/Documents/semester_02/Rapport"
 	],
 	"file_history":
 	[
-		"/C/Users/SimonEgeberg/Documents/semester_02/ReadASCIIString.ino/ScenarierList.cpp",
+		"/C/Users/SimonEgeberg/Documents/semester_02/Rapport/texput.log",
+		"/C/Users/SimonEgeberg/Downloads/latex.tex",
+		"/C/Users/SimonEgeberg/AppData/Roaming/Sublime Text 3/Packages/User/LaTeXTools.sublime-settings",
+		"/C/Users/SimonEgeberg/Documents/semester_02/ReadASCIIString.ino/ReadASCIIString.ino.ino",
 		"/C/Users/SimonEgeberg/Documents/semester_02/ReadASCIIString.ino/protocol.cpp",
+		"/C/Users/SimonEgeberg/Documents/semester_02/ReadASCIIString.ino/bitsettest.cpp",
+		"/C/Users/SimonEgeberg/Documents/semester_02/ReadASCIIString.ino/ScenarierList.cpp",
 		"/C/Users/SimonEgeberg/Documents/semester_02/SMS/mainwindow.cpp",
 		"/C/Users/SimonEgeberg/Documents/semester_02/ReadASCIIString.ino/protocol.h",
 		"/C/Users/SimonEgeberg/Documents/semester_02/KodeTilHardware/Modtager/ReadASCIIString.ino.ino",
@@ -669,7 +677,6 @@
 		"/C/Users/SimonEgeberg/Documents/semester_02/SMS/protocol.h",
 		"/C/Users/SimonEgeberg/Dropbox/cprog/Computer/Computer/Calculator.h",
 		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-8/Rapport/rapport.tex",
-		"/C/Users/SimonEgeberg/AppData/Roaming/Sublime Text 3/Packages/User/LaTeXTools.sublime-settings",
 		"/C/Users/SimonEgeberg/Dropbox/cprog/Forlæsning/noter.tex",
 		"/C/Users/SimonEgeberg/Documents/semester_02/build-SMS-Desktop_Qt_5_7_0_MSVC2015_64bit-Debug/saved_data_alarmet.txt",
 		"/C/Users/SimonEgeberg/Dropbox/DSD/Rapport - 5-8/Kode til excercise 7/codelock/codelock1.vhd",
@@ -849,59 +856,29 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "ReadASCIIString.ino/ReadASCIIString.ino.ino",
+					"file": "Rapport/simon_rapport.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3427,
+						"buffer_size": 501,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1624,
-								1624
+								331,
+								331
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Arduino-like IDE/Arduino.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 561.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "ReadASCIIString.ino/bitsettest.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++11/C++11.tmLanguage"
+							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -911,31 +888,32 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "ReadASCIIString.ino/protocol.cpp",
+					"buffer": 1,
+					"file": "/C/Users/SimonEgeberg/AppData/Roaming/Sublime Text 3/Packages/User/LaTeXTools.sublime-settings",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3317,
+						"buffer_size": 19840,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3164,
-								3164
+								4678,
+								4678
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++11/C++11.tmLanguage"
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3468.0,
+						"translation.y": 1785.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
