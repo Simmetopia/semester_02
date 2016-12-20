@@ -1,0 +1,164 @@
+\documentclass[11pt]{article}
+\usepackage{ctable,microtype,natbib,amsmath,amssymb,fullpage,graphicx}
+\usepackage{siunitx}
+\usepackage{cleveref}
+\usepackage{keyval,kvoptions,fancyvrb,float,ifthen,calc,ifplatform,pdftexcmds,etoolbox,lineno}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage[danish]{babel}
+\usepackage[left=25mm, right=25mm, top=25mm, bottom=25mm]{geometry}
+\usepackage{lastpage}
+\usepackage{amsthm}
+\setlength\parindent{0pt}
+\usepackage{fancyhdr}
+\usepackage{dcolumn}
+\usepackage{minted} 
+\usepackage{setspace}
+\onehalfspacing
+
+\title{What to do, who to do and when to do}
+\author{Christian Bondesen - 201511621}
+
+\begin{document}
+\maketitle
+\section{Hvad skal laves:}
+
+Til vi mødes næstegang skal være styr på følgende!
+
+\begin{enumerate}
+	\item Forside 
+	\item Indholdsfortegnelse
+	\item Indledning
+	\item Kravspecifikation
+	\item Arkitektur
+	
+	\item Hardware
+	\begin{enumerate}
+		\item Design
+		\item Implementering
+		\item Modultest
+	\end{enumerate}
+
+	\item Software	
+	\begin{enumerate}
+		\item Design
+		\item Implementering
+		\item Modultest
+	\end{enumerate}
+	\item Integrationstest
+	\item Accepttest
+	\item Bilag
+\end{enumerate}
+
+\subsection{Hvad skal laves under hvert punkt: }
+
+\textbf{Forside}\\
+
+Der skal laves følgende for forsiden:
+\begin{enumerate}
+	\item Den skal laves lækker!
+	\item Den skal have Gruppenummer
+	\item Projektdeltagernes navne og std-nummer
+	\item Navn på Institution
+	\item Dato for aflevering
+	\item Navn på vejleder - Det er Kim hvis man er i tvivl
+\end{enumerate}
+
+\textbf{Indholdsfortegnelse}
+\\
+I ved fandme godt hvordan man laver en indholdsfortegnelse!
+\\
+
+\textbf{Indledning}
+\\
+Indledningen skal give censor et indlblik i vores Projekt, den have en kort læsevejledning for projektdokumentationens indhold. \\
+
+\textbf{Bilag}\\
+Smid alt hvad I har af bilag i et dokument, vi kan samle alle bilag når vi mødes igen inden aflevering.\\
+
+\textbf{Kravspecifikation}\\
+Gå use-case igennem. Ikke-funktionelle krav igennem, og måske lidt ekstra generelle krav. Vi skal have GUI med i vores kravspec. Når I kigger kravspec igennem så tænk: Hvad er vores værdier! Hvilke krav stiller vi til projektet!\\
+
+\textbf{Arkitekturen}\\
+Det er nok en god ide vi alle laver arkitekturen om sammen. Vi skal have SysML, UML og ligeledes en Domænemodel.\\
+
+\textbf{Hardware}
+
+\text{(a)Design:}
+
+I designdelen af hardwaren, skal der overvejes følgende:
+
+\begin{itemize}
+	\item Hvilke kredsløb har vi brugt? 
+	\item Hvad har vi skiftet ud?
+	\item Hvilke modstande har vi på og hvorfor?
+	\item Hvilke filtre har vi brugt? 
+	\item Diagrammer for ZeroX, Generator og Modtager
+	\item Udregninger for filtre og sådan.
+\end{itemize}
+
+\text {(b)Implementering:}\\
+I implementeringen af hardwaren, skal vi beskrive følgende:
+
+\begin{itemize}
+	\item Test på board
+	\item billeder fra google drevet
+	\item Hvad skete der under implementeringen
+	\item Skiftede vi noget hardware ud?
+	\item Hvilke signaler fik vi?
+	\item Var vi nød til at ændre noget for at få et bedre resultat?
+\end{itemize}
+
+\text {(c)Modultest:}\\
+I Modultesten af hardwaren, skal vi beskrive følgende:
+
+\begin{itemize}
+	\item Hvad fik vi ud af når vi testede de enkelte dele?
+	\item Hvordan så resultaterne ud når vi testede det?
+	\item Skulle vi ændre noget ud fra resultaterne?
+	\item Billeder af det enkelte test.
+\end{itemize}
+
+\textbf{Software}
+
+\text{(a)Design:}
+I software-designet skal vi beskrive følgende:
+
+\begin{itemize}
+	\item Beskriv grænseflader for hvert enkelt blok/modul/pakke/klasse.
+	\item Aktivitets diagrammer
+	\item Beskrivelse af interne algoritmer, tænk state algoritmen. Alt der gør noget på et givet tidspunkt.
+	\item Figurerne skal selvfølgelig understøttes af noget tekst der forklarer hvad den enkelte algoritme eller klasse gør.
+\end{itemize}
+
+\text{(b)Implementering:}\\
+I software-implementeringen skal vi beskrive følgende:
+
+\begin{itemize}
+	\item Beskrivelse af sourcekoden til hvert enkelte klasse.
+	\item Hvilke ændringer har I lavet efter test.
+\end{itemize}
+
+\text{(c)Implementering:}\\
+I software-modultest skal vi beskrive følgende:
+
+\begin{itemize}
+	\item Dokumenter alt test af software, dvs. alt test vi har lavet for koden hver for sig.
+	\item Koden testet hvert for sig og samlet.
+	\item Dokumenter også om softwaren virker sammen med hardwaren.
+\end{itemize}
+
+\textbf{Integrationstest:}\\
+I integrationstesten samles software og hardware gradvist til et færdigt system. Dokumenter hvad der sker når vi samler de enkelte dele. Skriv hvilke problemer vi løb ind i, da vi satte det sammen. Efter integrationsprocessen skal prototypen være klar til at udføre accepttest. Så beskriv evt. løsninger og overvejelser vi har gjort for at kunne gennemføre en accepttest.\\
+
+\textbf{Accepttest}\\
+Her beskrives det færdige system. Gennemgå accepttesten og vis hvordan vi har gennemført hvert enkelte del. 
+
+
+
+ 
+%\inputminted[linenos,breaklines = true]{c++}{senderLogik.cpp} -- udskrive en cpp-fil til PDF, fucking insane!
+
+
+
+\end{document}
