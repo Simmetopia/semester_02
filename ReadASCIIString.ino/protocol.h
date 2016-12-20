@@ -19,6 +19,7 @@ public:
 	void pushBack(char a);
 	char charIntConverter(int a);
 	std::vector<char> getSaveVector();
+  void clearSavedVector();
 	
   int protocolLogic();
   void resetSaveVector(std::vector<char>);

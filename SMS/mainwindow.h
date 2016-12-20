@@ -9,6 +9,7 @@
 #include "aktion.h"
 #include "scenarier.h"
 #include "scenarielist.h"
+#include "enheder.h"
 #include "additem.h"
 #include <Qstring>
 #include <string>
@@ -34,6 +35,7 @@ public:
     void AddLabel(size_t);
 
     void skrivTilFil(std::string a, std::string b);
+    void skrivTilFil(std::string, int);
 
 private slots:
     void on_pushButton_clicked();
@@ -41,6 +43,8 @@ private slots:
     void on_pushButton_2_clicked();
 
     void on_sletAlarmKnap_clicked();
+
+    void on_enhedsHaandtering_clicked();
 
     void initSerial();
 

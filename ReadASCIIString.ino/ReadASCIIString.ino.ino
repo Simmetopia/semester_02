@@ -4,6 +4,7 @@
 #include <utility.h>
 #include <string>
 #include <bitset>
+#include <deque>
 #include "protocol.h"
 #include "vector"
 #define F_CPU 16000000
@@ -14,16 +15,20 @@ void ConvertToBinary(int n);
 // Function prototypes
 void initHardware();
 void burstOn();
-
+int dataOut = 0;
 vector<char> b;
 const uint8_t ZeroCrossIn = 19; //INT2/RXD1
 const int BurstPin = 11;        //Burst Pin/OC1A
 const int LED4 = 10;
 const int LED5 = 11;
 const int LED6 = 12;
+std::deque<int> fuckDigBui;
+int readyToSend = 0;
 string inputString = "";         // a string to hold incoming data
 boolean stringComplete = false;  // whether the string is complete
 protocol p1;
+int senderstuffs = -1;
+int tempSize = 0;
 
 void setup() {
   initHardware();
@@ -33,39 +38,81 @@ void setup() {
   pinMode(LED5, OUTPUT);
   pinMode(LED6, OUTPUT);
   pinMode(44, OUTPUT);
-  pinMode(42,OUTPUT);
+  pinMode(42, OUTPUT);
   // reserve 200 bytes for the inputString:
   inputString.reserve(200);
 }
 
 void loop()
 {
-  int readyToSend = 0;
 
   if (stringComplete)
   {
     p1.readToVector(inputString);
     inputString = "";
     stringComplete = false;
+    readyToSend = 1;
+    
+   // ConvertToBinary(p1.alarmTid(1));
+  }
+
+  
+  if(digitalRead(ZeroCrossIn) == HIGH && readyToSend == 1){
+  sendStartBit();
+  }
+
+  if(digitalRead(ZeroCrossIn) == HIGH && readyToSend == 2){
+    if(tempSize == 0){
     ConvertToBinary(p1.alarmTid(1));
+    p1.clearSavedVector();
+    }
+    if(tempSize < 14){
+    for(int i = tempSize; i< 14; i++){
+      fuckDigBui.push_front(0);
+       tempSize++;
+    }// end for
+//    Serial.print(tempSize);
+//    Serial.print(" ");
+    } // end if
+   
+    if(fuckDigBui[dataOut] == 0){
+      delay(3);
+//      Serial.print(0);
+//      Serial.print(" ");
+    }
+    if(fuckDigBui[dataOut] == 1){
+      burstOn();
+//      Serial.print(1);
+//      Serial.print(" ");
+    }
+    dataOut++;
+//    Serial.print(dataOut);
+//    Serial.print(" ");
+    if(dataOut >= 14){
+      dataOut = 0;
+      readyToSend = 0;
+      tempSize=0;
+      fuckDigBui.clear();
+      
+    }
   }
 
 
-//    int antalEnheder = p1.antalElementer();
-//
-//    std::vector<int> Enheder;
-//    for (int i = 0; i < antalEnheder; i++) {
-//
-//      for (int i = 0; i < p1.getSaveVector().size(); i++) {
-//        if (p1.getSaveVector()[i] == 'N') {
-//          Enheder.push_back( (int)p1.getSaveVector()[i + 1] );
-//        } // end if
-//      } // end inner for lopp
-//    } // end outer for
-//    for (int i = 0; i < antalEnheder; i++) {
+  //    int antalEnheder = p1.antalElementer();
+  //
+  //    std::vector<int> Enheder;
+  //    for (int i = 0; i < antalEnheder; i++) {
+  //
+  //      for (int i = 0; i < p1.getSaveVector().size(); i++) {
+  //        if (p1.getSaveVector()[i] == 'N') {
+  //          Enheder.push_back( (int)p1.getSaveVector()[i + 1] );
+  //        } // end if
+  //      } // end inner for lopp
+  //    } // end outer for
+  //    for (int i = 0; i < antalEnheder; i++) {
 
-//    }
-  
+  //    }
+
 
 }
 
@@ -107,31 +154,43 @@ void initHardware()
 
 void burst_ISR()               // run interrupt routine and detach interrupt after 1 ms.
 {
-  TCCR1A |= (1 << COM1A0);            // OCR1A on - resten er det samme. Enable burst timer 1 120kHz.
-  delay(1);
-  TCCR1A &= (0 << COM1A0);            // OCR1A off - resten er det samme. disable burst timer 1 120kHz
+
   detachInterrupt(digitalPinToInterrupt(ZeroCrossIn));
 }
 
 
 void burstOn()                  //enable burst in 1 ms.
 {
-  attachInterrupt(digitalPinToInterrupt(ZeroCrossIn), burst_ISR, RISING);
+  //attachInterrupt(digitalPinToInterrupt(ZeroCrossIn), burst_ISR, RISING);
+  TCCR1A |= (1 << COM1A0);            // OCR1A on - resten er det samme. Enable burst timer 1 120kHz.
+  delay(1);
+  TCCR1A &= (0 << COM1A0);  
+  delay(2);// OCR1A off - resten er det samme. disable burst timer 1 120kHz
 }
 
-void ConvertToBinary(int n) /*recusiv følge*/
-{
+void sendStartBit(){
+  
+  
+  if(senderstuffs < 3){
+    burstOn();
+    senderstuffs ++;
+  }
+  if(senderstuffs == 3){
+    delay(11);
+    senderstuffs = 0;
+    readyToSend = 2;
+  }
+}
 
+
+void ConvertToBinary(int n) /*recusiv følge*/
+{ 
   if (n / 2 != 0) {
     ConvertToBinary(n / 2);
-
   }
-  if( (n % 2) == 1 ){
-Serial.print(1);Serial.print(" ");
-  }
-  else
-  {
-Serial.print(0);Serial.print(" ");
-  }
+tempSize++;
+fuckDigBui.push_back(n%2);
+//Serial.print(n%2);
+//Serial.print(" ");
 }
 
