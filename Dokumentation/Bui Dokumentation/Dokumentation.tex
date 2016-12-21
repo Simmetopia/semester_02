@@ -9,9 +9,11 @@
 \usepackage{amsthm}
 \setlength\parindent{0pt}
 \usepackage{dcolumn}
-\usepackage{minted}
+%\usepackage{minted}
 \usepackage{setspace}
 \usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{multirow}
 
 \title{Dokumentation}
 
@@ -94,6 +96,44 @@
 \pagebreak
 
 \section{Systemarkitektur}
+\subsection{Hardware-arkitektur}
+\begin{table}[!ht]
+\centering
+	\begin{tabular}{l|p{10cm}|l|l}
+	
+	\toprule[0.4mm]\midrule Bloknavn & Funktionsbeskrivelse & Signal & Kommentar\\ \midrule[0.4mm]
+	X-10 Sender & Modtage data serielt og sende data over lysnettet & 18V AC & Lysnet\\
+	 & & 5V DC & VCC\\
+	 & & 0V & Stel\\
+	 & & Lås & DE2\\
+	 & & Signal & Serielt\\
+	 \midrule
+	 Kodelås & Sender højt eller lavt signal & Lås & DE2\\
+	 & & 0V & Stel\\
+	 \midrule
+	 Wake-up Light & \multirow{2}{10cm}{Tænder/slukker til et vis tidspunkt relativt til modtaget data fra X-10 modtageren \vfill}  & Signal & P1\\
+	 & & 0V & Stel\\
+	 & & 5V DC & VCC\\
+	 \midrule
+	 Electronics & \multirow{2}{10cm}{Tænder/slukker til et vis tidspunkt relativt til modtaget data fra X-10 modtageren \vfill}  & Signal & P1\\
+	 & & 0V & Stel\\
+	 & & 5V DC & VCC\\
+	 \midrule
+	 X-10 Modtager & \multirow{2}{10cm}{Modtage data fra lysnet og sende videre til hhv. Wake-up Light og Electronics \vfill} & 18V AC & Lysnet\\
+	 & & 5V DC & VCC\\
+	 & & 0V & Stel\\
+	 & & Signal & Serielt\\
+	 \midrule\bottomrule[0.4mm]
+
+
+
+	\end{tabular}
+	\caption{Blokbeskrivelse for det overordnede system}
+	\label{tab: Bloktabel}
+\end{table}
+
+\subsection{Software-arkitektur}
+
 \vfill
 \pagebreak
 

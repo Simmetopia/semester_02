@@ -1,7 +1,7 @@
 \select@language {danish}
 \contentsline {section}{\numberline {1}Indledning}{2}
 \contentsline {section}{\numberline {2}Kravspecifikation}{3}
-\contentsline {section}{\numberline {3}Arkitektur}{4}
+\contentsline {section}{\numberline {3}Systemarkitektur}{4}
 \contentsline {section}{\numberline {4}Hardware-design, implementering \& modultest}{5}
 \contentsline {subsection}{\numberline {4.1}Design (HW)}{5}
 \contentsline {subsection}{\numberline {4.2}Implementering (HW)}{5}
