@@ -14,6 +14,7 @@
 \usepackage{tabularx}
 \usepackage{booktabs}
 \usepackage{multirow}
+\usepackage{caption}
 
 \title{Dokumentation}
 
@@ -96,8 +97,24 @@
 \pagebreak
 
 \section{Systemarkitektur}
+%----------------------------------------------------------------------------------
+%	Hardware-arkitektur
+%----------------------------------------------------------------------------------
 \subsection{Hardware-arkitektur}
-\begin{table}[!ht]
+
+%----------------------------------------------------------------------------------
+%	Overordnet BDD
+%----------------------------------------------------------------------------------
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{Bdd-sms.png}
+\label{FIG: Full BDD}
+\caption{Overordnet BDD for Smart Morning System}
+\end{figure}
+
+
+\begin{table}[H]
 \centering
 	\begin{tabular}{l|p{10cm}|l|l}
 	
@@ -112,11 +129,11 @@
 	 Kodelås & Sender højt eller lavt signal & Lås & DE2\\
 	 & & 0V & Stel\\
 	 \midrule
-	 Wake-up Light & \multirow{2}{10cm}{Tænder/slukker til et vis tidspunkt relativt til modtaget data fra X-10 modtageren \vfill}  & Signal & P1\\
+	 Wake-up Light & \multirow{2}{10cm}{Tænder/slukker til et vis tidspunkt relativt til modtaget data fra X-10 modtageren \vfill}  & Signal & Serielt\\
 	 & & 0V & Stel\\
 	 & & 5V DC & VCC\\
 	 \midrule
-	 Electronics & \multirow{2}{10cm}{Tænder/slukker til et vis tidspunkt relativt til modtaget data fra X-10 modtageren \vfill}  & Signal & P1\\
+	 Electronics & \multirow{2}{10cm}{Tænder/slukker til et vis tidspunkt relativt til modtaget data fra X-10 modtageren \vfill}  & Signal & Serielt\\
 	 & & 0V & Stel\\
 	 & & 5V DC & VCC\\
 	 \midrule
@@ -131,6 +148,217 @@
 	\label{tab: Bloktabel}
 \end{table}
 
+\subsubsection{X-10 Sender Blokbeskrivelse}
+
+%----------------------------------------------------------------------------------
+%	Blokbeskrivelse X-10 Sender || ZeroX-sender
+%----------------------------------------------------------------------------------
+
+
+\begin{minipage}[Ht]{0.45\linewidth}
+	\centering
+	\includegraphics{ZeroX-sender-blok.png}
+	%\captionof{figure}{ZeroX-sender Blok}\label{FIG: ZeroX sender blok}
+\end{minipage}
+\hfill
+\begin{minipage}[!t]{0.45\linewidth}
+	\centering
+   Her skal der stå noget tekst om Zero-Cross Detectoren for senderen
+\end{minipage}%
+\hfill
+
+\begin{table}[H]
+\centering
+	\begin{tabular}{l|l|l}
+	
+	\toprule[0.4mm]\midrule \multicolumn{3}{c}{\textbf{ZeroX-sender Blok}}\\
+	\midrule[0.4mm] Navn & Funktionsbeskrivelse & Signal\\ \midrule[0.3mm]
+	 Lysnet & Modtage signal fra lysnettet & 18V AC\\
+	 Zc & Sender digital signal til Arduino & Digital\\
+	 VCC & Spændingsforsyning til ZeroX-Detector & 5V DC\\
+	 Stel & Fælles stel  & 0V\\
+	 \midrule\bottomrule[0.4mm]
+
+	\end{tabular}
+	\caption{Blokbeskrivelse for senderens Zero Cross Detector}
+	\label{tab: Bloktabel ZeroX sender}
+\end{table}
+\qquad
+
+%----------------------------------------------------------------------------------
+%	Blokbeskrivelse X-10 Sender || Generator-sender
+%----------------------------------------------------------------------------------
+
+\begin{minipage}[Ht]{0.45\linewidth}
+	\centering
+	\includegraphics{Generator-sender-blok.png}
+	%\captionof{figure}{Generator-sender Blok}\label{FIG: Generator sender blok}
+\end{minipage}
+\hfill
+\begin{minipage}[!t]{0.45\linewidth}
+	\centering
+   Her skal der stå noget tekst om 120kHz-carrier Generator for senderen
+\end{minipage}%
+\hfill
+
+\begin{table}[H]
+\centering
+	\begin{tabular}{l|l|l}
+	
+	\toprule[0.4mm]\midrule \multicolumn{3}{c}{\textbf{Generator-sender Blok}}\\
+	\midrule[0.4mm] Navn & Funktionsbeskrivelse & Signal\\ \midrule[0.3mm]
+	 Tx & Modtage Burstsignal fra sender Arduino & Burst\\
+	 VCC & Spændingsforsyning til Generatoren & 5V DC\\
+	 Stel & Fælles stel  & 0V\\
+ 	 Data & Sender data signal til lysnettet & X-10 signal\\
+	 \midrule\bottomrule[0.4mm]
+
+	\end{tabular}
+	\caption{Blokbeskrivelse for senderens Generator}
+	\label{tab: Bloktabel Generator sender}
+\end{table}
+\qquad
+%----------------------------------------------------------------------------------
+%	Blokbeskrivelse X-10 Sender || Arduino-sender
+%----------------------------------------------------------------------------------
+
+\begin{minipage}[Ht]{0.45\linewidth}
+	\centering
+	\includegraphics{Arduino-sender-blok.png}
+	%\captionof{figure}{Arduino-sender Blok}\label{FIG: Arduino sender blok}
+\end{minipage}
+\hfill
+\begin{minipage}[!t]{0.45\linewidth}
+	\centering
+   Her skal der stå noget tekst om Arduinoen for senderen
+\end{minipage}%
+\hfill
+
+\begin{table}[H]
+\centering
+	\begin{tabular}{l|l|l}
+	
+	\toprule[0.4mm]\midrule \multicolumn{3}{c}{\textbf{Arduino-sender Blok}}\\
+	\midrule[0.4mm] Navn & Funktionsbeskrivelse & Signal\\ \midrule[0.3mm]
+	 Zc & Modtage digitalt ZeroX signal fra ZeroX Detector & Digital\\
+	 Stel & Fælles stel  & 0V\\
+	 Tx & Sender 120kHz burst i perioder af 1 ms & Burst\\
+	 \midrule\bottomrule[0.4mm]
+
+	\end{tabular}
+	\caption{Blokbeskrivelse for senderens Arduino}
+	\label{tab: Bloktabel Arduino sender}
+\end{table}
+\qquad
+
+\subsubsection{X-10 Modtager Blokbeskrivelse}
+
+%----------------------------------------------------------------------------------
+%	Blokbeskrivelse X-10 Modtager || ZeroX-modtager
+%----------------------------------------------------------------------------------
+
+
+\begin{minipage}[Ht]{0.45\linewidth}
+	\centering
+	\includegraphics{ZeroX-modtager-blok.png}
+	%\captionof{figure}{ZeroX-sender Blok}\label{FIG: ZeroX sender blok}
+\end{minipage}
+\hfill
+\begin{minipage}[!t]{0.45\linewidth}
+	\centering
+   Her skal der stå noget tekst om Zero-Cross Detectoren for modtageren
+\end{minipage}%
+\hfill
+
+\begin{table}[H]
+\centering
+	\begin{tabular}{l|l|l}
+	
+	\toprule[0.4mm]\midrule \multicolumn{3}{c}{\textbf{ZeroX-modtager Blok}}\\
+	\midrule[0.4mm] Navn & Funktionsbeskrivelse & Signal\\ \midrule[0.3mm]
+	 Lysnet & Modtage signal fra lysnettet & 18V AC\\
+	 Zc & Sender digital signal til Arduino & Digital\\
+	 VCC & Spændingsforsyning til ZeroX-Detector & 5V DC\\
+	 Stel & Fælles stel  & 0V\\
+	 \midrule\bottomrule[0.4mm]
+
+	\end{tabular}
+	\caption{Blokbeskrivelse for modtagerens Zero Cross Detector}
+	\label{tab: Bloktabel ZeroX modtager}
+\end{table}
+\qquad
+%----------------------------------------------------------------------------------
+%	Blokbeskrivelse X-10 Modtager || Detector-modtager
+%----------------------------------------------------------------------------------
+
+\begin{minipage}[Ht]{0.45\linewidth}
+	\centering
+	\includegraphics{Detector-modtager-blok.png}
+	%\captionof{figure}{Generator-sender Blok}\label{FIG: Generator sender blok}
+\end{minipage}
+\hfill
+\begin{minipage}[!t]{0.45\linewidth}
+	\centering
+   Her skal der stå noget tekst om 120kHz-carrier Detector for modtageren
+\end{minipage}%
+\hfill
+
+\begin{table}[H]
+\centering
+	\begin{tabular}{l|l|l}
+	
+	\toprule[0.4mm]\midrule \multicolumn{3}{c}{\textbf{Detector-modtager Blok}}\\
+	\midrule[0.4mm] Navn & Funktionsbeskrivelse & Signal\\ \midrule[0.3mm]
+	 Lysnet & Modtage overlejret signal fra lysnettet & 18V AC\\
+	 Data & Sender data signal til Arduino & X-10 signal\\
+	 Stel & Fælles stel  & 0V\\
+	 VCC & Spændingsforsyning til Generatoren & 5V DC\\
+ 	 
+	 \midrule\bottomrule[0.4mm]
+
+	\end{tabular}
+	\caption{Blokbeskrivelse for modtagerens Detector}
+	\label{tab: Bloktabel Detector modtager}
+\end{table}
+\qquad
+%----------------------------------------------------------------------------------
+%	Blokbeskrivelse X-10 Modtager || Arduino-modtager
+%----------------------------------------------------------------------------------
+
+\begin{minipage}[Ht]{0.45\linewidth}
+	\centering
+	\includegraphics{Arduino-modtager-blok.png}
+	%\captionof{figure}{Arduino-sender Blok}\label{FIG: Arduino sender blok}
+\end{minipage}
+\hfill
+\begin{minipage}[!t]{0.45\linewidth}
+	\centering
+   Her skal der stå noget tekst om Arduinoen for modtageren
+\end{minipage}%
+\hfill
+
+\begin{table}[H]
+\centering
+	\begin{tabular}{l|l|l}
+	
+	\toprule[0.4mm]\midrule \multicolumn{3}{c}{\textbf{Arduino-modtager Blok}}\\
+	\midrule[0.4mm] Navn & Funktionsbeskrivelse & Signal\\ \midrule[0.3mm]
+	 Zc & Modtage digitalt ZeroX signal fra ZeroX Detector & Digital\\
+	 Stel & Fælles stel  & 0V\\
+	 Data & Modtage data signal fra Detektor & X-10 signal\\
+	 Serielt & Sender signal til Wake-up Light og Electronics med X-10 data & Signal\\
+	 \midrule\bottomrule[0.4mm]
+
+	\end{tabular}
+	\caption{Blokbeskrivelse for modtagerens Arduino}
+	\label{tab: Bloktabel Arduino modtager}
+\end{table}
+\qquad
+
+
+%----------------------------------------------------------------------------------
+%	Software-arkitektur
+%----------------------------------------------------------------------------------
 \subsection{Software-arkitektur}
 
 \vfill
