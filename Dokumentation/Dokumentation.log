@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.12.20)  20 DEC 2016 11:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.12.20)  20 DEC 2016 17:56
 entering extended mode
-**C:/Users/Marc/Documents/GitHub/semester_02/Rapport/simon_rapport.tex
-(C:/Users/Marc/Documents/GitHub/semester_02/Rapport/simon_rapport.tex
+**C:/Users/mabui/Desktop/semester_02/Dokumentation/Dokumentation.tex
+(C:/Users/mabui/Desktop/semester_02/Dokumentation/Dokumentation.tex
 LaTeX2e <2016/03/31> patch level 3
 Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
@@ -53,11 +53,11 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\siunitx\siunitx.sty"
-("C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty"
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\siunitx\siunitx.sty
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\l3kernel\expl3.sty
 Package: expl3 2016/11/21 v6760 L3 programming layer (loader) 
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3-code.tex"
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\l3kernel\expl3-code.tex
 Package: expl3 2016/11/21 v6760 L3 programming layer (code)
 L3 Module: l3bootstrap 2016/06/13 v6596 L3 Bootstrap code
 L3 Module: l3names 2016/10/13 v6722 L3 Namespace for primitives
@@ -163,12 +163,13 @@ L3 Module: l3candidates 2016/08/19 v6688 L3 Experimental additions to l3kernel
 \l__coffin_scaled_width_dim=\dimen135
 L3 Module: l3luatex 2016/08/18 v6679 L3 Experimental LuaTeX-specific functions
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\l3pdfmode.def"
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\l3kernel\l3pdfmode.def
 File: l3pdfmode.def 2016/08/18 v6679 L3 Experimental driver: PDF mode
 \l__driver_color_stack_int=\count109
 \l__driver_tmp_box=\box41
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty"
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\l3packages\xparse\xparse.s
+ty
 Package: xparse 2016/11/21 v6760 L3 Experimental document command parser
 \l__xparse_current_arg_int=\count110
 \l__xparse_m_args_int=\count111
@@ -177,8 +178,7 @@ Package: xparse 2016/11/21 v6760 L3 Experimental document command parser
 \l__xparse_v_nesting_int=\count114
 )
 Package: siunitx 2016/11/24 v2.7 A comprehensive (SI) units package
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01 AMS text
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
@@ -194,7 +194,8 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip49
 \backup@length=\skip50
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\l3keys2e\l3keys2e.sty"
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\l3packages\l3keys2e\l3keys
+2e.sty
 Package: l3keys2e 2016/11/21 v6760 LaTeX2e option processing using LaTeX3 keys
 )
 \l__siunitx_tmp_box=\box42
@@ -356,12 +357,13 @@ Package: l3keys2e 2016/11/21 v6760 LaTeX2e option processing using LaTeX3 keys
 .................................................
 \g__file_internal_ior=\read1
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\base\translator\translator.sty"
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\base\translator\tra
+nslator.sty
 Package: translator 2010/06/12 ver 1.10
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\base\translator\translator-langu
-age-mappings.tex")))
-("C:\Program Files\MiKTeX 2.9\tex\latex\cleveref\cleveref.sty"
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\base\translator\tra
+nslator-language-mappings.tex)))
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\cleveref\cleveref.sty
 Package: cleveref 2013/12/28 v0.19 Intelligent cross-referencing
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
@@ -382,7 +384,7 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-("C:\Program Files\MiKTeX 2.9\tex\latex\fancyvrb\fancyvrb.sty"
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\fancyvrb\fancyvrb.sty
 Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
@@ -417,7 +419,7 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count138
 \calc@Cskip=\skip57
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\ifplatform\ifplatform.sty"
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\ifplatform\ifplatform.sty
 Package: ifplatform 2010/10/22 v0.4 Testing for the operating system
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
@@ -435,11 +437,11 @@ Package pdftexcmds Info: \pdfdraftmode found.
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\catchfile.sty"
 Package: catchfile 2016/05/16 v1.7 Catch the contents of a file (HO)
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty"
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\etoolbox\etoolbox.sty
 Package: etoolbox 2016/12/01 v2.2b e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count139
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\lineno\lineno.sty"
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\lineno\lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 \linenopenalty=\count140
 \output=\toks19
@@ -777,11 +779,11 @@ Package: babel 2016/04/23 3.9r The Babel package
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:\Program Files\MiKTeX 2.9\tex\latex\arabi\bblopts.cfg"
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\babel-danish\danish.ldf"
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\babel-danish\danish.ldf
 Language: danish 2009/09/19 v1.3r Danish support from the babel system
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
@@ -830,14 +832,14 @@ Package: amsthm 2015/03/04 v2.20.2
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\dcolumn.sty"
 Package: dcolumn 2014/10/28 v1.06 decimal alignment package (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\minted\minted.sty"
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\minted\minted.sty
 Package: minted 2016/10/31 v2.4.1 Yet another Pygments shim for LaTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\fvextra\fvextra.sty"
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\fvextra\fvextra.sty
 Package: fvextra 2016/09/02 v1.2.1 fvextra - extensions and patches for fancyvr
 b
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\upquote\upquote.sty"
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\upquote\upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 )
@@ -860,15 +862,15 @@ tim
 Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
 Package shellesc Info: Unrestricted shell escape enabled on input line 67.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\xstring\xstring.sty"
-("C:\Program Files\MiKTeX 2.9\tex\generic\xstring\xstring.tex"
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\xstring\xstring.sty
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\generic\xstring\xstring.tex
 \@xs@message=\write4
 \integerpart=\count156
 \decimalpart=\count157
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\framed\framed.sty"
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\framed\framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip62
 \fb@frw=\dimen172
@@ -884,14 +886,24 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \@float@every@listing=\toks29
 \c@listing=\count160
 )
-runsystem(if not exist _minted-simon_rapport mkdir _minted-simon_rapport)...exe
+runsystem(if not exist _minted-Dokumentation mkdir _minted-Dokumentation)...exe
 cuted.
 
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\setspace\setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\tabularx.sty"
+Package: tabularx 2016/02/03 v2.11 `tabularx' package (DPC)
+\TX@col@width=\dimen176
+\TX@old@table=\dimen177
+\TX@old@col=\dimen178
+\TX@target=\dimen179
+\TX@delta=\dimen180
+\TX@cols=\count161
+\TX@ftn=\toks30
+)
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
@@ -908,14 +920,14 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > si
-mon_rapport.aex <nul: /p x=^%~$PATH:i>> simon_rapport.aex)...executed.
+runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > Do
+kumentation.aex <nul: /p x=^%~$PATH:i>> Dokumentation.aex)...executed.
 
-runsystem(del simon_rapport.aex)...executed.
+runsystem(del Dokumentation.aex)...executed.
 
 
-(simon_rapport.aux)
-\openout1 = `simon_rapport.aux'.
+(Dokumentation.aux)
+\openout1 = `Dokumentation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
@@ -929,19 +941,20 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
- ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count161
-\scratchdimen=\dimen176
+\scratchcounter=\count162
+\scratchdimen=\dimen181
 \scratchbox=\box57
-\nofMPsegments=\count162
-\nofMParguments=\count163
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count164
-\MPscratchDim=\dimen177
-\MPnumerator=\count165
-\makeMPintoPDFobject=\count166
-\everyMPtoPDFconversion=\toks31
+\nofMPsegments=\count163
+\nofMParguments=\count164
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count165
+\MPscratchDim=\dimen182
+\MPnumerator=\count166
+\makeMPintoPDFobject=\count167
+\everyMPtoPDFconversion=\toks32
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -1033,11 +1046,12 @@ File: ts1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+25EF (decimal 9711)
    defining Unicode char U+266A (decimal 9834)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\base\translator\dicts\translator
--basic-dictionary\translator-basic-dictionary-English.dict"
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\base\translator\dic
+ts\translator-basic-dictionary\translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\siunitx\siunitx-abbreviations.cfg"
+(C:\Users\mabui\AppData\Roaming\MiKTeX\2.9\tex\latex\siunitx\siunitx-abbreviati
+ons.cfg
 File: siunitx-abbreviations.cfg 2016/11/24 v2.7 siunitx: Abbreviated units
 )
 *geometry* driver: auto-detecting
@@ -1074,43 +1088,60 @@ File: siunitx-abbreviations.cfg 2016/11/24 v2.7 siunitx: Abbreviated units
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c__siunitx_mathsf_int=\count167
+\c__siunitx_mathsf_int=\count168
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 18.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 18.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 18.
-\c__siunitx_mathtt_int=\count168
+\c__siunitx_mathtt_int=\count169
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 20.
+(Font)              <12> on input line 56.
 
-LaTeX Warning: No \author given.
+Overfull \hbox (57.76906pt too wide) in paragraph at lines 56--63
+[][]  
+ []
+
+<projektillustration.png, id=1, 590.205pt x 468.75125pt>
+File: projektillustration.png Graphic file (type png)
+
+<use projektillustration.png>
+Package pdftex.def Info: projektillustration.png used on input line 76.
+(pdftex.def)             Requested size: 354.12573pt x 281.25291pt.
+
+<forsidelogo.jpg, id=2, 454.69875pt x 116.68594pt>
+File: forsidelogo.jpg Graphic file (type jpg)
+ <use forsidelogo.jpg>
+Package pdftex.def Info: forsidelogo.jpg used on input line 77.
+(pdftex.def)             Requested size: 113.67441pt x 29.1714pt.
 
 [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] (simon_rapport.toc)
+{C:/Users/mabui/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./projektil
+lustration.png> <./forsidelogo.jpg>] (Dokumentation.toc)
 \tf@toc=\write6
-\openout6 = `simon_rapport.toc'.
+\openout6 = `Dokumentation.toc'.
 
-[3] [4] [5] [6] [7] [8] [9] [10] [11] (simon_rapport.aux) ) 
+ [1] [2] [3] [4]
+[5] [6] [7] [8] [9] (Dokumentation.aux) ) 
 Here is how much of TeX's memory you used:
- 17177 strings out of 493333
- 348305 string characters out of 3139196
- 427931 words of memory out of 3000000
- 20532 multiletter control sequences out of 15000+200000
- 10696 words of font info for 39 fonts, out of 3000000 for 9000
+ 17244 strings out of 493333
+ 350218 string characters out of 3139193
+ 427993 words of memory out of 3000000
+ 20590 multiletter control sequences out of 15000+200000
+ 12554 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,6n,35p,10436b,378s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmr17.pfb>
-Output written on simon_rapport.pdf (11 pages, 82206 bytes).
+ 35i,8n,35p,10434b,378s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on Dokumentation.pdf (10 pages, 207153 bytes).
 PDF statistics:
- 58 PDF objects out of 1000 (max. 8388607)
+ 61 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
