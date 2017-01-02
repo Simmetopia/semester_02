@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.12.20)  21 DEC 2016 08:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.12.20)  30 DEC 2016 10:55
 entering extended mode
 **"C:/Users/Pig Benis the legend/Documents/GitHub/SemesterProject2/semester_02/
 Rapport/ChristianLatex/HardwareDesign.tex"
@@ -1106,18 +1106,18 @@ runsystem(del HardwareDesign.aex)...executed.
 (HardwareDesign.aux)
 \openout1 = `HardwareDesign.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1148,7 +1148,7 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-LaTeX Info: Redefining \microtypecontext on input line 22.
+LaTeX Info: Redefining \microtypecontext on input line 23.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1281,16 +1281,16 @@ File: siunitx-abbreviations.cfg 2016/11/24 v2.7 siunitx: Abbreviated units
 
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 22.
+(lastpage)             ! on input line 23.
 \c__siunitx_mathsf_int=\count189
-LaTeX Font Info:    Try loading font information for U+msa on input line 22.
+LaTeX Font Info:    Try loading font information for U+msa on input line 23.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msa.cfg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 22.
+LaTeX Font Info:    Try loading font information for U+msb on input line 23.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1308,27 +1308,94 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
+<Bdd-sms.jpg, id=1, 810.02625pt x 454.69875pt>
+File: Bdd-sms.jpg Graphic file (type jpg)
+ <use Bdd-sms.jpg>
+Package pdftex.def Info: Bdd-sms.jpg used on input line 28.
+(pdftex.def)             Requested size: 486.0195pt x 272.82135pt.
+
+Overfull \hbox (13.98827pt too wide) in paragraph at lines 28--29
+[][] 
+ []
+
+<Zero-cross-ms.png, id=2, 679.03688pt x 319.94531pt>
+File: Zero-cross-ms.png Graphic file (type png)
+ <use Zero-cross-ms.png>
+Package pdftex.def Info: Zero-cross-ms.png used on input line 35.
+(pdftex.def)             Requested size: 475.32257pt x 223.96017pt.
+
+Overfull \hbox (3.29134pt too wide) in paragraph at lines 35--36
+[][] 
+ []
+
+<udregning-af-spandingsdeler.png, id=3, 290.58563pt x 109.1578pt>
+File: udregning-af-spandingsdeler.png Graphic file (type png)
+
+<use udregning-af-spandingsdeler.png>
+Package pdftex.def Info: udregning-af-spandingsdeler.png used on input line 41.
+
+(pdftex.def)             Requested size: 290.58492pt x 109.15753pt.
+ [1
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./Bdd-sms.jpg>]
+<X-10modtager.png, id=12, 679.78969pt x 278.54062pt>
+File: X-10modtager.png Graphic file (type png)
+ <use X-10modtager.png>
+Package pdftex.def Info: X-10modtager.png used on input line 50.
+(pdftex.def)             Requested size: 475.84953pt x 194.9771pt.
+
+Overfull \hbox (3.8183pt too wide) in paragraph at lines 50--51
+ [][] 
+ []
+
+<Hojspas-modtager.png, id=13, 290.58563pt x 154.32657pt>
+File: Hojspas-modtager.png Graphic file (type png)
+
+<use Hojspas-modtager.png>
+Package pdftex.def Info: Hojspas-modtager.png used on input line 56.
+(pdftex.def)             Requested size: 232.46881pt x 123.4614pt.
+ [2 <./Zero-cross-ms.png> <./udregning-af-spandingsdeler.png>] [3 <./X-10modtag
+er.png> <./Hojspas-modtager.png>]
+<X10-generator-ms.png, id=20, 543.53062pt x 266.49562pt>
+File: X10-generator-ms.png Graphic file (type png)
+
+<use X10-generator-ms.png>
+Package pdftex.def Info: X10-generator-ms.png used on input line 66.
+(pdftex.def)             Requested size: 489.17303pt x 239.84384pt.
+
+Overfull \hbox (17.1418pt too wide) in paragraph at lines 66--67
+ [][] 
+ []
+
+<udregningHPgenerator.png, id=21, 290.58563pt x 228.855pt>
+File: udregningHPgenerator.png Graphic file (type png)
+
+<use udregningHPgenerator.png>
+Package pdftex.def Info: udregningHPgenerator.png used on input line 72.
+(pdftex.def)             Requested size: 145.29245pt x 114.42722pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 AED: lastpage setting LastPage
-[1
-
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] (HardwareDesign.aux) ) 
+[4 <./X10-generator-ms.png>] [5 <./udregningHPgenerator.png>]
+(HardwareDesign.aux) ) 
 Here is how much of TeX's memory you used:
- 20547 strings out of 493333
- 398949 string characters out of 3139146
- 509582 words of memory out of 3000000
- 23791 multiletter control sequences out of 15000+200000
- 13137 words of font info for 58 fonts, out of 3000000 for 9000
+ 20611 strings out of 493333
+ 400043 string characters out of 3139146
+ 513582 words of memory out of 3000000
+ 23824 multiletter control sequences out of 15000+200000
+ 14005 words of font info for 70 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,6n,54p,10487b,378s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:
-/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on HardwareDesign.pdf (1 page, 47747 bytes).
+ 39i,8n,54p,10487b,515s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on HardwareDesign.pdf (5 pages, 208327 bytes).
 PDF statistics:
- 22 PDF objects out of 1000 (max. 8388607)
+ 41 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 13825 words of extra memory for PDF output out of 14400 (max. 10000000)
+ 14372 words of extra memory for PDF output out of 14400 (max. 10000000)
 
