@@ -30,18 +30,18 @@ I design fasen af hardwaren er der udarbejdet et udfra arkitekturen et design af
 \end{figure} \\
 Det er tiltænkt at enhederne fra systemet skulle kunne kommunikere med hinanden via X-10 protokolen. Det er muligt gjort ved at designe følgende hardware dele i blokke. Disse blokke og deres funktionalitet vil i følgende afsnit blive beskrevet, da de er centrale for systemet. 
 \subsection{X-10 Zero-cross: }
-Herunder ses et billede af en simulering for X-10 Zero-cross, formålet for denne hardwaredel er at sende et 5V signal til Mega2560 når netspændingen passerer 0V på lysnettet sinussignal:
+Herunder ses et billede af en simulering for X-10 Zero-cross, formålet for denne hardwaredel er at sende et 5V signal til ATmega2560 når netspændingen passerer 0V på lysnettet sinussignal:
 \begin{figure}[!h]
 \includegraphics[scale = 0.7]{Zero-cross-ms}
 \caption{Multism billede af X-10 Zero-cross m. specifikke komponent værdier}
 \end{figure}\\
-Med udgangspunkt i ``AN236 Application Note'' blev der lavet en spændingsdeler, bestående af en modstand på 3,9k$\Omega$, 2 dioder og en modstand på 1,5k$\Omega$. Mega2560 kan ikke tage 18VAC fra lysnettet, der af er der laver følgende beregninger for at undgå for høj spænding til Microcontrolleren: 
+Med udgangspunkt i ``AN236 Application Note'' blev der lavet en spændingsdeler, bestående af en modstand på 3,9k$\Omega$, 2 dioder og en modstand på 1,5k$\Omega$. ATmega2560 kan ikke tage 18VAC fra lysnettet, der af er der laver følgende beregninger for at undgå for høj spænding til Microcontrolleren: 
 \begin{figure}[!h]
 \centering
 \includegraphics[scale = 1]{udregning-af-spandingsdeler}
 \caption{Udregning af spændingsdeler modstand}
 \end{figure}\\
-Diodernes funktion for spændingsdeleren er at sikre at strømmen ikke over går 5V eller -5V. På spændingsdeleren er der en Op-amp der sikre at Mega2560 altid ved få 5V så der ikke opstår falske nulgennemgange i vores kredsløb. Dvs. den er designet til at sende signal i det spændingen er tilpas påtrykt op-ampen. Her er tilføjet en pulldown modstand. Systemet er designet som på figur 2. Lysnettet sendes ind gennem spændingsdeleren giver en spænding på 5VAC der løber gennem Op-ampen og ind i Mega2560.
+Diodernes funktion for spændingsdeleren er at sikre at strømmen ikke over går 5V eller -5V. På spændingsdeleren er der en Op-amp der sikre at ATmega2560 altid ved få 5V så der ikke opstår falske nulgennemgange i vores kredsløb. Dvs. den er designet til at sende signal i det spændingen er tilpas påtrykt op-ampen. Her er tilføjet en pulldown modstand. Systemet er designet som på figur 2. Lysnettet sendes ind gennem spændingsdeleren giver en spænding på 5VAC der løber gennem Op-ampen og ind i ATmega2560.
 
 \subsection{X-10 Modtager: }
 X-10 Modtageren har til opgave at modtage et lysnettet og frasortere de 120kHz burst der er sendt ud på lysnettet. Herunder ses et diagram over X-10 modtagerens forskellige dele i sammenhæng med hinanden:
@@ -57,7 +57,7 @@ X-10 Modtager består af et højpasfilter, en forstærkende Op-amp og en envelop
 \caption{Udregning af højpasfilter for X-10 Modtager}
 \end{figure}\\
 Der er valgt en kondensator på forhånd udfra de komponenter der var tilrådighed i komponentlageret. Heraf blev der sat en cut-off frekvens på 100kHz for at sikre at alle frekvenser på 120kHz ville gå igennem. Heraf fik vi højpasfilteret. \\
-Den næste del i X-10 Modtageren har vi en forstærkende Op-amp, der blev erfaret at forstærkningen var nødvendig da spændingen efter ikke var stor nok for at gå igennem dioden. Herefter går spændingen direkte gennem en diode der sikre at strømmen kun løber en vej. Udfra X-10 protokolen fra ``AN236 Application Note'' er der lavet en envelope-detector med en inverterende Schmidt-trigger. Envelope-detectoren har til opgave at samle 120kHz burst'ne til et enkelt lavt signal. Dette signal aflæses så af Mega2560. Envelopen er bygget op af en kodensator og en modstand i serie med en diode. 
+Den næste del i X-10 Modtageren har vi en forstærkende Op-amp, der blev erfaret at forstærkningen var nødvendig da spændingen efter ikke var stor nok for at gå igennem dioden. Herefter går spændingen direkte gennem en diode der sikre at strømmen kun løber en vej. Udfra X-10 protokolen fra ``AN236 Application Note'' er der lavet en envelope-detector med en inverterende Schmidt-trigger. Envelope-detectoren har til opgave at samle 120kHz burst'ne til et enkelt lavt signal. Dette signal aflæses så af ATmega2560. Envelopen er bygget op af en kodensator og en modstand i serie med en diode. 
 
 \subsection{X-10 Generator}
 X-10 Generator har til formål at overlejre et 120kHz burst ud på lysnettet når der ønskes at sendes et scenarie. Herunder ses et digram over de forskellige komponenter og design der er udarbejdet til X-10 Generatoren:
