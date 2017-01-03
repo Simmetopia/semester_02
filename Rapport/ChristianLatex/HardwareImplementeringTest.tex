@@ -115,9 +115,10 @@ I testen af X-10 modtager og Zero-cross implementeringen ses der som forventet a
 I denne sektion sker en implementering og en test af de fårige sektioner og hardwaredele, bare samlet. Dvs. der implementeres en fungerende X-10 modtager med Zero-cross sammen med X-10 sender med Zero-cross. Yderligere vil der ske en test af denne implementering. Her forventes det at der sendes et signal på 4 bit, 3 høje og 1 lavt ud på lysnettet. Dette signal vil kunne aflæses med X-10 modtagere delen hvorefter det kan ses på osciloskopet at der kommer samme digitale signal ud. Implementering for hardware delen af hele systemet ses herunder:
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale = 1]{}
-	\caption{Caption here}
-	\label{fig:figure1}
+	\includegraphics[scale = 0.1]{heleHWsamlettest}
+	\caption{Billede af osciskop måling for test af hele systemet}
+	\label{bil:OscTestHeleSys}
 \end{figure}
+Det grønne signal viser hvergang vores Zero-cross detekterer en nulgennemgang. Get gule signal er hvad modtageren detekterer. Modtageren har altså modtaget det signal der er sendt ud på lysnettet. Det ses at der kommer 3 høje signaler ind og et lavt - hvilket svarer til det vi sendte ind. Heraf konkluderes der at de 4 samlede hardware dele og virker sammen.
 
 \end{document}
