@@ -92,7 +92,7 @@ For implementeringen er der brugt osciloskoper for at teste modtageren. Testen f
 	\caption{Billede af osciloskop målingerne for X-10 modtager}
 	\label{bil:oscmodtager}
 \end{figure}
-I testen af X-10 modtager implementeringen ses der som forventet at for hvert Zero-cross(gult-signal), vil modtagere detektere et nul(grønt-signal). Den falder fordi at der er en inverterende schmidt-trigger efter envelopen på selve X-10 modtager-delen. Som forventet ses der er at X-10 modtageren kan sortere det høje frekvenssignal fra og skabe et enkelt højt signal på \SI{1}{\milli\second} som kan detekteres af ATmega2560. I næste sektion vil der gennemgås en implemenetering af X-10 modtager sammen med Zero-cross.
+I testen af X-10 modtager implementeringen ses der som forventet at for hvert burst(gult-signal), vil modtagere detektere et nul(grønt-signal). Den falder fordi at der er en inverterende schmidt-trigger efter envelopen på selve X-10 modtager-delen. Som forventet ses der er at X-10 modtageren kan sortere det høje frekvenssignal fra og skabe et enkelt højt signal på \SI{1}{\milli\second} som kan detekteres af ATmega2560. I næste sektion vil der gennemgås en implemenetering af X-10 modtager sammen med Zero-cross.
 \subsubsection{Implementering Zero-cross og X-10 modtager}
 Denne sektion gennemgår implementeringen af X-10 modtager og Zero-cross samlet. Herunder ses et billede af implementeringen:
 \begin{figure}[H]
@@ -101,7 +101,23 @@ Denne sektion gennemgår implementeringen af X-10 modtager og Zero-cross samlet.
 	\caption{billede af Zero-cross og X-10 modtager implementering}
 	\label{bil:ZeroXmodimp}
 \end{figure}
+Efterfølgende billede viser en test af de to hardwaredele sammen. Der er testet i håb om at der for hver nulgennemgang vil aflæse en et højt eller et lavt signal. Herunder ses et billede af osciloskop målingerne:
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale = 1]{zeromodtest}
+	\caption{Billede af Zero-cross og X-10 modtager test}
+	\label{bil:ZeroXmodtest}
+\end{figure}
+I testen af X-10 modtager og Zero-cross implementeringen ses der som forventet at for hvert Zero-cross(gult-signal). Vil modtageren læse et højt eller lavt. I dette tilfælde vil den kun læse højesignaler fordi testen er levet med et program der sender et burst for hvert zero-cross. I den næste sektion vil der testes hele systemet samlet. Der er lavet et software test program til ATmega2560 der sender 3 høje signaler og 1 lavt. Implementering og testen ses i næste sektion.
 
 
+\subsection{Implementering af alle hardware dele}
+I denne sektion sker en implementering og en test af de fårige sektioner og hardwaredele, bare samlet. Dvs. der implementeres en fungerende X-10 modtager med Zero-cross sammen med X-10 sender med Zero-cross. Yderligere vil der ske en test af denne implementering. Her forventes det at der sendes et signal på 4 bit, 3 høje og 1 lavt ud på lysnettet. Dette signal vil kunne aflæses med X-10 modtagere delen hvorefter det kan ses på osciloskopet at der kommer samme digitale signal ud. Implementering for hardware delen af hele systemet ses herunder:
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale = 1]{}
+	\caption{Caption here}
+	\label{fig:figure1}
+\end{figure}
 
 \end{document}
