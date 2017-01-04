@@ -1,0 +1,48 @@
+\documentclass[11pt]{article}
+\usepackage{ctable,microtype,natbib,amsmath,amssymb,fullpage,graphicx,tabularx}
+\usepackage{siunitx}
+\usepackage{cleveref}
+\usepackage{keyval,kvoptions,fancyvrb,float,ifthen,calc,ifplatform,pdftexcmds,etoolbox,lineno}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage[danish]{babel}
+\usepackage[left=25mm, right=25mm, top=25mm, bottom=25mm]{geometry}
+\usepackage{lastpage}
+\usepackage{amsthm}
+\setlength\parindent{0pt}
+\usepackage{fancyhdr}
+\usepackage{dcolumn}
+\usepackage{minted} 
+\usepackage{setspace}
+\onehalfspacing
+
+\title{hahahaahah grimme}
+\author{Christian Bondesen - 201511621}
+
+\begin{document}
+\maketitle
+%-----------------------------------------------------------------------------------
+%------------------------------------Rapport for Hardware---------------------------
+%-----------------------------------------------------------------------------------
+\section{Design og implementering af hardwaredele}
+I følgende sektion gennemgås der tanker der er udtænkt da udarbejdelsen af hardwaren skulle gennemføres. Der vil blive beskrevet nogle detaljeret design for forskellige hardwaredele, som tager udgangspunkt i specifikationen og arkitekturen. Hvis man ønsker mere information i forhold til implementeringen af hardwaren, henvises der til projektdokumentation(mangler ref).
+
+\subsection*{Overvejelser for hardware-design}
+I start forløbet af projektet blev der udtænkt nogle tanker om hvilke bestanddele hardwaren skulle bestå af. Tanken er at der dannes et overordnet system ved navn Smart Morning System (SMS), der skulle bestå af forskellige hardwaredele. Figur \ref{fig:overvejelserBDD} viser en BDD af de første overvejelser. 
+
+	\begin{figure}[ht]
+	 	\centering
+	 	\includegraphics[scale = 0.8]{BDD-overvejelser-SMS}
+	 	\caption{BDD over de første overvejelser for designet}
+	 	\label{fig:overvejelserBDD}
+	 \end{figure} 
+
+Efter uarbejdelsen af dette diagram er det muligt at nedbryde disse blokke for at beskriver grænseflader og skabe overblik over specifikke funktionaliteter for det blokkene.\\
+Der er valgt i den endelige BDD ikke at have interface med da det ikke er et specifikt stykke hardware. Derudover er X-10 sender og modtager brudt yderligere ned, for at skabe overblik over de dele som de individuelt består af. Her henvises til System Arkitekturen i projektdokumentationen for yderligere information(mangler ref).
+
+ \subsection*{Wake-up light}
+ Der blev i starten af projektforløbet besluttet at der skulle være et bestemt lys der skulle hardcodes til vores system. Dvs. at man ikke kunne undgå denne funktion, da det er det som skulle være fundamentet for Smart Morning System. Dette lys skulle start med et svagt lys og derefter i løbet af nogle minutter stige i intensitet. 
+
+
+
+\end{document} 
