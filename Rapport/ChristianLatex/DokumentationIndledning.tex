@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+\usepackage{ctable,microtype,natbib,amsmath,amssymb,fullpage,graphicx,tabularx}
+\usepackage{siunitx}
+\usepackage{cleveref}
+\usepackage{keyval,kvoptions,fancyvrb,float,ifthen,calc,ifplatform,pdftexcmds,etoolbox,lineno}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage[danish]{babel}
+\usepackage[left=25mm, right=25mm, top=25mm, bottom=25mm]{geometry}
+\usepackage{lastpage}
+\usepackage{amsthm}
+\setlength\parindent{0pt}
+\usepackage{fancyhdr}
+\usepackage{dcolumn}
+\usepackage{minted} 
+\usepackage{setspace}
+\onehalfspacing
+
+\title{hahahaahah grimme}
+\author{Christian Bondesen - 201511621}
+
+\begin{document}
+\maketitle
+
+%Indledning
+\section{Indledning}
+
+Smart Morning System er et system der vil gøre det lettere for den almene dansker, at få en dejlig morgen. Systemet vil bestå af nogle forskellige hardware- og softwaredele. Dette produkt vil bestå af en PC-applikation, en X-10 modtager og en X-10 sender og et DE2 board. X-10 hardware- og softwaren vil følge X-10 protokol\footnote{indsæt}, yderligere er de også tilkoblet lysnettet på forbrugerens hjem. Det er også tilgængeligt at bruge en Graphical User Interface til at styre et brugervalgt scenarie. Disse scenarier kan bestå af forskellige enheder eksempelvis, en lampe, en radio eller en kaffemaskine. Det vil også være muligt at sætte alle enheder sammen og definere et specifikt tidspunkt hvorpå det scenarie vil påbegyndes til valgte tidspunkt.
+
+% Læsevejledning
+\section*{Læsevejledning}
+For at kunne læse og forstå denne projektdokumentation, anbefales det at følgende vejledning. Mange udtryk, forkortelse og sprogligevendinger er beskrevet herunder. Det vil gøre det mere overskueligt og skaber bedre forståelse.
+
+	\begin{table}[ht]
+		\centering
+		\label{tabel:TermListe}
+
+			\begin{tabularx}{\textwidth}{l|X|X}
+
+				\toprule \textbf{Term} 	& \textbf{Beskrivelse} & \textbf{Surrogat}\\
+
+				\midrule X-10 modtager 	& X-10 protokolens modtagerdel der læser på lysnettet og signalere til ATmega2560 om der er et logisk højt eller lavt & Modtager, \SI{120}{\kilo\hertz} Carrier-detector \\
+
+				\midrule X-10 sender 	& X-10 protokolens senderderdel der sender en bitkode sikkert ud på lysnettet & Generator, \SI{120}{\kilo\hertz} carrier-generator \\
+
+				\midrule GUI 			& Graphical User Interface & brugerflade, Grafisk brugerflade  \\
+
+				\midrule Zero-cross 	& X-10 protokolens Zero-cross detector, den der detekterer hvert zero cross på lysnettet & ZeroX\\
+
+				\midrule burst			& \SI{120}{\kilo\hertz} sendes fra ATmega2560 eller Analog-Discovery & \SI{120}{\kilo\hertz} \\
+
+				\midrule Arduino 		& Microcontrollerne til modtager og sender & ATmega2560, Microcontroller  \\
+
+				\midrule Lysnet 		& 18VAC signal & El-nettet \\
+
+				\midrule Nulgennemgang	& Hvergang der sinussignalet rammer 0 & zero cross \\
+				\bottomrule
+				
+			\end{tabularx}
+		\caption{Tabel over termer der fremmer forståelse hos læseren af projektdokumentation}
+	\end{table}
+
+
+\end{document}
+
