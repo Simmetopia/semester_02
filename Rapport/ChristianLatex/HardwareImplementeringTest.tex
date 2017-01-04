@@ -92,7 +92,7 @@ For implementeringen er der brugt osciloskoper for at teste modtageren. Testen f
 	\caption{Billede af osciloskop målingerne for X-10 modtager}
 	\label{bil:oscmodtager}
 \end{figure}
-I testen af X-10 modtager implementeringen ses der som forventet at for hvert burst(gult-signal), vil modtagere detektere et nul(grønt-signal). Den falder fordi at der er en inverterende schmidt-trigger efter envelopen på selve X-10 modtager-delen. Som forventet ses der er at X-10 modtageren kan sortere det høje frekvenssignal fra og skabe et enkelt højt signal på \SI{1}{\milli\second} som kan detekteres af ATmega2560. I næste sektion vil der gennemgås en implemenetering af X-10 modtager sammen med Zero-cross.
+I testen af X-10 modtager implementeringen ses der som forventet at for hvert burst(gult-signal), vil modtagere detekterer et nul(grønt-signal). Den falder fordi at der er en inverterende schmidt-trigger efter envelopen på selve X-10 modtager-delen. Som forventet ses der er at X-10 modtageren kan sortere det høje frekvenssignal fra og skabe et enkelt højt signal på \SI{1}{\milli\second} som kan detekteres af ATmega2560. I næste sektion vil der gennemgås en implemenetering af X-10 modtager sammen med Zero-cross.
 \subsubsection{Implementering Zero-cross og X-10 modtager}
 Denne sektion gennemgår implementeringen af X-10 modtager og Zero-cross samlet. Herunder ses et billede af implementeringen:
 \begin{figure}[H]
